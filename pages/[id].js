@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 
 export default function Home() {
   const router = useRouter()
+  const { id } = router.query
 
   return (
     <div className={styles.container}>
@@ -14,7 +15,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          ID{id}
         </h1>
 
         <p className={styles.description}>
@@ -51,7 +52,6 @@ export default function Home() {
             </p>
           </a>
         </div>
-        <div><span onClick={() => router.push('/hoge')}>Go to Hoge!!</span></div>
       </main>
 
       <footer className={styles.footer}>
