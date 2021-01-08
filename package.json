@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint \"src/**/*.{ts,tsx}\" && tsc --noEmit",
+    "lint": "eslint \"pages/**/*.{ts,tsx}\" && tsc --noEmit",
     "test": "react-scripts test --env=jest-environment-jsdom-sixteen",
     "test:ci": "CI=true react-scripts test --ci --coverage --runInBand --env=jest-environment-jsdom-sixteen"
   },
