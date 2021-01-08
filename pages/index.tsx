@@ -2,7 +2,7 @@ import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import { useRouter } from 'next/router';
 
-export default function Home() {
+export default () => {
   const router = useRouter();
 
   return (
@@ -61,4 +61,4 @@ export default function Home() {
       </footer>
     </div>
   );
-}
+};
