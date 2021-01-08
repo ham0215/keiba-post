@@ -5,7 +5,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "eslint \"src/**/*.{ts,tsx}\" && tsc --noEmit",
+    "test": "react-scripts test --env=jest-environment-jsdom-sixteen",
+    "test:ci": "CI=true react-scripts test --ci --coverage --runInBand --env=jest-environment-jsdom-sixteen"
   },
   "dependencies": {
     "next": "10.0.5",
@@ -21,6 +24,7 @@
     "@types/react": "^17.0.0",
     "@typescript-eslint/eslint-plugin": "^4.12.0",
     "@typescript-eslint/parser": "^4.12.0",
+    "eslint": "^7.17.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-react-app": "^6.0.0",
