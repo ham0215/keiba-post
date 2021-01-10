@@ -7,7 +7,7 @@ export default () => {
   return (
     <div>
       <Head>
-        <title>Create Next App</title>
+        <title>keiba post</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
