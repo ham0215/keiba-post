@@ -1,20 +1,18 @@
-import Head from 'next/head';
 import { useRouter } from 'next/router';
+import Typography from '@material-ui/core/Typography';
 
 export default () => {
   const router = useRouter();
 
   return (
     <div>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <main>
         <div>
           <span onClick={() => router.push('/hoge')}>Go to Hoge!!</span>
         </div>
+        <Typography variant="h4" component="h1" gutterBottom>
+          Next.js example
+        </Typography>
       </main>
 
       <footer>
