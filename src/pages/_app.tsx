@@ -6,7 +6,6 @@ import { ThemeProvider, StylesProvider } from '@material-ui/core/styles';
 import { ThemeProvider as StyledComponentsThemeProvider } from 'styled-components';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import theme from '../theme';
-import Footer from '../components/Footer';
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
@@ -27,7 +26,6 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           <StyledComponentsThemeProvider theme={theme}>
             <CssBaseline />
             <Component {...pageProps} />
-            <Footer />
           </StyledComponentsThemeProvider>
         </ThemeProvider>
       </StylesProvider>
