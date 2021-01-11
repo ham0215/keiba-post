@@ -1,5 +1,4 @@
 import { useRouter } from 'next/router';
-import Typography from '@material-ui/core/Typography';
 
 export default () => {
   const router = useRouter();
@@ -7,12 +6,11 @@ export default () => {
   return (
     <div>
       <main>
+        <img src="/favicon.ico" alt="keiba post" />
+
         <div>
           <span onClick={() => router.push('/hoge')}>Go to Hoge!!</span>
         </div>
-        <Typography variant="h4" component="h1" gutterBottom>
-          Next.js example
-        </Typography>
       </main>
 
       <footer>
