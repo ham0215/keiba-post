@@ -11,7 +11,7 @@ import PlaceIcon from '@material-ui/icons/Place';
 import InfoIcon from '@material-ui/icons/Info';
 import AllInclusiveIcon from '@material-ui/icons/AllInclusive';
 import ConfirmationNumberIcon from '@material-ui/icons/ConfirmationNumber';
-import { KeibaCalendar } from './KeibaCalendar'
+import { KeibaCalendar } from '../../data/KeibaCalendar'
 
 const KeibaCard = styled(Card)`
   margin: 8px 8px 8px 8px;

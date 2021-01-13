@@ -7,7 +7,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import { KeibaCalendar } from './KeibaCalendar'
+import { KeibaCalendar } from '../../data/KeibaCalendar'
 
 export default function List() {
   const router = useRouter();
