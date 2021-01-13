@@ -1,19 +1,5 @@
-import { useRouter } from 'next/router';
+import List from './List'
 
-const Top = () => {
-  const router = useRouter();
-
-  return (
-    <div>
-      <main>
-        <img src="/favicon.ico" alt="keiba post" />
-
-        <div>
-          <span onClick={() => router.push('/')}>Go to Hoge!!</span>
-        </div>
-      </main>
-    </div>
-  );
-};
-
-export default Top;
+export default function Top() {
+  return (<List />);
+}
