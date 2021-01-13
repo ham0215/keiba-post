@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import styled from 'styled-components'
 import { useRouter } from 'next/router';
 import Card from '@material-ui/core/Card';
@@ -12,6 +13,9 @@ import InfoIcon from '@material-ui/icons/Info';
 import AllInclusiveIcon from '@material-ui/icons/AllInclusive';
 import ConfirmationNumberIcon from '@material-ui/icons/ConfirmationNumber';
 import { KeibaCalendar } from '../../data/KeibaCalendar'
+import Float from '../../components/Float';
+import Backdrop from '../../components/Backdrop'
+import SpeedDial from './SpeedDial';
 
 const KeibaCard = styled(Card)`
   margin: 8px 8px 8px 8px;
@@ -23,43 +27,50 @@ export default function Detail() {
 
   const keiba = KeibaCalendar.find(item => item.id === Number(id));
   if (!keiba) return <p>Error :(</p>;
+  const [open, setOpen] = useState(false);
 
   return (
-    <KeibaCard>
-      <CardContent>
-        <List>
-          <ListItem>
-            <ListItemIcon>
-              <CalendarTodayIcon />
-            </ListItemIcon>
-            <ListItemText primary={keiba.date} />
-          </ListItem>
-          <ListItem>
-            <ListItemIcon>
-              <ConfirmationNumberIcon />
-            </ListItemIcon>
-            <ListItemText primary={keiba.name} />
-          </ListItem>
-          <ListItem>
-            <ListItemIcon>
-              <PlaceIcon />
-            </ListItemIcon>
-            <ListItemText primary={keiba.place} />
-          </ListItem>
-          <ListItem>
-            <ListItemIcon>
-              <InfoIcon />
-            </ListItemIcon>
-            <ListItemText primary={keiba.conditions} />
-          </ListItem>
-          <ListItem>
-            <ListItemIcon>
-              <AllInclusiveIcon />
-            </ListItemIcon>
-            <ListItemText primary={keiba.course} />
-          </ListItem>
-        </List>
-      </CardContent>
-    </KeibaCard>
+    <>
+      <Backdrop open={open} />
+      <KeibaCard>
+        <CardContent>
+          <List>
+            <ListItem>
+              <ListItemIcon>
+                <CalendarTodayIcon />
+              </ListItemIcon>
+              <ListItemText primary={keiba.date} />
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <ConfirmationNumberIcon />
+              </ListItemIcon>
+              <ListItemText primary={keiba.name} />
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <PlaceIcon />
+              </ListItemIcon>
+              <ListItemText primary={keiba.place} />
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <InfoIcon />
+              </ListItemIcon>
+              <ListItemText primary={keiba.conditions} />
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <AllInclusiveIcon />
+              </ListItemIcon>
+              <ListItemText primary={keiba.course} />
+            </ListItem>
+          </List>
+        </CardContent>
+      </KeibaCard>
+      <Float bottom={'2px'} right={'2px'}>
+        <SpeedDial open={open} setOpen={setOpen} />
+      </Float>
+    </>
   );
 }
