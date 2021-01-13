@@ -23,10 +23,10 @@ const KeibaCard = styled(Card)`
 export default function Detail() {
   const router = useRouter();
   const { id } = router.query;
+  const [open, setOpen] = useState(false);
 
   const keiba = KeibaCalendar.find(item => item.id === Number(id));
   if (!keiba) return <p>Error :(</p>;
-  const [open, setOpen] = useState(false);
 
   return (
     <>
