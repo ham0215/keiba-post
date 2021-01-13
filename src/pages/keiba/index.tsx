@@ -9,10 +9,9 @@ const Top = () => {
         <img src="/favicon.ico" alt="keiba post" />
 
         <div>
-          <span onClick={() => router.push('/keiba')}>Go to Hoge!!</span>
+          <span onClick={() => router.push('/')}>Go to Hoge!!</span>
         </div>
       </main>
-
     </div>
   );
 };

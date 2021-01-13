@@ -4,7 +4,7 @@ import Link from '@material-ui/core/Link';
 
 const Footer = styled.footer`
   padding: 10px 0 10px;
-  background-color: #3f51b5;
+  background-color:#556cd6;
   color: #fff;
   font-size: 0.8rem;
 `;
@@ -29,7 +29,7 @@ const FooterItem = styled(FooterFirstItem)`
   border-left: 1px solid #bbb;
 `;
 
-export default () => {
+export default function SiteFooter() {
   return (
     <Footer>
       <FooterList>
