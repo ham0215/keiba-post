@@ -14,7 +14,6 @@ import AllInclusiveIcon from '@material-ui/icons/AllInclusive';
 import ConfirmationNumberIcon from '@material-ui/icons/ConfirmationNumber';
 import { KeibaCalendar } from '../../data/KeibaCalendar'
 import Float from '../../components/Float';
-import Backdrop from '../../components/Backdrop'
 import SpeedDial from './SpeedDial';
 
 const KeibaCard = styled(Card)`
@@ -31,7 +30,6 @@ export default function Detail() {
 
   return (
     <>
-      <Backdrop open={open} />
       <KeibaCard>
         <CardContent>
           <List>
