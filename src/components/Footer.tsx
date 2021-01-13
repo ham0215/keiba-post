@@ -47,4 +47,4 @@ export default function SiteFooter() {
       <Copyright>Copyright ©︎ 2021 Ham</Copyright>
     </Footer>
   );
-};
+}
