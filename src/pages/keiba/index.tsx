@@ -1,7 +1,5 @@
-import List from './list'
+import List from './List'
 
-const Top = () => (
-  <List />
-);
-
-export default Top;
+export default function Top() {
+  return (<List />);
+}
