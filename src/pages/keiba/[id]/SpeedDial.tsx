@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useCallback } from 'react';
+import { useRouter } from 'next/router';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import SpeedDial from '@material-ui/lab/SpeedDial';
 import SpeedDialIcon from '@material-ui/lab/SpeedDialIcon';
@@ -16,26 +17,31 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-const actions = [
-  { icon: <ImageIcon />, name: 'Image' },
-  { icon: <TextFieldsIcon />, name: 'Text' },
-];
-
 type Props = {
   open: boolean;
   setOpen: ((open: boolean) => void);
+  id: string;
 }
 
-export default function SpeedDialTooltipOpen({ open, setOpen }: Props) {
+export default function SpeedDialTooltipOpen({ open, setOpen, id }: Props) {
   const classes = useStyles();
+  const router = useRouter();
 
-  const handleOpen = () => {
+  const handleOpen = useCallback(() => {
     setOpen(true);
-  };
+  }, [setOpen]);
 
-  const handleClose = () => {
+  const handleClose = useCallback(() => {
     setOpen(false);
-  };
+  }, [setOpen]);
+
+  const onClickText = useCallback(() => {
+    router.push(`/keiba/${id}/post`);
+  }, [id, router]);
+
+  const onClickImage = useCallback(() => {
+    setOpen(false);
+  }, [setOpen]);
 
   return (
     <SpeedDial
@@ -47,15 +53,20 @@ export default function SpeedDialTooltipOpen({ open, setOpen }: Props) {
       onOpen={handleOpen}
       open={open}
     >
-      {actions.map((action) => (
-        <SpeedDialAction
-          key={action.name}
-          icon={action.icon}
-          tooltipTitle={action.name}
-          tooltipOpen
-          onClick={handleClose}
-        />
-      ))}
+      <SpeedDialAction
+        key='text'
+        icon={<TextFieldsIcon />}
+        tooltipTitle='text'
+        tooltipOpen
+        onClick={onClickText}
+      />
+      <SpeedDialAction
+        key='image'
+        icon={<ImageIcon />}
+        tooltipTitle='image'
+        tooltipOpen
+        onClick={onClickImage}
+      />
     </SpeedDial>
   );
 }

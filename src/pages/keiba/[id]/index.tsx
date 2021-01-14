@@ -12,8 +12,8 @@ import PlaceIcon from '@material-ui/icons/Place';
 import InfoIcon from '@material-ui/icons/Info';
 import AllInclusiveIcon from '@material-ui/icons/AllInclusive';
 import ConfirmationNumberIcon from '@material-ui/icons/ConfirmationNumber';
-import { KeibaCalendar } from '../../data/KeibaCalendar'
-import Float from '../../components/Float';
+import { KeibaCalendar } from '../../../data/KeibaCalendar'
+import Float from '../../../components/Float';
 import SpeedDial from './SpeedDial';
 
 const KeibaCard = styled(Card)`
@@ -24,6 +24,8 @@ export default function Detail() {
   const router = useRouter();
   const { id } = router.query;
   const [open, setOpen] = useState(false);
+
+  if (typeof id !== 'string') return <p>Error :(</p>;
 
   const keiba = KeibaCalendar.find(item => item.id === Number(id));
   if (!keiba) return <p>Error :(</p>;
@@ -67,7 +69,7 @@ export default function Detail() {
         </CardContent>
       </KeibaCard>
       <Float bottom={'2px'} right={'2px'}>
-        <SpeedDial open={open} setOpen={setOpen} />
+        <SpeedDial open={open} setOpen={setOpen} id={id} />
       </Float>
     </>
   );
