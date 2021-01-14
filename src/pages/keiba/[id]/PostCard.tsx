@@ -30,7 +30,7 @@ export default function PostCard({ text }: { text: string }) {
         subheader={format(new Date(), 'yyyy-MM-dd HH:mm')}
       />
       <CardContent>
-        <PreWrapTypography variant="body1" component="p">
+        <PreWrapTypography variant="body1">
           {text}
         </PreWrapTypography>
       </CardContent>
