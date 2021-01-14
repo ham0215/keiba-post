@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import { useCallback } from 'react';
 import { useRouter } from 'next/router';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import SpeedDial from '@material-ui/lab/SpeedDial';

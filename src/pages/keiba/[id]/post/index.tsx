@@ -1,3 +1,4 @@
+import { useCallback } from 'react';
 import { useRouter } from 'next/router';
 import styled from 'styled-components'
 import TextField from '@material-ui/core/TextField';
@@ -20,6 +21,14 @@ export default function Post() {
   const router = useRouter();
   const { id } = router.query;
 
+  const onClickCancel = useCallback(() => {
+    router.push(`/keiba/${id}`)
+  }, [id, router]);
+
+  const onClickPost = useCallback(() => {
+    router.push(`/keiba/${id}`)
+  }, [id, router]);
+
   return (
     <>
       <KeibaTextField
@@ -30,10 +39,10 @@ export default function Post() {
         variant="outlined"
       />
       <ButtonArea>
-        < KeibaButton variant="outlined" onClick={() => router.push(`/keiba/${id}`)}>
+        < KeibaButton variant="outlined" onClick={onClickCancel}>
           キャンセル
         </KeibaButton>
-        <KeibaButton variant="outlined" color="primary">
+        <KeibaButton variant="outlined" color="primary" onClick={onClickPost}>
           投稿
         </KeibaButton>
       </ButtonArea>

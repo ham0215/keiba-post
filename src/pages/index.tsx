@@ -9,7 +9,7 @@ const Top = () => {
         <img src="/favicon.ico" alt="keiba post" />
 
         <div>
-          <span onClick={() => router.push('/keiba')}>Go to Hoge!!</span>
+          <span onClick={() => router.push('/keiba')}>Go to G1!!</span>
         </div>
       </main>
 
