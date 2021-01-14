@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint \"src/**/*.{ts,tsx}\" && tsc --noEmit",
+    "lint:fix": "eslint \"src/**/*.{ts,tsx}\" --fix && tsc --noEmit",
     "test": "jest --watch",
     "test:ci": "jest --ci"
   },
@@ -14,9 +15,11 @@
     "@material-ui/core": "^4.11.2",
     "@material-ui/icons": "^4.11.2",
     "@material-ui/lab": "^4.0.0-alpha.57",
+    "date-fns": "^2.16.1",
     "next": "10.0.5",
     "react": "17.0.1",
     "react-dom": "17.0.1",
+    "react-hook-form": "^6.14.1",
     "styled-components": "^5.2.1"
   },
   "devDependencies": {

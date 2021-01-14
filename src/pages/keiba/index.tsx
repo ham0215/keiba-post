@@ -1,5 +1,5 @@
 import List from './List'
 
-export default function Top() {
+export default function Keiba() {
   return (<List />);
 }
