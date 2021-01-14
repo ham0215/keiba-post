@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme: Theme) =>
 type Props = {
   open: boolean;
   setOpen: ((open: boolean) => void);
-  keibaId: string;
+  keibaId: number;
 }
 
 export default function SpeedDialTooltipOpen({ open, setOpen, keibaId }: Props) {

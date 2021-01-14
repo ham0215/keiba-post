@@ -12,16 +12,16 @@ import AllInclusiveIcon from '@material-ui/icons/AllInclusive';
 import ConfirmationNumberIcon from '@material-ui/icons/ConfirmationNumber';
 import { KeibaCalendar } from '../../../data/KeibaCalendar'
 
-const KeibaCard = styled(Card)`
+const CustomCard = styled(Card)`
   margin: 8px 8px 8px 8px;
 `;
 
-export default function KC({ keibaId }: { keibaId: string }) {
+export default function KeibaCard({ keibaId }: { keibaId: number }) {
   const keiba = KeibaCalendar.find(item => item.id === keibaId);
-  if (!keiba) return <p>Error :(</p>;
+  if (!keiba) return (<p>Error :(</p>);
 
   return (
-    <KeibaCard>
+    <CustomCard>
       <CardContent>
         <List>
           <ListItem>
@@ -56,6 +56,6 @@ export default function KC({ keibaId }: { keibaId: string }) {
           </ListItem>
         </List>
       </CardContent>
-    </KeibaCard>
+    </CustomCard>
   );
 }
