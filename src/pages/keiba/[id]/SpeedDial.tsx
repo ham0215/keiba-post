@@ -20,10 +20,10 @@ const useStyles = makeStyles((theme: Theme) =>
 type Props = {
   open: boolean;
   setOpen: ((open: boolean) => void);
-  id: string;
+  keibaId: string;
 }
 
-export default function SpeedDialTooltipOpen({ open, setOpen, id }: Props) {
+export default function SpeedDialTooltipOpen({ open, setOpen, keibaId }: Props) {
   const classes = useStyles();
   const router = useRouter();
 
@@ -36,8 +36,8 @@ export default function SpeedDialTooltipOpen({ open, setOpen, id }: Props) {
   }, [setOpen]);
 
   const onClickText = useCallback(() => {
-    router.push(`/keiba/${id}/post`);
-  }, [id, router]);
+    router.push(`/keiba/${keibaId}/post`);
+  }, [keibaId, router]);
 
   const onClickImage = useCallback(() => {
     setOpen(false);
