@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
-import * as firebaseui from 'firebaseui';
 import firebase from '../../firebase';
 import styled from 'styled-components';
 import 'firebaseui/dist/firebaseui.css';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 const Contents = styled.div`
   background: #151515 url('/images/login.jpg') no-repeat scroll center bottom;
@@ -34,6 +34,13 @@ export default function Login() {
     };
     ui.start('#firebaseui-auth-container', uiConfig);
   });
+
+  if (!process.browser) {
+    return (<CircularProgress />);
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const firebaseui = require('firebaseui');
 
   return (
     <Contents>
