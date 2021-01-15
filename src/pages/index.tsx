@@ -1,20 +1,15 @@
-import { useRouter } from 'next/router';
+import styled from 'styled-components';
 
-const Top = () => {
-  const router = useRouter();
+const Contents = styled.div`
+  background: #151515 url('/images/login.jpg') no-repeat scroll center bottom;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+  min-height: 500px;
+`;
 
+export default function Top() {
   return (
-    <div>
-      <main>
-        <img src="/favicon.ico" alt="keiba post" />
-
-        <div>
-          <span onClick={() => router.push('/keiba')}>Go to G1!!</span>
-        </div>
-      </main>
-
-    </div>
+    <Contents />
   );
-};
-
-export default Top;
+}
