@@ -33,7 +33,7 @@ export default function ButtonAppBar() {
           <Title variant="h6">
             <span onClick={() => router.push('/')}>Keiba Post</span>
           </Title>
-          <Button color="inherit">Login</Button>
+          <Button color="inherit" onClick={() => router.push('/login')} > Login</Button>
         </Toolbar>
       </AppBar>
     </Header>
