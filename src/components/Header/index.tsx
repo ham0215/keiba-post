@@ -11,6 +11,8 @@ import { UserContext } from '../../UserContext';
 
 const Header = styled.header`
   flex-grow: 1;
+  background-color: green;
+  color: #fff;
 `;
 
 const Title = styled(Typography)`
@@ -47,7 +49,7 @@ export default function ButtonAppBar() {
 
   return (
     <Header>
-      <AppBar position="static">
+      <AppBar position="static" color="transparent">
         <Toolbar>
           <Menu />
           <Title variant="h6">
