@@ -1,5 +1,5 @@
-import React from 'react';
 import { useRouter } from 'next/router';
+import styled from 'styled-components';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -9,19 +9,23 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { KeibaCalendar } from '../../data/KeibaCalendar'
 
+const StyledHeader = styled(TableHead)`
+  background-color:lightgray;
+`;
+
 export default function List() {
   const router = useRouter();
 
   return (
     <TableContainer component={Paper}>
       <Table aria-label="keiba calendar">
-        <TableHead>
+        <StyledHeader>
           <TableRow>
             <TableCell>日付</TableCell>
             <TableCell>レース名</TableCell>
             <TableCell>場所</TableCell>
           </TableRow>
-        </TableHead>
+        </StyledHeader>
         <TableBody>
           {KeibaCalendar.map((row) => (
             <TableRow key={row.id} onClick={() => router.push(`/keiba/${row.id}`)} >
