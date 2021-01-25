@@ -49,7 +49,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       <StylesProvider injectFirst>
         <ThemeProvider theme={theme}>
           <StyledComponentsThemeProvider theme={theme}>
-            <UserContext.Provider value={{ user: currentUser, setUser }}>
+            <UserContext.Provider value={{ user: currentUser, setUser: setCurrentUser }}>
               <CssBaseline />
               <Header />
               <Component {...pageProps} />
