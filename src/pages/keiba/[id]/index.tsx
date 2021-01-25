@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { useRouter } from 'next/router';
 import Float from '../../../components/Float';
+import { UserContext } from '../../../UserContext';
 import KeibaCard from './KeibaCard'
 import SpeedDial from './SpeedDial';
 import PostCard from './PostCard';
@@ -9,6 +10,7 @@ export default function Detail() {
   const router = useRouter();
   const { id, text } = router.query;
   const [open, setOpen] = useState(false);
+  const { user } = useContext(UserContext);
 
   const keibaId = Number(id);
   if (!keibaId) return (<p>Error :(</p>);
@@ -17,7 +19,7 @@ export default function Detail() {
   return (
     <>
       <KeibaCard keibaId={keibaId} />
-      {text && <PostCard text={text} />}
+      <PostCard text={text} user={user} />
       <Float bottom={'2px'} right={'2px'}>
         <SpeedDial open={open} setOpen={setOpen} keibaId={keibaId} />
       </Float>

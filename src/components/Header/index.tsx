@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import styled from 'styled-components';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -8,6 +8,7 @@ import { useRouter } from 'next/router';
 import Menu from './Menu';
 import firebase from '../../firebase';
 import { UserContext } from '../../UserContext';
+import UserAvatar from '../../components/UserAvatar'
 
 const Header = styled.header`
   flex-grow: 1;
@@ -30,15 +31,11 @@ export default function ButtonAppBar() {
         setUser(currentUser);
       }
     });
-  });
+  }, [setUser]);
 
   let loginButton;
   if (user) {
-    loginButton = (
-      <Button color="inherit" onClick={() => firebase.auth().signOut()}>
-        Logout
-      </Button>
-    );
+    loginButton = <UserAvatar user={user} />;
   } else {
     loginButton = (
       <Button color="inherit" onClick={() => router.push('/login')}>
@@ -51,7 +48,7 @@ export default function ButtonAppBar() {
     <Header>
       <AppBar position="static" color="transparent">
         <Toolbar>
-          <Menu />
+          <Menu user={user} />
           <Title variant="h6">
             <span onClick={() => router.push('/')}>Keiba Post</span>
           </Title>
