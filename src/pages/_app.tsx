@@ -13,12 +13,25 @@ import Footer from '../components/Footer';
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   const [currentUser, setUser] = useState<firebase.User | null>(null);
+  const db = firebase.firestore();
 
   useEffect(() => {
-    firebase.auth().onAuthStateChanged((currentUser) => {
+    firebase.auth().onAuthStateChanged(async (currentUser) => {
+      if (currentUser) {
+        let user = await db.collection('users').doc(currentUser.uid).get();
+        if (!user) {
+          await db.collection('users').doc(currentUser.uid).set({
+            name: currentUser.displayName,
+            photoUrl: currentUser.photoURL,
+            enabled: true,
+          });
+          user = await db.collection('users').doc(currentUser.uid).get();
+        }
+        console.log(user);
+      }
       setUser(currentUser);
     });
-  }, []);
+  }, [db]);
 
   useEffect(() => {
     const jssStyles = document.querySelector('#jss-server-side');
