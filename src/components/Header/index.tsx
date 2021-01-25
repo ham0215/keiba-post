@@ -23,15 +23,7 @@ const Title = styled(Typography)`
 export default function ButtonAppBar() {
   const router = useRouter();
 
-  const { user, setUser } = useContext(UserContext);
-
-  useEffect(() => {
-    firebase.auth().onAuthStateChanged((currentUser) => {
-      if (setUser) {
-        setUser(currentUser);
-      }
-    });
-  }, [setUser]);
+  const { user } = useContext(UserContext);
 
   let loginButton;
   if (user) {

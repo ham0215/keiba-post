@@ -13,9 +13,12 @@ import Footer from '../components/Footer';
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   const [currentUser, setUser] = useState<firebase.User | null>(null);
-  firebase.auth().onAuthStateChanged((user) => {
-    setUser(user);
-  });
+
+  useEffect(() => {
+    firebase.auth().onAuthStateChanged((currentUser) => {
+      setUser(currentUser);
+    });
+  }, []);
 
   useEffect(() => {
     const jssStyles = document.querySelector('#jss-server-side');
