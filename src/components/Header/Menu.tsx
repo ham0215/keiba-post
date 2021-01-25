@@ -29,6 +29,11 @@ export default function Header({ user }: { user: firebase.User | null }) {
     router.push('/keiba');
   }, [router]);
 
+  const handleProfile = useCallback(() => {
+    setOpen(false);
+    router.push('/profile');
+  }, [router]);
+
   const handleLogout = useCallback(() => {
     setOpen(false);
     firebase.auth().signOut()
@@ -42,6 +47,9 @@ export default function Header({ user }: { user: firebase.User | null }) {
       <Menu anchorEl={menuButtonRef.current} keepMounted open={open} onClose={handleClose}>
         <MenuItem onClick={handleG1}>
           GI Racing
+        </MenuItem>
+        <MenuItem onClick={handleProfile}>
+          Profile
         </MenuItem>
         {user &&
           <MenuItem color="inherit" onClick={handleLogout}>
