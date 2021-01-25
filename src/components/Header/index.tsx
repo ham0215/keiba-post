@@ -1,9 +1,10 @@
-import { useContext, useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import styled from 'styled-components';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import Avatar from '@material-ui/core/Avatar';
 import { useRouter } from 'next/router';
 import Menu from './Menu';
 import firebase from '../../firebase';
@@ -35,9 +36,9 @@ export default function ButtonAppBar() {
   let loginButton;
   if (user) {
     loginButton = (
-      <Button color="inherit" onClick={() => firebase.auth().signOut()}>
-        Logout
-      </Button>
+      <Avatar aria-label="avatar">
+        H
+      </Avatar>
     );
   } else {
     loginButton = (
@@ -51,7 +52,7 @@ export default function ButtonAppBar() {
     <Header>
       <AppBar position="static" color="transparent">
         <Toolbar>
-          <Menu />
+          <Menu user={user} />
           <Title variant="h6">
             <span onClick={() => router.push('/')}>Keiba Post</span>
           </Title>
