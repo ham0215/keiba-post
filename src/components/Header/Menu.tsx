@@ -6,12 +6,13 @@ import MenuItem from '@material-ui/core/MenuItem';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import firebase from '../../firebase';
+import { User } from '../../firestore/User';
 
 const MenuButton = styled(IconButton)`
   margin-right: 2px;
 `;
 
-export default function Header({ user }: { user: firebase.User | null }) {
+export default function Header({ user }: { user: User | null }) {
   const router = useRouter();
   const [open, setOpen] = useState<boolean>(false);
   const menuButtonRef = useRef(null);

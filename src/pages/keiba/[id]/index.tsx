@@ -10,7 +10,7 @@ export default function Detail() {
   const router = useRouter();
   const { id, text } = router.query;
   const [open, setOpen] = useState(false);
-  const { user } = useContext(UserContext);
+  const { currentUser } = useContext(UserContext);
 
   const keibaId = Number(id);
   if (!keibaId) return (<p>Error :(</p>);
@@ -19,7 +19,7 @@ export default function Detail() {
   return (
     <>
       <KeibaCard keibaId={keibaId} />
-      <PostCard text={text} user={user} />
+      <PostCard text={text} user={currentUser} />
       <Float bottom={'2px'} right={'2px'}>
         <SpeedDial open={open} setOpen={setOpen} keibaId={keibaId} />
       </Float>

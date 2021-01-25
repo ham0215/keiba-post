@@ -1,12 +1,12 @@
 import { Dispatch, createContext } from 'react';
-import firebase from 'firebase';
+import { User } from './firestore/User'
 
 type UserContextType = {
-  user: firebase.User | null;
-  setUser: Dispatch<firebase.User | null> | undefined;
+  currentUser: User | null;
+  setCurrentUser: Dispatch<User | null> | undefined;
 };
 
 export const UserContext = createContext<UserContextType>({
-  user: null,
-  setUser: undefined,
+  currentUser: null,
+  setCurrentUser: undefined,
 });

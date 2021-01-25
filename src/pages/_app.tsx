@@ -10,28 +10,28 @@ import { UserContext } from '../UserContext';
 import theme from '../theme';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { findUser, setUser } from '../firestore/User';
+import { findUser, setUser, User } from '../firestore/User';
 
 export default function MyApp({ Component, pageProps }: AppProps) {
-  const [currentUser, setCurrentUser] = useState<firebase.User | null>(null);
-  const db = firebase.firestore();
+  const [currentUser, setCurrentUser] = useState<User | null>(null);
 
   useEffect(() => {
-    firebase.auth().onAuthStateChanged(async (currentUser) => {
-      if (currentUser) {
-        let user = await findUser(currentUser.uid);
-        if (!user) {
-          user = await setUser({
-            id: currentUser.uid,
-            name: currentUser.displayName,
-            photoUrl: currentUser.photoURL,
+    firebase.auth().onAuthStateChanged(async (fbUser) => {
+      let currentUser = null;
+      if (fbUser) {
+        currentUser = await findUser(fbUser.uid);
+        if (!currentUser) {
+          currentUser = await setUser({
+            id: fbUser.uid,
+            name: fbUser.displayName,
+            photoUrl: fbUser.photoURL,
             enabled: true
           });
         }
       }
       setCurrentUser(currentUser);
     });
-  }, [db]);
+  }, []);
 
   useEffect(() => {
     const jssStyles = document.querySelector('#jss-server-side');
@@ -49,7 +49,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       <StylesProvider injectFirst>
         <ThemeProvider theme={theme}>
           <StyledComponentsThemeProvider theme={theme}>
-            <UserContext.Provider value={{ user: currentUser, setUser: setCurrentUser }}>
+            <UserContext.Provider value={{ currentUser, setCurrentUser }}>
               <CssBaseline />
               <Header />
               <Component {...pageProps} />

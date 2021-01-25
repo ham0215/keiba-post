@@ -1,6 +1,6 @@
 import firebase from '../firebase';
 
-type User = {
+export type User = {
   id: string;
   name: string | null;
   photoUrl: string | null;
