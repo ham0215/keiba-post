@@ -10,26 +10,26 @@ import { UserContext } from '../UserContext';
 import theme from '../theme';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { findUser, setUser } from '../firestore/User';
 
 export default function MyApp({ Component, pageProps }: AppProps) {
-  const [currentUser, setUser] = useState<firebase.User | null>(null);
+  const [currentUser, setCurrentUser] = useState<firebase.User | null>(null);
   const db = firebase.firestore();
 
   useEffect(() => {
     firebase.auth().onAuthStateChanged(async (currentUser) => {
       if (currentUser) {
-        let user = await db.collection('users').doc(currentUser.uid).get();
+        let user = await findUser(currentUser.uid);
         if (!user) {
-          await db.collection('users').doc(currentUser.uid).set({
+          user = await setUser({
+            id: currentUser.uid,
             name: currentUser.displayName,
             photoUrl: currentUser.photoURL,
-            enabled: true,
+            enabled: true
           });
-          user = await db.collection('users').doc(currentUser.uid).get();
         }
-        console.log(user);
       }
-      setUser(currentUser);
+      setCurrentUser(currentUser);
     });
   }, [db]);
 
