@@ -4,11 +4,11 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import Avatar from '@material-ui/core/Avatar';
 import { useRouter } from 'next/router';
 import Menu from './Menu';
 import firebase from '../../firebase';
 import { UserContext } from '../../UserContext';
+import UserAvatar from '../../components/UserAvatar'
 
 const Header = styled.header`
   flex-grow: 1;
@@ -31,15 +31,11 @@ export default function ButtonAppBar() {
         setUser(currentUser);
       }
     });
-  });
+  }, [setUser]);
 
   let loginButton;
   if (user) {
-    loginButton = (
-      <Avatar aria-label="avatar">
-        H
-      </Avatar>
-    );
+    loginButton = <UserAvatar user={user} />;
   } else {
     loginButton = (
       <Button color="inherit" onClick={() => router.push('/login')}>
