@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { useRouter } from 'next/router';
 import Float from '../../../components/Float';
+import Error from '../../../components/Error';
 import { UserContext } from '../../../UserContext';
 import KeibaCard from './KeibaCard'
 import SpeedDial from './SpeedDial';
@@ -13,8 +14,8 @@ export default function Detail() {
   const { currentUser } = useContext(UserContext);
 
   const keibaId = Number(id);
-  if (!keibaId) return (<p>Error :(</p>);
-  if (text && typeof text !== 'string') return (<p>Error :(</p>);
+  if (!keibaId) return (<Error />);
+  if (text && typeof text !== 'string') return (<Error />);
 
   return (
     <>

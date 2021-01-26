@@ -23,11 +23,19 @@ export async function findUser(id: string): Promise<User | null> {
   }
 }
 
-export async function setUser({ id, name, photoUrl, enabled }: User) {
+export async function createUser({ id, name, photoUrl, enabled }: User) {
   await firebase.firestore().collection('users').doc(id).set({
     name: name,
     photoUrl: photoUrl,
     enabled: enabled,
+  });
+  return await findUser(id);
+}
+
+export async function updataUser(id: string, name: string, photoUrl: string) {
+  await firebase.firestore().collection('users').doc(id).set({
+    name: name,
+    photoUrl: photoUrl,
   });
   return await findUser(id);
 }

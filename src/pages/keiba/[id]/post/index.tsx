@@ -2,17 +2,8 @@ import { useCallback } from 'react';
 import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
 import styled from 'styled-components'
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
-
-const KeibaTextField = styled(TextField)`
-  margin: 10px 0 10px 0;
-`;
-
-const KeibaButton = styled(Button)`
-  margin: 8px;
-  width: 160px;
-`;
+import TextField from '../../../../components/TextField';
+import Button from '../../../../components/Button';
 
 const ButtonArea = styled.div`
   text-align: center;
@@ -39,7 +30,7 @@ export default function Post() {
   return (
     <>
       <form onSubmit={handleSubmit(onClickPost)}>
-        <KeibaTextField
+        <TextField
           id="keibaText"
           name="keibaText"
           label="予想"
@@ -50,12 +41,12 @@ export default function Post() {
           inputProps={{ ref: register({ required: true }) }}
         />
         <ButtonArea>
-          <KeibaButton variant="outlined" onClick={onClickCancel}>
+          <Button variant="outlined" onClick={onClickCancel}>
             キャンセル
-          </KeibaButton>
-          <KeibaButton type="submit" variant="outlined" color="primary">
+          </Button>
+          <Button type="submit" variant="outlined" color="primary">
             投稿
-          </KeibaButton>
+          </Button>
         </ButtonArea>
       </form>
     </>

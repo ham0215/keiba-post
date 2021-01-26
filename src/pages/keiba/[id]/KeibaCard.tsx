@@ -11,6 +11,7 @@ import InfoIcon from '@material-ui/icons/Info';
 import AllInclusiveIcon from '@material-ui/icons/AllInclusive';
 import ConfirmationNumberIcon from '@material-ui/icons/ConfirmationNumber';
 import { KeibaCalendar } from '../../../data/KeibaCalendar'
+import Error from '../../../components/Error';
 
 const CustomCard = styled(Card)`
   margin: 8px 8px 8px 8px;
@@ -18,7 +19,7 @@ const CustomCard = styled(Card)`
 
 export default function KeibaCard({ keibaId }: { keibaId: number }) {
   const keiba = KeibaCalendar.find(item => item.id === keibaId);
-  if (!keiba) return (<p>Error :(</p>);
+  if (!keiba) return (<Error />);
 
   return (
     <CustomCard>

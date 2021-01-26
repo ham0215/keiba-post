@@ -1,61 +1,77 @@
-import { useCallback } from 'react';
+import { useCallback, useContext } from 'react';
 import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
 import styled from 'styled-components'
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
-
-const KeibaTextField = styled(TextField)`
-  margin: 10px 0 10px 0;
-`;
-
-const KeibaButton = styled(Button)`
-  margin: 8px;
-  width: 160px;
-`;
+import TextField from '../../components/TextField';
+import Button from '../../components/Button';
+import Error from '../../components/Error';
+import { UserContext } from '../../UserContext';
+import { updataUser } from '../../firestore/User';
 
 const ButtonArea = styled.div`
   text-align: center;
 `;
 
 type FormInputType = {
-  keibaText: string;
+  name: string;
+  photoUrl: string;
 };
 
 export default function Profile() {
   const router = useRouter();
-  const { id } = router.query;
 
   const { register, handleSubmit } = useForm<FormInputType>();
 
-  const onClickCancel = useCallback(() => {
-    router.push(`/keiba/${id}`)
-  }, [id, router]);
+  const { currentUser, setCurrentUser } = useContext(UserContext);
 
-  const onClickPost = useCallback((data) => {
-    router.push({ pathname: `/keiba/${id}`, query: { text: data.keibaText } });
-  }, [id, router]);
+  const onClickCancel = useCallback(() => {
+    router.push(`/`)
+  }, [router]);
+
+  const onClickPost = useCallback(async (data: FormInputType) => {
+    if (!currentUser) return;
+    if (!setCurrentUser) return;
+
+    const updatedUser = await updataUser(
+      currentUser.id,
+      data.name,
+      data.photoUrl
+    );
+
+    setCurrentUser(updatedUser);
+    router.push(`/`)
+  }, [currentUser, router, setCurrentUser]);
+
+  if (!currentUser) return <Error />;
 
   return (
     <>
       <form onSubmit={handleSubmit(onClickPost)}>
-        <KeibaTextField
-          id="keibaText"
-          name="keibaText"
-          label="予想"
-          multiline
+        <TextField
+          id="name"
+          name="name"
+          label="name"
           fullWidth
-          rows={10}
-          variant="outlined"
+          required
+          defaultValue={currentUser.name}
+          inputProps={{ ref: register({ required: true }) }}
+        />
+        <TextField
+          id="photoUrl"
+          name="photoUrl"
+          label="photoUrl"
+          fullWidth
+          required
+          defaultValue={currentUser.photoUrl}
           inputProps={{ ref: register({ required: true }) }}
         />
         <ButtonArea>
-          <KeibaButton variant="outlined" onClick={onClickCancel}>
+          <Button variant="outlined" onClick={onClickCancel}>
             キャンセル
-          </KeibaButton>
-          <KeibaButton type="submit" variant="outlined" color="primary">
-            投稿
-          </KeibaButton>
+          </Button>
+          <Button type="submit" variant="outlined" color="primary">
+            更新
+          </Button>
         </ButtonArea>
       </form>
     </>
