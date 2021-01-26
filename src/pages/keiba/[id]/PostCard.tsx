@@ -7,8 +7,8 @@ import CardContent from '@material-ui/core/CardContent';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
 import PreWrapTypography from '../../../components/PreWrapTypography';
-import { User } from '../../../firestore/User';
 import UserAvatar from '../../../components/UserAvatar'
+import { User } from '../../../firestore/User';
 
 const CustomCard = styled(Card)`
   margin: 8px 8px 8px 8px;
