@@ -7,14 +7,14 @@ import CardContent from '@material-ui/core/CardContent';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
 import PreWrapTypography from '../../../components/PreWrapTypography';
-import firebase from '../../../firebase';
+import { User } from '../../../firestore/User';
 import UserAvatar from '../../../components/UserAvatar'
 
 const CustomCard = styled(Card)`
   margin: 8px 8px 8px 8px;
 `;
 
-export default function PostCard({ text, user }: { text: string | undefined, user: firebase.User | null }) {
+export default function PostCard({ text, user }: { text: string | undefined, user: User | null }) {
   const [show, setShow] = useState(true);
 
   const handleDelete = useCallback(() => {
@@ -32,7 +32,7 @@ export default function PostCard({ text, user }: { text: string | undefined, use
             <DeleteIcon />
           </IconButton>
         }
-        title={user.displayName}
+        title={user.name}
         subheader={format(new Date(), 'yyyy-MM-dd HH:mm')}
       />
       <CardContent>

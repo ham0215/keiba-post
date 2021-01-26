@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -6,7 +6,6 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import { useRouter } from 'next/router';
 import Menu from './Menu';
-import firebase from '../../firebase';
 import { UserContext } from '../../UserContext';
 import UserAvatar from '../../components/UserAvatar'
 
@@ -23,19 +22,11 @@ const Title = styled(Typography)`
 export default function ButtonAppBar() {
   const router = useRouter();
 
-  const { user, setUser } = useContext(UserContext);
-
-  useEffect(() => {
-    firebase.auth().onAuthStateChanged((currentUser) => {
-      if (setUser) {
-        setUser(currentUser);
-      }
-    });
-  }, [setUser]);
+  const { currentUser } = useContext(UserContext);
 
   let loginButton;
-  if (user) {
-    loginButton = <UserAvatar user={user} />;
+  if (currentUser) {
+    loginButton = <UserAvatar user={currentUser} />;
   } else {
     loginButton = (
       <Button color="inherit" onClick={() => router.push('/login')}>
@@ -48,7 +39,7 @@ export default function ButtonAppBar() {
     <Header>
       <AppBar position="static" color="transparent">
         <Toolbar>
-          <Menu user={user} />
+          <Menu user={currentUser} />
           <Title variant="h6">
             <span onClick={() => router.push('/')}>Keiba Post</span>
           </Title>

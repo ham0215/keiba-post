@@ -6,12 +6,13 @@ import MenuItem from '@material-ui/core/MenuItem';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import firebase from '../../firebase';
+import { User } from '../../firestore/User';
 
 const MenuButton = styled(IconButton)`
   margin-right: 2px;
 `;
 
-export default function Header({ user }: { user: firebase.User | null }) {
+export default function Header({ user }: { user: User | null }) {
   const router = useRouter();
   const [open, setOpen] = useState<boolean>(false);
   const menuButtonRef = useRef(null);
@@ -29,6 +30,11 @@ export default function Header({ user }: { user: firebase.User | null }) {
     router.push('/keiba');
   }, [router]);
 
+  const handleProfile = useCallback(() => {
+    setOpen(false);
+    router.push('/profile');
+  }, [router]);
+
   const handleLogout = useCallback(() => {
     setOpen(false);
     firebase.auth().signOut()
@@ -42,6 +48,9 @@ export default function Header({ user }: { user: firebase.User | null }) {
       <Menu anchorEl={menuButtonRef.current} keepMounted open={open} onClose={handleClose}>
         <MenuItem onClick={handleG1}>
           GI Racing
+        </MenuItem>
+        <MenuItem onClick={handleProfile}>
+          Profile
         </MenuItem>
         {user &&
           <MenuItem color="inherit" onClick={handleLogout}>

@@ -10,12 +10,28 @@ import { UserContext } from '../UserContext';
 import theme from '../theme';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { findUser, createUser, User } from '../firestore/User';
 
 export default function MyApp({ Component, pageProps }: AppProps) {
-  const [currentUser, setUser] = useState<firebase.User | null>(null);
-  firebase.auth().onAuthStateChanged((user) => {
-    setUser(user);
-  });
+  const [currentUser, setCurrentUser] = useState<User | null>(null);
+
+  useEffect(() => {
+    firebase.auth().onAuthStateChanged(async (fbUser) => {
+      let currentUser = null;
+      if (fbUser) {
+        currentUser = await findUser(fbUser.uid);
+        if (!currentUser) {
+          currentUser = await createUser({
+            id: fbUser.uid,
+            name: fbUser.displayName,
+            photoUrl: fbUser.photoURL,
+            enabled: true
+          });
+        }
+      }
+      setCurrentUser(currentUser);
+    });
+  }, []);
 
   useEffect(() => {
     const jssStyles = document.querySelector('#jss-server-side');
@@ -33,7 +49,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       <StylesProvider injectFirst>
         <ThemeProvider theme={theme}>
           <StyledComponentsThemeProvider theme={theme}>
-            <UserContext.Provider value={{ user: currentUser, setUser }}>
+            <UserContext.Provider value={{ currentUser, setCurrentUser }}>
               <CssBaseline />
               <Header />
               <Component {...pageProps} />

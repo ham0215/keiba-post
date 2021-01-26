@@ -1,18 +1,18 @@
 import Avatar from '@material-ui/core/Avatar';
-import firebase from '../firebase';
+import { User } from '../firestore/User';
 
-export default function UserAvatar({ user }: { user: firebase.User | null }) {
+export default function UserAvatar({ user }: { user: User | null }) {
   let avatar;
-  if (user?.photoURL) {
+  if (user?.photoUrl) {
     avatar = (
-      <Avatar aria-label="avatar" src={user.photoURL}>
-        {user.displayName?.slice(0, 1)}
+      <Avatar aria-label="avatar" src={user.photoUrl}>
+        {user.name?.slice(0, 1)}
       </Avatar>
     );
   } else {
     avatar = (
       <Avatar aria-label="avatar">
-        {user?.displayName?.slice(0, 1)}
+        {user?.name?.slice(0, 1)}
       </Avatar>
     );
   }
