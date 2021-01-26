@@ -1,23 +1,40 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Grid from '@material-ui/core/Grid';
+import firebase from '../../../firebase';
+import { findUser } from '../../../firestore/User';
 import Float from '../../../components/Float';
 import Error from '../../../components/Error';
 import { UserContext } from '../../../UserContext';
-import KeibaCard from './KeibaCard'
+import KeibaCard from './KeibaCard';
 import SpeedDial from './SpeedDial';
 import PostCard from './PostCard';
+
+type Post = {
+  uid: string;
+  text: string;
+  name: string | null | undefined;
+  photoUrl: string | null | undefined;
+}
 
 export default function Detail() {
   const router = useRouter();
   const { id, text } = router.query;
   const [open, setOpen] = useState<boolean>(false);
   const { currentUser } = useContext(UserContext);
-  const [posts, setPosts] = useState<number[]>([]);
+  const [posts, setPosts] = useState<Post[]>([]);
+  const db = firebase.firestore();
 
   useEffect(() => {
-    setPosts([1, 2, 3, 4, 5]);
-  }, []);
+    (async () => {
+      const ps = await db.collection('keibas').doc("1").collection('posts').get();
+      const posts = await Promise.all(ps.docs.map(async (doc) => {
+        const user = await findUser(doc.id);
+        return { uid: doc.id, text: doc.data().text, name: user?.name, photoUrl: user?.photoUrl };
+      }));
+      setPosts(posts);
+    })();
+  }, [db]);
 
   const keibaId = Number(id);
   if (!keibaId) return (<Error />);
@@ -28,8 +45,8 @@ export default function Detail() {
       <KeibaCard keibaId={keibaId} />
       <Grid container>
         {posts.map((post) => (
-          <Grid key={post} item xs={12} md={4}>
-            <PostCard text={text} user={currentUser} />
+          <Grid key={post.uid} item xs={12} md={4}>
+            <PostCard text={post.text} user={currentUser} />
           </Grid>
         ))}
       </Grid>
