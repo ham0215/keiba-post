@@ -1,9 +1,12 @@
-import { useCallback } from 'react';
+import { useCallback, useContext } from 'react';
 import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
 import styled from 'styled-components'
 import TextField from '../../../../components/TextField';
 import Button from '../../../../components/Button';
+import Error from '../../../../components/Error';
+import { updataPost } from '../../../../firestore/Post';
+import { UserContext } from '../../../../UserContext';
 
 const ButtonArea = styled.div`
   text-align: center;
@@ -19,13 +22,26 @@ export default function Post() {
 
   const { register, handleSubmit } = useForm<FormInputType>();
 
+  const { currentUser } = useContext(UserContext);
+
   const onClickCancel = useCallback(() => {
     router.push(`/keiba/${id}`)
   }, [id, router]);
 
-  const onClickPost = useCallback((data) => {
-    router.push({ pathname: `/keiba/${id}`, query: { text: data.keibaText } });
-  }, [id, router]);
+  const onClickPost = useCallback(async (data) => {
+    if (!currentUser) return;
+    if (typeof id !== 'string') return;
+
+    await updataPost(
+      id,
+      currentUser.id,
+      data.keibaText,
+      new Date()
+    );
+    router.push({ pathname: `/keiba/${id}` });
+  }, [currentUser, id, router]);
+
+  if (!currentUser) return <Error />;
 
   return (
     <>
