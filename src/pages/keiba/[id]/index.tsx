@@ -26,6 +26,9 @@ export default function Detail() {
 
   useEffect(() => {
     (async () => {
+      if (!id) return;
+      if (typeof id !== 'string') return;
+
       const ps = await db.collection('keibas').doc(id).collection('posts').get();
       const posts = await Promise.all(ps.docs.map(async (doc) => {
         const user = await findUser(doc.id);
@@ -33,7 +36,7 @@ export default function Detail() {
       }));
       setPosts(posts);
     })();
-  }, [db]);
+  }, [id, db]);
 
   const keibaId = Number(id);
   if (!keibaId) return (<Error />);
