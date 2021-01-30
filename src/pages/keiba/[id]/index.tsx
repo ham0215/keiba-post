@@ -26,7 +26,7 @@ export default function Detail() {
 
   useEffect(() => {
     (async () => {
-      const ps = await db.collection('keibas').doc("1").collection('posts').get();
+      const ps = await db.collection('keibas').doc(id).collection('posts').get();
       const posts = await Promise.all(ps.docs.map(async (doc) => {
         const user = await findUser(doc.id);
         return { uid: doc.id, text: doc.data().text, name: user?.name, photoUrl: user?.photoUrl, createdAt: doc.data().createdAt.toDate() };
