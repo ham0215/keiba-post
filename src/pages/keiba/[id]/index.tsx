@@ -47,7 +47,7 @@ export default function Detail() {
       <Grid container>
         {posts.map((post) => (
           <Grid key={post.uid} item xs={12} md={4}>
-            <PostCard {...post} />
+            <PostCard {...post} keibaId={String(keibaId)} />
           </Grid>
         ))}
       </Grid>
