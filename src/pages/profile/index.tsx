@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import TextField from '../../components/TextField';
 import Button from '../../components/Button';
 import Error from '../../components/Error';
+import Card from '../../components/Card'
 import { UserContext } from '../../UserContext';
 import { updataUser } from '../../firestore/User';
 
@@ -14,7 +15,6 @@ const ButtonArea = styled.div`
 
 type FormInputType = {
   name: string;
-  photoUrl: string;
 };
 
 export default function Profile() {
@@ -35,7 +35,7 @@ export default function Profile() {
     const updatedUser = await updataUser(
       currentUser.id,
       data.name,
-      data.photoUrl
+      currentUser.enabled
     );
 
     setCurrentUser(updatedUser);
@@ -45,7 +45,7 @@ export default function Profile() {
   if (!currentUser) return <Error />;
 
   return (
-    <>
+    <Card>
       <form onSubmit={handleSubmit(onClickPost)}>
         <TextField
           id="name"
@@ -54,15 +54,6 @@ export default function Profile() {
           fullWidth
           required
           defaultValue={currentUser.name}
-          inputProps={{ ref: register({ required: true }) }}
-        />
-        <TextField
-          id="photoUrl"
-          name="photoUrl"
-          label="photoUrl"
-          fullWidth
-          required
-          defaultValue={currentUser.photoUrl}
           inputProps={{ ref: register({ required: true }) }}
         />
         <ButtonArea>
@@ -74,6 +65,6 @@ export default function Profile() {
           </Button>
         </ButtonArea>
       </form>
-    </>
+    </Card>
   );
 }

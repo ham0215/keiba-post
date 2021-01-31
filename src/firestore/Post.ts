@@ -6,3 +6,7 @@ export async function updataPost(keibaId: string, uid: string, text: string, cre
     createdAt: createdAt,
   });
 }
+
+export async function deletePost(keibaId: string, uid: string) {
+  await firebase.firestore().collection('keibas').doc(keibaId).collection('posts').doc(uid).delete();
+}

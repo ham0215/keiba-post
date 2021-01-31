@@ -24,7 +24,6 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           currentUser = await createUser({
             id: fbUser.uid,
             name: fbUser.displayName,
-            photoUrl: fbUser.photoURL,
             enabled: true
           });
         }

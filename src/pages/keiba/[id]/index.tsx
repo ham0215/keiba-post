@@ -13,7 +13,6 @@ type Post = {
   uid: string;
   text: string;
   name: string | null | undefined;
-  photoUrl: string | null | undefined;
   createdAt: Date;
 }
 
@@ -32,7 +31,7 @@ export default function Detail() {
       const ps = await db.collection('keibas').doc(id).collection('posts').get();
       const posts = await Promise.all(ps.docs.map(async (doc) => {
         const user = await findUser(doc.id);
-        return { uid: doc.id, text: doc.data().text, name: user?.name, photoUrl: user?.photoUrl, createdAt: doc.data().createdAt.toDate() };
+        return { uid: doc.id, text: doc.data().text, name: user?.name, createdAt: doc.data().createdAt.toDate() };
       }));
       setPosts(posts);
     })();
@@ -48,7 +47,7 @@ export default function Detail() {
       <Grid container>
         {posts.map((post) => (
           <Grid key={post.uid} item xs={12} md={4}>
-            <PostCard {...post} />
+            <PostCard {...post} keibaId={String(keibaId)} />
           </Grid>
         ))}
       </Grid>
