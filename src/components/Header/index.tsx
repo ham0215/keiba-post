@@ -26,8 +26,8 @@ export default function ButtonAppBar() {
 
   let loginButton;
   if (currentUser) {
-    const { name, photoUrl } = currentUser
-    loginButton = <UserAvatar name={name} photoUrl={photoUrl} />;
+    const { name } = currentUser
+    loginButton = <UserAvatar name={name} />;
   } else {
     loginButton = (
       <Button color="inherit" onClick={() => router.push('/login')}>

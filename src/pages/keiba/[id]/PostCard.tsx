@@ -17,10 +17,9 @@ type PostCard = {
   text: string | undefined,
   createdAt: Date,
   name: string | null | undefined,
-  photoUrl: string | null | undefined
 }
 
-export default function PostCard({ text, createdAt, name, photoUrl }: PostCard) {
+export default function PostCard({ text, createdAt, name }: PostCard) {
   const [show, setShow] = useState(true);
 
   const handleDelete = useCallback(() => {
@@ -32,7 +31,7 @@ export default function PostCard({ text, createdAt, name, photoUrl }: PostCard) 
   return (
     <CustomCard>
       <CardHeader
-        avatar={<UserAvatar name={name} photoUrl={photoUrl} />}
+        avatar={<UserAvatar name={name} />}
         action={
           <IconButton aria-label="delete" onClick={handleDelete}>
             <DeleteIcon />

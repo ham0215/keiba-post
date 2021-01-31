@@ -47,9 +47,11 @@ export default function Header({ user }: { user: User | null }) {
       </MenuButton>
       {user &&
         <Menu anchorEl={menuButtonRef.current} keepMounted open={open} onClose={handleClose}>
-          <MenuItem onClick={handleG1}>
-            GI Racing
-          </MenuItem>
+          {user.enabled &&
+            <MenuItem onClick={handleG1}>
+              GI Racing
+            </MenuItem>
+          }
           <MenuItem onClick={handleProfile}>
             Profile
           </MenuItem>
