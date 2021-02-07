@@ -32,12 +32,14 @@ export default function Post() {
     if (!currentUser) return;
     if (typeof id !== 'string') return;
 
-    await updataPost(
-      id,
-      currentUser.id,
-      data.keibaText,
-      new Date()
-    );
+    await updataPost({
+      keibaId: id,
+      uid: currentUser.id,
+      type: 'text',
+      text: data.keibaText,
+      image: '',
+      createdAt: new Date(),
+    });
     router.push({ pathname: `/keiba/${id}` });
   }, [currentUser, id, router]);
 

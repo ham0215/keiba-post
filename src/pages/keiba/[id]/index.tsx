@@ -28,6 +28,7 @@ export default function Detail() {
       if (!id) return;
       if (typeof id !== 'string') return;
 
+      // TODO: 投稿の種類にtext、imageを持たす
       const ps = await db.collection('keibas').doc(id).collection('posts').get();
       const posts = await Promise.all(ps.docs.map(async (doc) => {
         const user = await findUser(doc.id);
@@ -38,6 +39,7 @@ export default function Detail() {
   }, [id, db]);
 
   useEffect(() => {
+    // TODO: PostCardの中で取得するようにする
     (async () => {
       const storageRef = firebase.storage().ref();
       const imagesRef = await storageRef.child('posts/1/ham.jpg').getDownloadURL();
