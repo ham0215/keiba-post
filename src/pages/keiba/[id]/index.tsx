@@ -37,6 +37,14 @@ export default function Detail() {
     })();
   }, [id, db]);
 
+  useEffect(() => {
+    (async () => {
+      const storageRef = firebase.storage().ref();
+      const imagesRef = await storageRef.child('posts/1/ham.jpg').getDownloadURL();
+      console.log(imagesRef);
+    })();
+  }, []);
+
   const keibaId = Number(id);
   if (!keibaId) return (<Error />);
   if (text && typeof text !== 'string') return (<Error />);
