@@ -3,8 +3,8 @@ import { useRouter } from 'next/router';
 import Grid from '@material-ui/core/Grid';
 import firebase from '../../../firebase';
 import { findUser } from '../../../firestore/User';
-import Float from '../../../components/Float';
-import Error from '../../../components/Error';
+import Float from '@/components/Float';
+import Error from '@/components/Error';
 import KeibaCard from './KeibaCard';
 import SpeedDial from './SpeedDial';
 import PostCard from './PostCard';
@@ -28,6 +28,7 @@ export default function Detail() {
       if (!id) return;
       if (typeof id !== 'string') return;
 
+      // TODO: 投稿の種類にtext、imageを持たす
       const ps = await db.collection('keibas').doc(id).collection('posts').get();
       const posts = await Promise.all(ps.docs.map(async (doc) => {
         const user = await findUser(doc.id);
@@ -36,6 +37,15 @@ export default function Detail() {
       setPosts(posts);
     })();
   }, [id, db]);
+
+  useEffect(() => {
+    // TODO: PostCardの中で取得するようにする
+    (async () => {
+      const storageRef = firebase.storage().ref();
+      const imagesRef = await storageRef.child('posts/1/ham.jpg').getDownloadURL();
+      console.log(imagesRef);
+    })();
+  }, []);
 
   const keibaId = Number(id);
   if (!keibaId) return (<Error />);
