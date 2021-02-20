@@ -30,6 +30,11 @@ export default function Header({ user }: { user: User | null }) {
     router.push('/keiba');
   }, [router]);
 
+  const handleResult = useCallback(() => {
+    setOpen(false);
+    router.push('/result');
+  }, [router]);
+
   const handleProfile = useCallback(() => {
     setOpen(false);
     router.push('/profile');
@@ -50,6 +55,11 @@ export default function Header({ user }: { user: User | null }) {
           {user.enabled &&
             <MenuItem onClick={handleG1}>
               GI Racing
+            </MenuItem>
+          }
+          {user.enabled &&
+            <MenuItem onClick={handleResult}>
+              GI Racing Result
             </MenuItem>
           }
           <MenuItem onClick={handleProfile}>
