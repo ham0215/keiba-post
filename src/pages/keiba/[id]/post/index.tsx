@@ -1,12 +1,13 @@
-import { useCallback, useContext } from 'react';
+import { useState, useCallback, useContext, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
 import styled from 'styled-components'
-import TextField from '../../../../components/TextField';
-import Button from '../../../../components/Button';
-import Error from '../../../../components/Error';
-import { updataPost } from '../../../../firestore/Post';
-import { UserContext } from '../../../../UserContext';
+import firebase from 'firebase';
+import TextField from 'components/TextField';
+import Button from 'components/Button';
+import Error from 'components/Error';
+import { updataPost } from 'firestore/Post';
+import { UserContext } from 'UserContext';
 
 const ButtonArea = styled.div`
   text-align: center;
@@ -23,6 +24,23 @@ export default function Post() {
   const { register, handleSubmit } = useForm<FormInputType>();
 
   const { currentUser } = useContext(UserContext);
+
+  const db = firebase.firestore();
+  const [post, setPost] = useState<string>('');
+
+  useEffect(() => {
+    (async () => {
+      if (!id) return;
+      if (typeof id !== 'string') return;
+      if (!currentUser) return;
+
+      const p = await db.collection('keibas').doc(id).collection('posts').doc(currentUser.id).get();
+      const data = p.data();
+      if (!data) return;
+
+      setPost(data.text);
+    })();
+  }, [currentUser, db, id]);
 
   const onClickCancel = useCallback(() => {
     router.push(`/keiba/${id}`)
@@ -56,6 +74,7 @@ export default function Post() {
           fullWidth
           rows={10}
           variant="outlined"
+          defaultValue={post}
           inputProps={{ ref: register({ required: true }) }}
         />
         <ButtonArea>
