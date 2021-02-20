@@ -10,8 +10,9 @@ import PlaceIcon from '@material-ui/icons/Place';
 import InfoIcon from '@material-ui/icons/Info';
 import AllInclusiveIcon from '@material-ui/icons/AllInclusive';
 import ConfirmationNumberIcon from '@material-ui/icons/ConfirmationNumber';
-import { KeibaCalendar } from '../../../data/KeibaCalendar'
-import Error from '../../../components/Error';
+import Badge from '@material-ui/core/Badge';
+import { KeibaCalendar } from 'data/KeibaCalendar'
+import Error from 'components/Error';
 
 const CustomCard = styled(Card)`
   margin: 8px 8px 8px 8px;
@@ -35,7 +36,12 @@ export default function KeibaCard({ keibaId }: { keibaId: number }) {
             <ListItemIcon>
               <ConfirmationNumberIcon />
             </ListItemIcon>
-            <ListItemText primary={keiba.name} />
+            {keiba.big ?
+              <Badge variant="dot" color="error">
+                <ListItemText primary={keiba.name} />
+              </Badge>
+              : <ListItemText primary={keiba.name} />
+            }
           </ListItem>
           <ListItem>
             <ListItemIcon>
