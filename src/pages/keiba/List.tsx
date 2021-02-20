@@ -7,6 +7,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import Badge from '@material-ui/core/Badge';
 import { KeibaCalendar } from '../../data/KeibaCalendar'
 
 const StyledHeader = styled(TableHead)`
@@ -32,7 +33,9 @@ export default function List() {
               <TableCell component="th" scope="row">
                 {row.date}
               </TableCell>
-              <TableCell>{row.name}</TableCell>
+              <TableCell>
+                {row.big ? <Badge variant="dot" color="error">{row.name}</Badge> : row.name}
+              </TableCell>
               <TableCell>{row.place}</TableCell>
             </TableRow>
           ))}

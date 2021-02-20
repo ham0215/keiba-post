@@ -5,7 +5,8 @@ export const KeibaCalendar = [
     place: "東京",
     name: "フェブラリーS",
     conditions: "4歳以上",
-    course: "ダ1,600メートル"
+    course: "ダ1,600メートル",
+    big: false
   },
   {
     id: 2,
@@ -13,7 +14,8 @@ export const KeibaCalendar = [
     place: "中京",
     name: "高松宮記念",
     conditions: "4歳以上",
-    course: "芝1,200メートル"
+    course: "芝1,200メートル",
+    big: false
   },
   {
     id: 3,
@@ -21,7 +23,8 @@ export const KeibaCalendar = [
     place: "阪神",
     name: "大阪杯",
     conditions: "4歳以上",
-    course: "芝2,000メートル"
+    course: "芝2,000メートル",
+    big: false
   },
   {
     id: 4,
@@ -29,7 +32,8 @@ export const KeibaCalendar = [
     place: "阪神",
     name: "桜花賞",
     conditions: "3歳牝",
-    course: "芝1,600メートル"
+    course: "芝1,600メートル",
+    big: false
   },
   {
     id: 5,
@@ -37,7 +41,8 @@ export const KeibaCalendar = [
     place: "中山",
     name: "皐月賞",
     conditions: "3歳牡・牝",
-    course: "芝2,000メートル"
+    course: "芝2,000メートル",
+    big: true
   },
   {
     id: 6,
@@ -45,7 +50,8 @@ export const KeibaCalendar = [
     place: "京都",
     name: "天皇賞（春）",
     conditions: "4歳以上",
-    course: "芝3,200メートル"
+    course: "芝3,200メートル",
+    big: true
   },
   {
     id: 7,
@@ -53,7 +59,8 @@ export const KeibaCalendar = [
     place: "東京",
     name: "NHKマイルC",
     conditions: "3歳牡・牝",
-    course: "芝1,600メートル"
+    course: "芝1,600メートル",
+    big: false
   },
   {
     id: 8,
@@ -61,7 +68,8 @@ export const KeibaCalendar = [
     place: "東京",
     name: "ヴィクトリアマイル",
     conditions: "4歳以上牝",
-    course: "芝1,600メートル"
+    course: "芝1,600メートル",
+    big: false
   },
   {
     id: 9,
@@ -69,7 +77,8 @@ export const KeibaCalendar = [
     place: "東京",
     name: "オークス",
     conditions: "3歳牝",
-    course: "芝2,400メートル"
+    course: "芝2,400メートル",
+    big: false
   },
   {
     id: 10,
@@ -77,7 +86,8 @@ export const KeibaCalendar = [
     place: "東京",
     name: "日本ダービー",
     conditions: "3歳牡・牝",
-    course: "芝2,400メートル"
+    course: "芝2,400メートル",
+    big: true
   },
   {
     id: 11,
@@ -85,7 +95,8 @@ export const KeibaCalendar = [
     place: "東京",
     name: "安田記念",
     conditions: "3歳以上",
-    course: "芝1,600メートル"
+    course: "芝1,600メートル",
+    big: false
   },
   {
     id: 12,
@@ -93,7 +104,8 @@ export const KeibaCalendar = [
     place: "阪神",
     name: "宝塚記念",
     conditions: "3歳以上",
-    course: "芝2,200メートル"
+    course: "芝2,200メートル",
+    big: true
   },
   {
     id: 13,
@@ -101,7 +113,8 @@ export const KeibaCalendar = [
     place: "中山",
     name: "スプリンターズS",
     conditions: "3歳以上",
-    course: "芝1,200メートル"
+    course: "芝1,200メートル",
+    big: false
   },
   {
     id: 14,
@@ -109,7 +122,8 @@ export const KeibaCalendar = [
     place: "京都",
     name: "秋華賞",
     conditions: "3歳牝",
-    course: "芝2,000メートル"
+    course: "芝2,000メートル",
+    big: false
   },
   {
     id: 15,
@@ -117,7 +131,8 @@ export const KeibaCalendar = [
     place: "京都",
     name: "菊花賞",
     conditions: "3歳牡・牝",
-    course: "芝3,000メートル"
+    course: "芝3,000メートル",
+    big: true
   },
   {
     id: 16,
@@ -125,7 +140,8 @@ export const KeibaCalendar = [
     place: "東京",
     name: "天皇賞（秋）",
     conditions: "3歳以上",
-    course: "芝2,000メートル"
+    course: "芝2,000メートル",
+    big: true
   },
   {
     id: 17,
@@ -133,7 +149,8 @@ export const KeibaCalendar = [
     place: "阪神",
     name: "エリザベス女王杯",
     conditions: "3歳以上牝",
-    course: "芝2,200メートル"
+    course: "芝2,200メートル",
+    big: false
   },
   {
     id: 18,
@@ -141,7 +158,8 @@ export const KeibaCalendar = [
     place: "阪神",
     name: "マイルチャンピオンシップ",
     conditions: "3歳以上",
-    course: "芝1,600メートル"
+    course: "芝1,600メートル",
+    big: false
   },
   {
     id: 19,
@@ -149,7 +167,8 @@ export const KeibaCalendar = [
     place: "東京",
     name: "ジャパンC",
     conditions: "3歳以上",
-    course: "芝2,400メートル"
+    course: "芝2,400メートル",
+    big: true
   },
   {
     id: 20,
@@ -157,7 +176,8 @@ export const KeibaCalendar = [
     place: "中京",
     name: "チャンピオンズC",
     conditions: "3歳以上",
-    course: "ダ1,800メートル"
+    course: "ダ1,800メートル",
+    big: false
   },
   {
     id: 21,
@@ -165,7 +185,8 @@ export const KeibaCalendar = [
     place: "阪神",
     name: "阪神ジュベナイルF",
     conditions: "2歳牝",
-    course: "芝1,600メートル"
+    course: "芝1,600メートル",
+    big: false
   },
   {
     id: 22,
@@ -173,7 +194,8 @@ export const KeibaCalendar = [
     place: "阪神",
     name: "朝日杯フューチュリティS",
     conditions: "2歳牡・牝",
-    course: "芝1,600メートル"
+    course: "芝1,600メートル",
+    big: false
   },
   {
     id: 23,
@@ -181,7 +203,8 @@ export const KeibaCalendar = [
     place: "中山",
     name: "有馬記念",
     conditions: "3歳以上",
-    course: "芝2,500メートル"
+    course: "芝2,500メートル",
+    big: true
   },
   {
     id: 24,
@@ -189,6 +212,7 @@ export const KeibaCalendar = [
     place: "中山",
     name: "ホープフルS",
     conditions: "2歳牡・牝",
-    course: "芝2,000メートル"
+    course: "芝2,000メートル",
+    big: false
   }
 ];
