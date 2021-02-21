@@ -59,7 +59,7 @@ export default function Header({ user }: { user: User | null }) {
           }
           {user.enabled &&
             <MenuItem onClick={handleResult}>
-              GI Racing Result
+              Ranking
             </MenuItem>
           }
           <MenuItem onClick={handleProfile}>
