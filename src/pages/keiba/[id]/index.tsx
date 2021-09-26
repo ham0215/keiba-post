@@ -14,7 +14,7 @@ type Post = {
   text: string;
   name: string | null | undefined;
   createdAt: Date;
-}
+};
 
 export default function Detail() {
   const router = useRouter();
@@ -30,10 +30,12 @@ export default function Detail() {
 
       // TODO: 投稿の種類にtext、imageを持たす
       const ps = await db.collection('keibas').doc(id).collection('posts').get();
-      const posts = await Promise.all(ps.docs.map(async (doc) => {
-        const user = await findUser(doc.id);
-        return { uid: doc.id, text: doc.data().text, name: user?.name, createdAt: doc.data().createdAt.toDate() };
-      }));
+      const posts = await Promise.all(
+        ps.docs.map(async (doc) => {
+          const user = await findUser(doc.id);
+          return { uid: doc.id, text: doc.data().text, name: user?.name, createdAt: doc.data().createdAt.toDate() };
+        })
+      );
       setPosts(posts);
     })();
   }, [id, db]);
@@ -48,8 +50,8 @@ export default function Detail() {
   }, []);
 
   const keibaId = Number(id);
-  if (!keibaId) return (<Error />);
-  if (text && typeof text !== 'string') return (<Error />);
+  if (!keibaId) return <Error />;
+  if (text && typeof text !== 'string') return <Error />;
 
   return (
     <>

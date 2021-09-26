@@ -14,14 +14,14 @@ const useStyles = makeStyles((theme: Theme) =>
       bottom: theme.spacing(2),
       right: theme.spacing(2),
     },
-  }),
+  })
 );
 
 type Props = {
   open: boolean;
-  setOpen: ((open: boolean) => void);
+  setOpen: (open: boolean) => void;
   keibaId: number;
-}
+};
 
 export default function SpeedDialTooltipOpen({ open, setOpen, keibaId }: Props) {
   const classes = useStyles();
@@ -53,20 +53,8 @@ export default function SpeedDialTooltipOpen({ open, setOpen, keibaId }: Props) 
       onOpen={handleOpen}
       open={open}
     >
-      <SpeedDialAction
-        key='text'
-        icon={<TextFieldsIcon />}
-        tooltipTitle='text'
-        tooltipOpen
-        onClick={onClickText}
-      />
-      <SpeedDialAction
-        key='image'
-        icon={<ImageIcon />}
-        tooltipTitle='image'
-        tooltipOpen
-        onClick={onClickImage}
-      />
+      <SpeedDialAction key="text" icon={<TextFieldsIcon />} tooltipTitle="text" tooltipOpen onClick={onClickText} />
+      <SpeedDialAction key="image" icon={<ImageIcon />} tooltipTitle="image" tooltipOpen onClick={onClickImage} />
     </SpeedDial>
   );
 }

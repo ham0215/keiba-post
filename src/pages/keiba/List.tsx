@@ -8,10 +8,10 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Badge from '@material-ui/core/Badge';
-import { KeibaCalendar } from '../../data/KeibaCalendar'
+import { KeibaCalendar } from '../../data/KeibaCalendar';
 
 const StyledHeader = styled(TableHead)`
-  background-color:lightgray;
+  background-color: lightgray;
 `;
 
 export default function List() {
@@ -29,18 +29,24 @@ export default function List() {
         </StyledHeader>
         <TableBody>
           {KeibaCalendar.map((row) => (
-            <TableRow key={row.id} onClick={() => router.push(`/keiba/${row.id}`)} >
+            <TableRow key={row.id} onClick={() => router.push(`/keiba/${row.id}`)}>
               <TableCell component="th" scope="row">
                 {row.date}
               </TableCell>
               <TableCell>
-                {row.big ? <Badge variant="dot" color="error">{row.name}</Badge> : row.name}
+                {row.big ? (
+                  <Badge variant="dot" color="error">
+                    {row.name}
+                  </Badge>
+                ) : (
+                  row.name
+                )}
               </TableCell>
               <TableCell>{row.place}</TableCell>
             </TableRow>
           ))}
         </TableBody>
       </Table>
-    </TableContainer >
+    </TableContainer>
   );
 }

@@ -4,7 +4,7 @@ import Link from '@material-ui/core/Link';
 
 const Footer = styled.footer`
   padding: 10px 0 10px;
-  background-color:green;
+  background-color: green;
   color: #fff;
   font-size: 0.8rem;
 `;

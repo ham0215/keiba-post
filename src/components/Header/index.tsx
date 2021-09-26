@@ -7,7 +7,7 @@ import Button from '@material-ui/core/Button';
 import { useRouter } from 'next/router';
 import Menu from './Menu';
 import { UserContext } from '../../UserContext';
-import UserAvatar from '../../components/UserAvatar'
+import UserAvatar from '../../components/UserAvatar';
 
 const Header = styled.header`
   flex-grow: 1;
@@ -26,7 +26,7 @@ export default function ButtonAppBar() {
 
   let loginButton;
   if (currentUser) {
-    const { name } = currentUser
+    const { name } = currentUser;
     loginButton = <UserAvatar name={name} />;
   } else {
     loginButton = (

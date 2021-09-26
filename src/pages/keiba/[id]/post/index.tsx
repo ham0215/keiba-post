@@ -1,7 +1,7 @@
 import { useState, useCallback, useContext, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
-import styled from 'styled-components'
+import styled from 'styled-components';
 import firebase from 'firebase';
 import TextField from 'components/TextField';
 import Button from 'components/Button';
@@ -43,23 +43,26 @@ export default function Post() {
   }, [currentUser, db, id]);
 
   const onClickCancel = useCallback(() => {
-    router.push(`/keiba/${id}`)
+    router.push(`/keiba/${id}`);
   }, [id, router]);
 
-  const onClickPost = useCallback(async (data) => {
-    if (!currentUser) return;
-    if (typeof id !== 'string') return;
+  const onClickPost = useCallback(
+    async (data) => {
+      if (!currentUser) return;
+      if (typeof id !== 'string') return;
 
-    await updataPost({
-      keibaId: id,
-      uid: currentUser.id,
-      type: 'text',
-      text: data.keibaText,
-      image: '',
-      createdAt: new Date(),
-    });
-    router.push({ pathname: `/keiba/${id}` });
-  }, [currentUser, id, router]);
+      await updataPost({
+        keibaId: id,
+        uid: currentUser.id,
+        type: 'text',
+        text: data.keibaText,
+        image: '',
+        createdAt: new Date(),
+      });
+      router.push({ pathname: `/keiba/${id}` });
+    },
+    [currentUser, id, router]
+  );
 
   if (!currentUser) return <Error />;
 
