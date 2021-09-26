@@ -20,10 +20,11 @@ type PostCard = {
   uid: string;
   text: string | undefined;
   createdAt: Date;
-  name: string | null | undefined;
+  name: string;
+  url: string;
 };
 
-export default function PostCard({ keibaId, uid, text, createdAt, name }: PostCard) {
+export default function PostCard({ keibaId, uid, text, createdAt, name, url }: PostCard) {
   const [show, setShow] = useState(true);
   const { currentUser } = useContext(UserContext);
 
@@ -41,7 +42,7 @@ export default function PostCard({ keibaId, uid, text, createdAt, name }: PostCa
   return (
     <CustomCard>
       <CardHeader
-        avatar={<UserAvatar name={name} />}
+        avatar={<UserAvatar url={url} />}
         action={
           uid === currentUser?.id && (
             <IconButton aria-label="delete" onClick={handleDelete}>

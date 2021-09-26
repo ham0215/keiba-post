@@ -2,7 +2,8 @@ import firebase from '../firebase';
 
 export type User = {
   id: string;
-  name: string | null;
+  name: string;
+  url: string;
   enabled: boolean;
 };
 
@@ -17,13 +18,15 @@ export async function findUser(id: string): Promise<User | null> {
   return {
     id: user.id,
     name: userData.name,
+    url: userData.url,
     enabled: userData.enabled,
   };
 }
 
-export async function createUser({ id, name, enabled }: User) {
+export async function createUser({ id, name, url, enabled }: User) {
   await firebase.firestore().collection('users').doc(id).set({
     name: name,
+    url: url,
     enabled: enabled,
   });
   return await findUser(id);

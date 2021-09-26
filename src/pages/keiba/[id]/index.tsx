@@ -12,7 +12,8 @@ import PostCard from './PostCard';
 type Post = {
   uid: string;
   text: string;
-  name: string | null | undefined;
+  name: string;
+  url: string;
   createdAt: Date;
 };
 
@@ -33,7 +34,14 @@ export default function Detail() {
       const posts = await Promise.all(
         ps.docs.map(async (doc) => {
           const user = await findUser(doc.id);
-          return { uid: doc.id, text: doc.data().text, name: user?.name, createdAt: doc.data().createdAt.toDate() };
+
+          return {
+            uid: doc.id,
+            text: doc.data().text,
+            name: user?.name || '',
+            url: user?.url || '',
+            createdAt: doc.data().createdAt.toDate(),
+          };
         })
       );
       setPosts(posts);
