@@ -36,7 +36,7 @@ export default function Login() {
   });
 
   if (!process.browser) {
-    return (<CircularProgress />);
+    return <CircularProgress />;
   }
 
   // eslint-disable-next-line @typescript-eslint/no-var-requires

@@ -1,11 +1,11 @@
-import React, { useState, useEffect, } from 'react';
+import React, { useState, useEffect } from 'react';
 import { AppProps } from 'next/app';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
 import { ThemeProvider, StylesProvider } from '@material-ui/core/styles';
 import { ThemeProvider as StyledComponentsThemeProvider } from 'styled-components';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import 'semantic-ui-css/semantic.min.css'
+import 'semantic-ui-css/semantic.min.css';
 import firebase from '../firebase';
 import { UserContext } from '../UserContext';
 import theme from '../theme';
@@ -25,7 +25,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           currentUser = await createUser({
             id: fbUser.uid,
             name: fbUser.displayName,
-            enabled: true
+            enabled: true,
           });
         }
       }

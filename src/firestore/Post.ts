@@ -1,13 +1,13 @@
 import firebase from 'firebase';
 
 type UpdatePost = {
-  keibaId: string,
-  uid: string,
-  type: 'text' | 'image',
-  text: string,
-  image: string,
-  createdAt: Date,
-}
+  keibaId: string;
+  uid: string;
+  type: 'text' | 'image';
+  text: string;
+  image: string;
+  createdAt: Date;
+};
 
 export async function updataPost({ keibaId, uid, type, text, image, createdAt }: UpdatePost) {
   await firebase.firestore().collection('keibas').doc(keibaId).collection('posts').doc(uid).set({

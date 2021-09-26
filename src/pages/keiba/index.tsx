@@ -6,7 +6,7 @@ import Rule from './Rule';
 
 export default function Keiba() {
   const { currentUser } = useContext(UserContext);
-  if (!currentUser) return (<Pleaselogin />);
+  if (!currentUser) return <Pleaselogin />;
 
   return (
     <>

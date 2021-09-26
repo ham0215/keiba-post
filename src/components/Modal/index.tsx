@@ -7,7 +7,7 @@ const StyledModal = styled(Modal)`
   display: flex;
   align-items: center;
   justify-content: center;
-`
+`;
 const StyledPaper = styled(Paper)`
   margin: 10px 10px 10px 10px;
   padding: 10px 10px 10px 10px;
@@ -25,14 +25,8 @@ export default function CustomModal({ children, open, setOpen }: Props) {
   };
 
   return (
-    <StyledModal
-      open={open}
-      onClose={handleClose}
-      aria-labelledby="rule"
-    >
-      <StyledPaper>
-        {children}
-      </StyledPaper>
+    <StyledModal open={open} onClose={handleClose} aria-labelledby="rule">
+      <StyledPaper>{children}</StyledPaper>
     </StyledModal>
   );
 }

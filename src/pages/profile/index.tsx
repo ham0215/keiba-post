@@ -1,11 +1,11 @@
 import { useCallback, useContext } from 'react';
 import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
-import styled from 'styled-components'
+import styled from 'styled-components';
 import TextField from '../../components/TextField';
 import Button from '../../components/Button';
 import Error from '../../components/Error';
-import Card from '../../components/Card'
+import Card from '../../components/Card';
 import { UserContext } from '../../UserContext';
 import { updataUser } from '../../firestore/User';
 
@@ -25,22 +25,21 @@ export default function Profile() {
   const { currentUser, setCurrentUser } = useContext(UserContext);
 
   const onClickCancel = useCallback(() => {
-    router.push(`/`)
+    router.push(`/`);
   }, [router]);
 
-  const onClickPost = useCallback(async (data: FormInputType) => {
-    if (!currentUser) return;
-    if (!setCurrentUser) return;
+  const onClickPost = useCallback(
+    async (data: FormInputType) => {
+      if (!currentUser) return;
+      if (!setCurrentUser) return;
 
-    const updatedUser = await updataUser(
-      currentUser.id,
-      data.name,
-      currentUser.enabled
-    );
+      const updatedUser = await updataUser(currentUser.id, data.name, currentUser.enabled);
 
-    setCurrentUser(updatedUser);
-    router.push(`/`)
-  }, [currentUser, router, setCurrentUser]);
+      setCurrentUser(updatedUser);
+      router.push(`/`);
+    },
+    [currentUser, router, setCurrentUser]
+  );
 
   if (!currentUser) return <Error />;
 

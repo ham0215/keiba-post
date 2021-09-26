@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import List from '@material-ui/core/List';
@@ -11,7 +11,7 @@ import InfoIcon from '@material-ui/icons/Info';
 import AllInclusiveIcon from '@material-ui/icons/AllInclusive';
 import ConfirmationNumberIcon from '@material-ui/icons/ConfirmationNumber';
 import Badge from '@material-ui/core/Badge';
-import { KeibaCalendar } from 'data/KeibaCalendar'
+import { KeibaCalendar } from 'data/KeibaCalendar';
 import Error from 'components/Error';
 
 const CustomCard = styled(Card)`
@@ -19,8 +19,8 @@ const CustomCard = styled(Card)`
 `;
 
 export default function KeibaCard({ keibaId }: { keibaId: number }) {
-  const keiba = KeibaCalendar.find(item => item.id === keibaId);
-  if (!keiba) return (<Error />);
+  const keiba = KeibaCalendar.find((item) => item.id === keibaId);
+  if (!keiba) return <Error />;
 
   return (
     <CustomCard>
@@ -36,12 +36,13 @@ export default function KeibaCard({ keibaId }: { keibaId: number }) {
             <ListItemIcon>
               <ConfirmationNumberIcon />
             </ListItemIcon>
-            {keiba.big ?
+            {keiba.big ? (
               <Badge variant="dot" color="error">
                 <ListItemText primary={keiba.name} />
               </Badge>
-              : <ListItemText primary={keiba.name} />
-            }
+            ) : (
+              <ListItemText primary={keiba.name} />
+            )}
           </ListItem>
           <ListItem>
             <ListItemIcon>

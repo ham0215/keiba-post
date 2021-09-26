@@ -42,7 +42,7 @@ export default function Header({ user }: { user: User | null }) {
 
   const handleLogout = useCallback(() => {
     setOpen(false);
-    firebase.auth().signOut()
+    firebase.auth().signOut();
   }, []);
 
   return (
@@ -50,26 +50,16 @@ export default function Header({ user }: { user: User | null }) {
       <MenuButton edge="start" color="inherit" aria-label="menu" onClick={handleClick} ref={menuButtonRef}>
         <MenuIcon />
       </MenuButton>
-      {user &&
+      {user && (
         <Menu anchorEl={menuButtonRef.current} keepMounted open={open} onClose={handleClose}>
-          {user.enabled &&
-            <MenuItem onClick={handleG1}>
-              GI Racing
-            </MenuItem>
-          }
-          {user.enabled &&
-            <MenuItem onClick={handleResult}>
-              Ranking
-            </MenuItem>
-          }
-          <MenuItem onClick={handleProfile}>
-            Profile
-          </MenuItem>
+          {user.enabled && <MenuItem onClick={handleG1}>GI Racing</MenuItem>}
+          {user.enabled && <MenuItem onClick={handleResult}>Ranking</MenuItem>}
+          <MenuItem onClick={handleProfile}>Profile</MenuItem>
           <MenuItem color="inherit" onClick={handleLogout}>
             Logout
           </MenuItem>
         </Menu>
-      }
+      )}
     </>
   );
 }

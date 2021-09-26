@@ -4,7 +4,7 @@ export type User = {
   id: string;
   name: string | null;
   enabled: boolean;
-}
+};
 
 export async function findUser(id: string): Promise<User | null> {
   const db = firebase.firestore();
@@ -18,7 +18,7 @@ export async function findUser(id: string): Promise<User | null> {
     id: user.id,
     name: userData.name,
     enabled: userData.enabled,
-  }
+  };
 }
 
 export async function createUser({ id, name, enabled }: User) {

@@ -9,7 +9,5 @@ const Contents = styled.div`
 `;
 
 export default function Top() {
-  return (
-    <Contents />
-  );
+  return <Contents />;
 }
