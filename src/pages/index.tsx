@@ -5,9 +5,11 @@ const Contents = styled.div`
   background-size: cover;
   color: #fff;
   text-align: center;
-  min-height: 500px;
+  height: 90vh;
 `;
 
 export default function Top() {
-  return <Contents />;
+  return (
+    <Contents />
+  );
 }
