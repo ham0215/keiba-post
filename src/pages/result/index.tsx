@@ -1,9 +1,5 @@
 import { useContext } from 'react';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
 import Error from 'components/Error';
-import ExternalLink from 'components/ExternalLink';
-import { Icon } from 'semantic-ui-react';
 import ResultCard from './ResultCard';
 
 import { UserContext } from 'UserContext';
