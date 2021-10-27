@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { AppProps } from 'next/app';
-import PropTypes from 'prop-types';
 import Head from 'next/head';
 import { ThemeProvider, Theme, StyledEngineProvider } from '@mui/material/styles';
 import StylesProvider from '@mui/styles/StylesProvider';
 import { ThemeProvider as StyledComponentsThemeProvider } from 'styled-components';
 import CssBaseline from '@mui/material/CssBaseline';
 import 'semantic-ui-css/semantic.min.css';
-import firebase from '../firebase';
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { UserContext } from '../UserContext';
 import theme from '../theme';
 import Header from '../components/Header';
@@ -25,7 +24,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   const [currentUser, setCurrentUser] = useState<User | null>(null);
 
   useEffect(() => {
-    firebase.auth().onAuthStateChanged(async (fbUser) => {
+    getAuth().onAuthStateChanged(async (fbUser) => {
       let currentUser = null;
       if (fbUser) {
         currentUser = await findUser(fbUser.uid);
@@ -72,8 +71,3 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     </React.Fragment>
   );
 }
-
-MyApp.propTypes = {
-  Component: PropTypes.elementType.isRequired,
-  pageProps: PropTypes.object.isRequired,
-};
