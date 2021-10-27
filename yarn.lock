@@ -532,19 +532,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/cache@npm:^11.5.0":
-  version: 11.5.0
-  resolution: "@emotion/cache@npm:11.5.0"
-  dependencies:
-    "@emotion/memoize": ^0.7.4
-    "@emotion/sheet": ^1.0.3
-    "@emotion/utils": ^1.0.0
-    "@emotion/weak-memoize": ^0.2.5
-    stylis: ^4.0.10
-  checksum: 8b3fac281ea201d617b594d79e4b38903ee538e9aa2117f3f99a4f952b3f93d92659a569b3b934efa31ae450b2ddd9ae435b6c77db70aa99ac8cae4cbd71450b
-  languageName: node
-  linkType: hard
-
 "@emotion/hash@npm:^0.8.0":
   version: 0.8.0
   resolution: "@emotion/hash@npm:0.8.0"
@@ -584,13 +571,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/sheet@npm:^1.0.3":
-  version: 1.0.3
-  resolution: "@emotion/sheet@npm:1.0.3"
-  checksum: 43a9b9a0e4261d40c02907bbea4d19e7c75d102fbd04e55a94e025b26b7a78bb499c2f76c9a0bd94f36bee0b0219006ab26a1ebb9eb4cbb30f2925313de30b61
-  languageName: node
-  linkType: hard
-
 "@emotion/stylis@npm:^0.8.4":
   version: 0.8.5
   resolution: "@emotion/stylis@npm:0.8.5"
@@ -602,20 +582,6 @@ __metadata:
   version: 0.7.5
   resolution: "@emotion/unitless@npm:0.7.5"
   checksum: f976e5345b53fae9414a7b2e7a949aa6b52f8bdbcc84458b1ddc0729e77ba1d1dfdff9960e0da60183877873d3a631fa24d9695dd714ed94bcd3ba5196586a6b
-  languageName: node
-  linkType: hard
-
-"@emotion/utils@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "@emotion/utils@npm:1.0.0"
-  checksum: 3ce8048441a915447d9ef51eb6d1d4cbcce8c8d1647bc7a23333ce2fb2249e74cf9471670d6f49a716e93ff633c9e7a6633517698e17391aebfc40c9d0cabcc0
-  languageName: node
-  linkType: hard
-
-"@emotion/weak-memoize@npm:^0.2.5":
-  version: 0.2.5
-  resolution: "@emotion/weak-memoize@npm:0.2.5"
-  checksum: 27d402b0c683b94658220b6d47840346ee582329ca2a15ec9c233492e0f1a27687ccb233b76eedc922f2e185e444cc89f7b97a81a1d3e5ae9f075bab08e965ea
   languageName: node
   linkType: hard
 
@@ -1455,7 +1421,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mui/styled-engine-sc@npm:^5.0.4":
+"@mui/styled-engine@npm:@mui/styled-engine-sc@latest":
   version: 5.0.4
   resolution: "@mui/styled-engine-sc@npm:5.0.4"
   dependencies:
@@ -1467,26 +1433,6 @@ __metadata:
     "@types/styled-components":
       optional: true
   checksum: 55826a14e5c603c0e7293e4718d61bf1953da67278c921a047290fc336a71a281799040a0319531ad145878c2f57fb40c4a04258feed6246f25cd754cb87bf7f
-  languageName: node
-  linkType: hard
-
-"@mui/styled-engine@npm:^5.0.2":
-  version: 5.0.2
-  resolution: "@mui/styled-engine@npm:5.0.2"
-  dependencies:
-    "@babel/runtime": ^7.15.4
-    "@emotion/cache": ^11.5.0
-    prop-types: ^15.7.2
-  peerDependencies:
-    "@emotion/react": ^11.4.1
-    "@emotion/styled": ^11.3.0
-    react: ^17.0.2
-  peerDependenciesMeta:
-    "@emotion/react":
-      optional: true
-    "@emotion/styled":
-      optional: true
-  checksum: 3d64edbcc9e0dbcdf70da4c71e1a517599987b53025b4f3b795e8ea0d907037055c8cfcb9cf06176c3b96cb8d888e7a74ceff80279ad3ec4fdfa0bcf38591195
   languageName: node
   linkType: hard
 
@@ -5878,7 +5824,7 @@ __metadata:
     "@mui/icons-material": ^5.0.5
     "@mui/lab": ^5.0.0-alpha.53
     "@mui/material": ^5.0.6
-    "@mui/styled-engine-sc": ^5.0.4
+    "@mui/styled-engine": "npm:@mui/styled-engine-sc@latest"
     "@mui/styles": ^5.0.2
     "@testing-library/jest-dom": ^5.11.9
     "@testing-library/react": ^11.2.5
@@ -7988,13 +7934,6 @@ __metadata:
   version: 3.5.4
   resolution: "stylis@npm:3.5.4"
   checksum: 3673a748ad236219bd77ca9c0a8730b8726812e612cbc844aa6f029f13666a10cf2825a5f8d41f05e8af02b5987d31b7d3ebe995e4b42e0255366fec23489b77
-  languageName: node
-  linkType: hard
-
-"stylis@npm:^4.0.10":
-  version: 4.0.10
-  resolution: "stylis@npm:4.0.10"
-  checksum: 0fecaf5c234ec3ffcb0afc21478742a815a21cb964365259789be9c1692e72e13d8c081c1150fd76ed2146633a3251cdecd6e0c120b158f44bd74c38f81cafb3
   languageName: node
   linkType: hard
 
