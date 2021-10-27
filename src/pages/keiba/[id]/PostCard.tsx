@@ -1,11 +1,11 @@
 import React, { useState, useCallback, useContext } from 'react';
 import styled from 'styled-components';
 import { format } from 'date-fns';
-import Card from '@material-ui/core/Card';
-import CardHeader from '@material-ui/core/CardHeader';
-import CardContent from '@material-ui/core/CardContent';
-import IconButton from '@material-ui/core/IconButton';
-import DeleteIcon from '@material-ui/icons/Delete';
+import Card from '@mui/material/Card';
+import CardHeader from '@mui/material/CardHeader';
+import CardContent from '@mui/material/CardContent';
+import IconButton from '@mui/material/IconButton';
+import DeleteIcon from '@mui/icons-material/Delete';
 import PreWrapTypography from '../../../components/PreWrapTypography';
 import UserAvatar from '../../../components/UserAvatar';
 import { UserContext } from '../../../UserContext';
@@ -45,7 +45,7 @@ export default function PostCard({ keibaId, uid, text, createdAt, name, url }: P
         avatar={<UserAvatar url={url} />}
         action={
           uid === currentUser?.id && (
-            <IconButton aria-label="delete" onClick={handleDelete}>
+            <IconButton aria-label="delete" onClick={handleDelete} size="large">
               <DeleteIcon />
             </IconButton>
           )

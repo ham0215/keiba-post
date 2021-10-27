@@ -1,10 +1,12 @@
 import { useCallback } from 'react';
 import { useRouter } from 'next/router';
-import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
-import SpeedDial from '@material-ui/lab/SpeedDial';
-import SpeedDialIcon from '@material-ui/lab/SpeedDialIcon';
-import SpeedDialAction from '@material-ui/lab/SpeedDialAction';
-import TextFieldsIcon from '@material-ui/icons/TextFields';
+import { Theme } from '@mui/material/styles';
+import makeStyles from '@mui/styles/makeStyles';
+import createStyles from '@mui/styles/createStyles';
+import SpeedDial from '@mui/material/SpeedDial';
+import SpeedDialIcon from '@mui/material/SpeedDialIcon';
+import SpeedDialAction from '@mui/material/SpeedDialAction';
+import TextFieldsIcon from '@mui/icons-material/TextFields';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({

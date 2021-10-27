@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Paper from '@material-ui/core/Paper';
+import Paper from '@mui/material/Paper';
 
 export default styled(Paper)`
   padding: 20px;

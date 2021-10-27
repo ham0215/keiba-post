@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import firebase from '../../firebase';
 import styled from 'styled-components';
 import 'firebaseui/dist/firebaseui.css';
-import CircularProgress from '@material-ui/core/CircularProgress';
+import CircularProgress from '@mui/material/CircularProgress';
 
 const Contents = styled.div`
   background: #151515 url('/images/login.jpg') no-repeat scroll center bottom;
