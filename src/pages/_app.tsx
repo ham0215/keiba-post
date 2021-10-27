@@ -4,7 +4,6 @@ import Head from 'next/head';
 import { ThemeProvider, StylesProvider } from '@material-ui/core/styles';
 import { ThemeProvider as StyledComponentsThemeProvider } from 'styled-components';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import 'semantic-ui-css/semantic.min.css';
 import firebase from '../firebase';
 import { UserContext } from '../UserContext';
 import theme from '../theme';

@@ -2,7 +2,6 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import styled from 'styled-components';
 import ExternalLink from 'components/ExternalLink';
-import { Icon } from 'semantic-ui-react';
 
 type Props = {
   title: string;
@@ -22,9 +21,7 @@ export default function ResultCard({ title, winner, url }: Props) {
         <ExternalLink href={url} variant="body1">
           {title}
         </ExternalLink>
-        <Span>
-          <Icon name="trophy" size="large" color="yellow" />
-        </Span>
+        <Span />
         {winner}
       </CardContent>
     </Card>
