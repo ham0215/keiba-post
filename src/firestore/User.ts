@@ -32,9 +32,10 @@ export async function createUser({ id, name, url, enabled }: User) {
   return await findUser(id);
 }
 
-export async function updataUser(id: string, name: string, enabled: boolean) {
+export async function updataUser(id: string, name: string, url: string, enabled: boolean) {
   await firebase.firestore().collection('users').doc(id).set({
     name: name,
+    url: url,
     enabled: enabled,
   });
   return await findUser(id);

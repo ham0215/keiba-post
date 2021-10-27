@@ -33,7 +33,7 @@ export default function Profile() {
       if (!currentUser) return;
       if (!setCurrentUser) return;
 
-      const updatedUser = await updataUser(currentUser.id, data.name, currentUser.enabled);
+      const updatedUser = await updataUser(currentUser.id, data.name, currentUser.url, currentUser.enabled);
 
       setCurrentUser(updatedUser);
       router.push(`/`);

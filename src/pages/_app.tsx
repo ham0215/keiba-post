@@ -26,7 +26,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
             id: fbUser.uid,
             name: fbUser.displayName || '',
             url: fbUser.photoURL || '',
-            enabled: true,
+            enabled: false,
           });
         }
       }
