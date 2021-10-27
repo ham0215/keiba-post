@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { AppProps } from 'next/app';
-import PropTypes from 'prop-types';
 import Head from 'next/head';
 import { ThemeProvider, StylesProvider } from '@material-ui/core/styles';
 import { ThemeProvider as StyledComponentsThemeProvider } from 'styled-components';
@@ -62,8 +61,3 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     </React.Fragment>
   );
 }
-
-MyApp.propTypes = {
-  Component: PropTypes.elementType.isRequired,
-  pageProps: PropTypes.object.isRequired,
-};
