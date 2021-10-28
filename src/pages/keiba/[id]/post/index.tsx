@@ -21,7 +21,13 @@ export default function Post() {
   const router = useRouter();
   const { id } = router.query;
 
-  const { register, handleSubmit } = useForm<FormInputType>();
+  const {
+    register,
+    handleSubmit,
+    formState: { isDirty, isSubmitted, isValid, errors },
+  } = useForm<FormInputType>({
+    mode: 'all',
+  });
 
   const { currentUser } = useContext(UserContext);
 
@@ -78,13 +84,13 @@ export default function Post() {
           rows={10}
           variant="outlined"
           defaultValue={post}
-          inputProps={{ ref: register({ required: true }) }}
+          inputProps={{ ...register('keibaText', { required: true }) }}
         />
         <ButtonArea>
           <Button variant="outlined" onClick={onClickCancel}>
             キャンセル
           </Button>
-          <Button type="submit" variant="outlined" color="primary">
+          <Button type="submit" variant="outlined" color="primary" disabled={!isDirty || isSubmitted || !isValid}>
             投稿
           </Button>
         </ButtonArea>
