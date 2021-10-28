@@ -2,7 +2,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import styled from 'styled-components';
 import ExternalLink from 'components/ExternalLink';
-import { Icon } from 'semantic-ui-react';
+import { FaTrophy } from 'react-icons/fa';
 
 type Props = {
   title: string;
@@ -23,7 +23,7 @@ export default function ResultCard({ title, winner, url }: Props) {
           {title}
         </ExternalLink>
         <Span>
-          <Icon name="trophy" size="large" color="yellow" />
+          <FaTrophy color="orange" />
         </Span>
         {winner}
       </CardContent>
