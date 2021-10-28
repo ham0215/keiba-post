@@ -12,7 +12,7 @@ https://keiba-post.vercel.app
 
 https://youtu.be/cL9WG2A_8wI
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/cL9WG2A_8wI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![](https://img.youtube.com/vi/cL9WG2A_8wI/0.jpg)](https://www.youtube.com/watch?v=cL9WG2A_8wI)
 
 ## Deployment
 
