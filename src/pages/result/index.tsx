@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import Error from 'components/Error';
-import ResultCard from './ResultCard';
+import ResultCard from 'components/ResultCard';
 
 import { UserContext } from 'UserContext';
 

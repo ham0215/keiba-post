@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Button from '@material-ui/core/Button';
+import Button from '@mui/material/Button';
 
 export default styled(Button)`
   margin: 8px;

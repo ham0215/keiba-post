@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Link from '@material-ui/core/Link';
+import Link from '@mui/material/Link';
 
 const Footer = styled.footer`
   padding: 10px 0 10px;

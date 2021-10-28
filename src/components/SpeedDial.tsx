@@ -1,20 +1,9 @@
 import { useCallback } from 'react';
 import { useRouter } from 'next/router';
-import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
-import SpeedDial from '@material-ui/lab/SpeedDial';
-import SpeedDialIcon from '@material-ui/lab/SpeedDialIcon';
-import SpeedDialAction from '@material-ui/lab/SpeedDialAction';
-import TextFieldsIcon from '@material-ui/icons/TextFields';
-
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    speedDial: {
-      position: 'absolute',
-      bottom: theme.spacing(2),
-      right: theme.spacing(2),
-    },
-  })
-);
+import SpeedDial from '@mui/material/SpeedDial';
+import SpeedDialIcon from '@mui/material/SpeedDialIcon';
+import SpeedDialAction from '@mui/material/SpeedDialAction';
+import TextFieldsIcon from '@mui/icons-material/TextFields';
 
 type Props = {
   open: boolean;
@@ -23,7 +12,6 @@ type Props = {
 };
 
 export default function SpeedDialTooltipOpen({ open, setOpen, keibaId }: Props) {
-  const classes = useStyles();
   const router = useRouter();
 
   const handleOpen = useCallback(() => {
@@ -41,7 +29,7 @@ export default function SpeedDialTooltipOpen({ open, setOpen, keibaId }: Props) 
   return (
     <SpeedDial
       ariaLabel="SpeedDial"
-      className={classes.speedDial}
+      sx={{ position: 'absolute', bottom: 16, right: 16 }}
       hidden={false}
       icon={<SpeedDialIcon />}
       onClose={handleClose}
