@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Grid from '@mui/material/Grid';
-import firebase from 'firebase';
+import firebase from 'firebaseApp';
 import { findUser } from 'firestore/User';
 import Float from 'components/Float';
 import Error from 'components/Error';

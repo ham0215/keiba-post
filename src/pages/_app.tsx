@@ -7,7 +7,7 @@ import StylesProvider from '@mui/styles/StylesProvider';
 import { ThemeProvider as StyledComponentsThemeProvider } from 'styled-components';
 import CssBaseline from '@mui/material/CssBaseline';
 import 'semantic-ui-css/semantic.min.css';
-import firebase from 'firebase';
+import firebase from 'firebaseApp';
 import { UserContext } from 'UserContext';
 import theme from 'theme';
 import Header from 'components/Header';

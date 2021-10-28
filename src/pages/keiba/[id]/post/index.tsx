@@ -2,7 +2,7 @@ import { useState, useCallback, useContext, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
 import styled from 'styled-components';
-import firebase from 'firebase';
+import firebase from 'firebaseApp';
 import TextField from 'components/TextField';
 import Button from 'components/Button';
 import Error from 'components/Error';
