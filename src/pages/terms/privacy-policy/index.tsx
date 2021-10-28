@@ -2,9 +2,9 @@ import React from 'react';
 import Typography from '@mui/material/Typography';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
-import ContentPaper from '../ContentPaper';
-import Sentence from '../Sentence';
-import NestedList from '../NestedList';
+import ContentPaper from 'components/ContentPaper';
+import Sentence from 'components/Sentence';
+import NestedList from 'components/NestedList';
 
 export default function PrivacyPolicy() {
   return (
