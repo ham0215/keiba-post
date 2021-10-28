@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { AppProps } from 'next/app';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
-import { ThemeProvider, Theme, StyledEngineProvider } from '@mui/material/styles';
+import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
 import StylesProvider from '@mui/styles/StylesProvider';
 import { ThemeProvider as StyledComponentsThemeProvider } from 'styled-components';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -13,13 +13,6 @@ import theme from '../theme';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { findUser, createUser, User } from '../firestore/User';
-
-
-declare module '@mui/styles/defaultTheme' {
-  // eslint-disable-next-line @typescript-eslint/no-empty-interface
-  interface DefaultTheme extends Theme {}
-}
-
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   const [currentUser, setCurrentUser] = useState<User | null>(null);

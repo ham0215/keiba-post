@@ -24,7 +24,7 @@ export default function Post() {
   const {
     register,
     handleSubmit,
-    formState: { isDirty, isSubmitted, isValid, errors },
+    formState: { isDirty, isSubmitted, isValid },
   } = useForm<FormInputType>({
     mode: 'all',
   });
