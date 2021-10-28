@@ -19,7 +19,7 @@
     "@material-ui/lab": "^4.0.0-alpha.57",
     "date-fns": "^2.17.0",
     "firebase": "^8.2.9",
-    "firebaseui": "^4.7.3",
+    "firebaseui": "^5.0.0",
     "next": "12.0.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
