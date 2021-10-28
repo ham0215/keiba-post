@@ -32,7 +32,7 @@ export default function Profile() {
   const { currentUser, setCurrentUser } = useContext(UserContext);
 
   const onClickCancel = useCallback(() => {
-    router.push(`/`);
+    router.push('/');
   }, [router]);
 
   const onClickPost = useCallback(
@@ -43,7 +43,7 @@ export default function Profile() {
       const updatedUser = await updataUser(currentUser.id, data.name, currentUser.url, currentUser.enabled);
 
       setCurrentUser(updatedUser);
-      router.push(`/`);
+      router.push('/');
     },
     [currentUser, router, setCurrentUser]
   );
