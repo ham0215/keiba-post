@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import { Link, TypographyVariant } from '@material-ui/core';
+import { Link, TypographyVariant } from '@mui/material';
 
 type Props = {
   children: ReactNode;

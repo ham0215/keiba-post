@@ -14,9 +14,10 @@
     "test:ci": "jest --ci"
   },
   "dependencies": {
-    "@material-ui/core": "^4.11.3",
-    "@material-ui/icons": "^4.11.2",
-    "@material-ui/lab": "^4.0.0-alpha.57",
+    "@mui/icons-material": "^5.0.5",
+    "@mui/lab": "^5.0.0-alpha.53",
+    "@mui/material": "^5.0.6",
+    "@mui/styles": "^5.0.2",
     "date-fns": "^2.17.0",
     "firebase": "^8.2.9",
     "firebaseui": "^4.7.3",

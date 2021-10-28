@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
 import styled from 'styled-components';
-import Modal from '@material-ui/core/Modal';
-import Paper from '@material-ui/core/Paper';
+import Modal from '@mui/material/Modal';
+import Paper from '@mui/material/Paper';
 
 const StyledModal = styled(Modal)`
   display: flex;
