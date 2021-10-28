@@ -21,11 +21,13 @@ export default function Post() {
   const router = useRouter();
   const { id } = router.query;
 
-  const { register, handleSubmit, formState: { isDirty, isSubmitted, isValid, errors } } = useForm<FormInputType>(
-    {
-      mode: 'all'
-    }
-  );
+  const {
+    register,
+    handleSubmit,
+    formState: { isDirty, isSubmitted, isValid, errors },
+  } = useForm<FormInputType>({
+    mode: 'all',
+  });
 
   const { currentUser } = useContext(UserContext);
 

@@ -21,11 +21,13 @@ type FormInputType = {
 export default function Profile() {
   const router = useRouter();
 
-  const { register, handleSubmit, formState: { isDirty, isSubmitted, isValid, errors } } = useForm<FormInputType>(
-    {
-      mode: 'all'
-    }
-  );
+  const {
+    register,
+    handleSubmit,
+    formState: { isDirty, isSubmitted, isValid, errors },
+  } = useForm<FormInputType>({
+    mode: 'all',
+  });
 
   const { currentUser, setCurrentUser } = useContext(UserContext);
 
@@ -60,9 +62,7 @@ export default function Profile() {
           defaultValue={currentUser.name}
           inputProps={{ ...register('name', { required: true }) }}
         />
-        {errors?.name && (
-          <Typography color="error">Name is required!!</Typography>
-        )}
+        {errors?.name && <Typography color="error">Name is required!!</Typography>}
         <ButtonArea>
           <Button variant="outlined" onClick={onClickCancel}>
             キャンセル
