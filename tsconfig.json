@@ -7,17 +7,7 @@
       "esnext"
     ],
     "baseUrl": "src",
-    "paths": {
-      "@/components/*": [
-        "components/*"
-      ],
-      "@/firebase/*": [
-        "firebase/*"
-      ],
-      "@/firestore/*": [
-        "firestore/*"
-      ]
-    },
+    "paths": {},
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,

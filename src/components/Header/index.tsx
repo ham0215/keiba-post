@@ -6,8 +6,8 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { useRouter } from 'next/router';
 import Menu from './Menu';
-import { UserContext } from '../../UserContext';
-import UserAvatar from '../../components/UserAvatar';
+import { UserContext } from 'UserContext';
+import UserAvatar from 'components/UserAvatar';
 
 const Header = styled.header`
   flex-grow: 1;

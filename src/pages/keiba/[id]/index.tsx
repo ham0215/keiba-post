@@ -3,11 +3,11 @@ import { useRouter } from 'next/router';
 import Grid from '@mui/material/Grid';
 import firebase from 'firebase';
 import { findUser } from 'firestore/User';
-import Float from '@/components/Float';
-import Error from '@/components/Error';
-import KeibaCard from './KeibaCard';
-import SpeedDial from './SpeedDial';
-import PostCard from './PostCard';
+import Float from 'components/Float';
+import Error from 'components/Error';
+import KeibaCard from 'components/KeibaCard';
+import SpeedDial from 'components/SpeedDial';
+import PostCard from 'components/PostCard';
 
 type Post = {
   uid: string;

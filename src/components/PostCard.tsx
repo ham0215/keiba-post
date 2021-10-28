@@ -6,10 +6,10 @@ import CardHeader from '@mui/material/CardHeader';
 import CardContent from '@mui/material/CardContent';
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
-import PreWrapTypography from '../../../components/PreWrapTypography';
-import UserAvatar from '../../../components/UserAvatar';
-import { UserContext } from '../../../UserContext';
-import { deletePost } from '../../../firestore/Post';
+import PreWrapTypography from './PreWrapTypography';
+import UserAvatar from './UserAvatar';
+import { UserContext } from 'UserContext';
+import { deletePost } from 'firestore/Post';
 
 const CustomCard = styled(Card)`
   margin: 8px 8px 8px 8px;

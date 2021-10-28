@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import Pleaselogin from 'components/PleaseLogin';
 import { UserContext } from 'UserContext';
-import List from './List';
-import Rule from './Rule';
+import List from 'components/List';
+import Rule from 'components/Rule';
 
 export default function Keiba() {
   const { currentUser } = useContext(UserContext);

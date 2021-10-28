@@ -7,12 +7,12 @@ import StylesProvider from '@mui/styles/StylesProvider';
 import { ThemeProvider as StyledComponentsThemeProvider } from 'styled-components';
 import CssBaseline from '@mui/material/CssBaseline';
 import 'semantic-ui-css/semantic.min.css';
-import firebase from '../firebase';
-import { UserContext } from '../UserContext';
-import theme from '../theme';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import { findUser, createUser, User } from '../firestore/User';
+import firebase from 'firebase';
+import { UserContext } from 'UserContext';
+import theme from 'theme';
+import Header from 'components/Header';
+import Footer from 'components/Footer';
+import { findUser, createUser, User } from 'firestore/User';
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   const [currentUser, setCurrentUser] = useState<User | null>(null);

@@ -3,12 +3,12 @@ import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
 import styled from 'styled-components';
 import Typography from '@mui/material/Typography';
-import TextField from '../../components/TextField';
-import Button from '../../components/Button';
-import Error from '../../components/Error';
-import Card from '../../components/Card';
-import { UserContext } from '../../UserContext';
-import { updataUser } from '../../firestore/User';
+import TextField from 'components/TextField';
+import Button from 'components/Button';
+import Error from 'components/Error';
+import Card from 'components/Card';
+import { UserContext } from 'UserContext';
+import { updataUser } from 'firestore/User';
 
 const ButtonArea = styled.div`
   text-align: center;

@@ -8,7 +8,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Badge from '@mui/material/Badge';
-import { KeibaCalendar } from '../../data/KeibaCalendar';
+import { KeibaCalendar } from 'data/KeibaCalendar';
 
 const StyledHeader = styled(TableHead)`
   background-color: lightgray;
