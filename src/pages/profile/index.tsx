@@ -2,6 +2,7 @@ import { useCallback, useContext } from 'react';
 import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
 import styled from 'styled-components';
+import Typography from '@material-ui/core/Typography';
 import TextField from '../../components/TextField';
 import Button from '../../components/Button';
 import Error from '../../components/Error';
@@ -20,7 +21,11 @@ type FormInputType = {
 export default function Profile() {
   const router = useRouter();
 
-  const { register, handleSubmit } = useForm<FormInputType>();
+  const { register, handleSubmit, formState: { isDirty, isSubmitted, isValid, errors } } = useForm<FormInputType>(
+    {
+      mode: 'all'
+    }
+  );
 
   const { currentUser, setCurrentUser } = useContext(UserContext);
 
@@ -49,17 +54,20 @@ export default function Profile() {
         <TextField
           id="name"
           name="name"
-          label="name"
+          label="Name"
           fullWidth
           required
           defaultValue={currentUser.name}
-          inputProps={{ ref: register({ required: true }) }}
+          inputProps={{ ...register('name', { required: true }) }}
         />
+        {errors?.name && (
+          <Typography color="error">Name is required!!</Typography>
+        )}
         <ButtonArea>
           <Button variant="outlined" onClick={onClickCancel}>
             キャンセル
           </Button>
-          <Button type="submit" variant="outlined" color="primary">
+          <Button type="submit" variant="outlined" color="primary" disabled={!isDirty || isSubmitted || !isValid}>
             更新
           </Button>
         </ButtonArea>
