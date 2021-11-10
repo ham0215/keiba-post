@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Grid from '@mui/material/Grid';
-import firebase from 'firebaseApp';
+import { getFirestore, getDocs, collection } from 'firebase/firestore';
 import { findUser } from 'firestore/User';
 import Float from 'components/Float';
 import Error from 'components/Error';
@@ -22,7 +22,7 @@ export default function Detail() {
   const { id, text } = router.query;
   const [open, setOpen] = useState<boolean>(false);
   const [posts, setPosts] = useState<Post[]>([]);
-  const db = firebase.firestore();
+  const db = getFirestore();
 
   useEffect(() => {
     (async () => {
@@ -30,7 +30,7 @@ export default function Detail() {
       if (typeof id !== 'string') return;
 
       // TODO: 投稿の種類にtext、imageを持たす
-      const ps = await db.collection('keibas').doc(id).collection('posts').get();
+      const ps = await getDocs(collection(db, 'keibas', id, 'posts'));
       const posts = await Promise.all(
         ps.docs.map(async (doc) => {
           const user = await findUser(doc.id);

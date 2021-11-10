@@ -5,7 +5,8 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import firebase from 'firebaseApp';
+import firebaseApp from 'firebaseApp';
+import { getAuth, signOut } from 'firebase/auth';
 import { User } from 'firestore/User';
 
 const MenuButton = styled(IconButton)`
@@ -42,7 +43,8 @@ export default function Header({ user }: { user: User | null }) {
 
   const handleLogout = useCallback(() => {
     setOpen(false);
-    firebase.auth().signOut();
+    const auth = getAuth(firebaseApp);
+    signOut(auth);
   }, []);
 
   return (

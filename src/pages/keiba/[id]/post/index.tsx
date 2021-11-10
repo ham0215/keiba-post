@@ -2,7 +2,7 @@ import { useState, useCallback, useContext, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
 import styled from 'styled-components';
-import firebase from 'firebaseApp';
+import { getFirestore, getDoc, doc } from 'firebase/firestore';
 import TextField from 'components/TextField';
 import Button from 'components/Button';
 import Error from 'components/Error';
@@ -31,7 +31,7 @@ export default function Post() {
 
   const { currentUser } = useContext(UserContext);
 
-  const db = firebase.firestore();
+  const db = getFirestore();
   const [post, setPost] = useState<string>('');
 
   useEffect(() => {
@@ -40,7 +40,7 @@ export default function Post() {
       if (typeof id !== 'string') return;
       if (!currentUser) return;
 
-      const p = await db.collection('keibas').doc(id).collection('posts').doc(currentUser.id).get();
+      const p = await getDoc(doc(db, 'keibas', id, 'posts', currentUser.id));
       const data = p.data();
       if (!data) return;
 
