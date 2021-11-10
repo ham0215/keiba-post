@@ -1,4 +1,4 @@
-import firebase from 'firebaseApp';
+import { getFirestore, getDoc, setDoc, doc } from 'firebase/firestore';
 
 export type User = {
   id: string;
@@ -8,8 +8,7 @@ export type User = {
 };
 
 export async function findUser(id: string): Promise<User | null> {
-  const db = firebase.firestore();
-  const user = await db.collection('users').doc(id).get();
+  const user = await getDoc(doc(getFirestore(), 'users', id));
 
   if (!user) return null;
   const userData = user.data();
@@ -23,17 +22,8 @@ export async function findUser(id: string): Promise<User | null> {
   };
 }
 
-export async function createUser({ id, name, url, enabled }: User) {
-  await firebase.firestore().collection('users').doc(id).set({
-    name: name,
-    url: url,
-    enabled: enabled,
-  });
-  return await findUser(id);
-}
-
-export async function updataUser(id: string, name: string, url: string, enabled: boolean) {
-  await firebase.firestore().collection('users').doc(id).set({
+export async function setUser({ id, name, url, enabled }: User) {
+  await setDoc(doc(getFirestore(), 'users', id), {
     name: name,
     url: url,
     enabled: enabled,

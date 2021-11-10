@@ -1,4 +1,4 @@
-import firebase from 'firebaseApp';
+import { getFirestore, doc, setDoc, deleteDoc } from 'firebase/firestore';
 
 type UpdatePost = {
   keibaId: string;
@@ -10,7 +10,7 @@ type UpdatePost = {
 };
 
 export async function updataPost({ keibaId, uid, type, text, image, createdAt }: UpdatePost) {
-  await firebase.firestore().collection('keibas').doc(keibaId).collection('posts').doc(uid).set({
+  await setDoc(doc(getFirestore(), 'keibas', keibaId, 'posts', uid), {
     type: type,
     text: text,
     image: image,
@@ -19,5 +19,5 @@ export async function updataPost({ keibaId, uid, type, text, image, createdAt }:
 }
 
 export async function deletePost(keibaId: string, uid: string) {
-  await firebase.firestore().collection('keibas').doc(keibaId).collection('posts').doc(uid).delete();
+  await deleteDoc(doc(getFirestore(), 'keibas', keibaId, 'posts', uid));
 }

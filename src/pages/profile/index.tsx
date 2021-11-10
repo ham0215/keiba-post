@@ -8,7 +8,7 @@ import Button from 'components/Button';
 import Error from 'components/Error';
 import Card from 'components/Card';
 import { UserContext } from 'UserContext';
-import { updataUser } from 'firestore/User';
+import { setUser } from 'firestore/User';
 
 const ButtonArea = styled.div`
   text-align: center;
@@ -40,7 +40,12 @@ export default function Profile() {
       if (!currentUser) return;
       if (!setCurrentUser) return;
 
-      const updatedUser = await updataUser(currentUser.id, data.name, currentUser.url, currentUser.enabled);
+      const updatedUser = await setUser({
+        id: currentUser.id,
+        name: data.name,
+        url: currentUser.url,
+        enabled: currentUser.enabled,
+      });
 
       setCurrentUser(updatedUser);
       router.push('/');

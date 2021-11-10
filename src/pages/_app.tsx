@@ -12,7 +12,7 @@ import { UserContext } from 'UserContext';
 import theme from 'theme';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
-import { findUser, createUser, User } from 'firestore/User';
+import { findUser, setUser, User } from 'firestore/User';
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   const [currentUser, setCurrentUser] = useState<User | null>(null);
@@ -24,7 +24,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       if (fbUser) {
         currentUser = await findUser(fbUser.uid);
         if (!currentUser) {
-          currentUser = await createUser({
+          currentUser = await setUser({
             id: fbUser.uid,
             name: fbUser.displayName || '',
             url: fbUser.photoURL || '',
