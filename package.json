@@ -20,7 +20,7 @@
     "@mui/styled-engine": "npm:@mui/styled-engine-sc@latest",
     "@mui/styles": "^5.0.2",
     "date-fns": "^2.17.0",
-    "firebase": "^9.3.0",
+    "firebase": "^9.4.0",
     "firebaseui": "^6.0.0",
     "next": "12.0.2",
     "react": "17.0.2",
