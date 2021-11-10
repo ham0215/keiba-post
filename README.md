@@ -4,6 +4,7 @@
 [![Lint](https://github.com/ham0215/keiba-post/actions/workflows/lint.yml/badge.svg)](https://github.com/ham0215/keiba-post/actions/workflows/lint.yml)
 [![Prettier](https://github.com/ham0215/keiba-post/actions/workflows/prettier.yml/badge.svg)](https://github.com/ham0215/keiba-post/actions/workflows/prettier.yml)
 [![Prettier](https://github.com/ham0215/keiba-post/actions/workflows/prettier.yml/badge.svg)](https://github.com/ham0215/keiba-post/actions/workflows/prettier.yml)
+[![StyleLint](https://github.com/ham0215/keiba-post/actions/workflows/stylelint.yml/badge.svg)](https://github.com/ham0215/keiba-post/actions/workflows/stylelint.yml)
 
 ## How to Keiba Post.
 
