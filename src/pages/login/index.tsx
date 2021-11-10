@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import firebase from 'firebaseApp';
+import firebaseApp from 'firebaseApp';
+import { getAuth, GoogleAuthProvider } from 'firebase/auth';
 import styled from 'styled-components';
 import 'firebaseui/dist/firebaseui.css';
 import CircularProgress from '@mui/material/CircularProgress';
@@ -16,7 +17,7 @@ export default function Login() {
   useEffect(() => {
     let ui = firebaseui.auth.AuthUI.getInstance();
     if (!ui) {
-      ui = new firebaseui.auth.AuthUI(firebase.auth());
+      ui = new firebaseui.auth.AuthUI(getAuth(firebaseApp));
     }
     const uiConfig = {
       callbacks: {
@@ -28,7 +29,7 @@ export default function Login() {
       },
       signInFlow: 'popup',
       signInSuccessUrl: '/',
-      signInOptions: [firebase.auth.GoogleAuthProvider.PROVIDER_ID],
+      signInOptions: [GoogleAuthProvider.PROVIDER_ID],
       tosUrl: '/terms/terms-of-service',
       privacyPolicyUrl: '/terms/privacy-policy',
     };

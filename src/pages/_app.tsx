@@ -6,7 +6,8 @@ import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
 import StylesProvider from '@mui/styles/StylesProvider';
 import { ThemeProvider as StyledComponentsThemeProvider } from 'styled-components';
 import CssBaseline from '@mui/material/CssBaseline';
-import firebase from 'firebaseApp';
+import firebaseApp from 'firebaseApp';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { UserContext } from 'UserContext';
 import theme from 'theme';
 import Header from 'components/Header';
@@ -17,7 +18,8 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   const [currentUser, setCurrentUser] = useState<User | null>(null);
 
   useEffect(() => {
-    firebase.auth().onAuthStateChanged(async (fbUser) => {
+    const auth = getAuth(firebaseApp);
+    onAuthStateChanged(auth, async (fbUser) => {
       let currentUser = null;
       if (fbUser) {
         currentUser = await findUser(fbUser.uid);
