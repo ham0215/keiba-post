@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { AppProps } from 'next/app';
-import PropTypes from 'prop-types';
 import Head from 'next/head';
-import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
-import StylesProvider from '@mui/styles/StylesProvider';
-import { ThemeProvider as StyledComponentsThemeProvider } from 'styled-components';
+import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import firebaseApp from 'firebaseApp';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
@@ -36,38 +33,20 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     });
   }, []);
 
-  useEffect(() => {
-    const jssStyles = document.querySelector('#jss-server-side');
-    if (jssStyles && jssStyles.parentElement) {
-      jssStyles.parentElement.removeChild(jssStyles);
-    }
-  }, []);
-
   return (
     <React.Fragment>
       <Head>
         <title>keiba post</title>
         <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
       </Head>
-      <StylesProvider injectFirst>
-        <StyledEngineProvider injectFirst>
-          <ThemeProvider theme={theme}>
-            <StyledComponentsThemeProvider theme={theme}>
-              <UserContext.Provider value={{ currentUser, setCurrentUser }}>
-                <CssBaseline />
-                <Header />
-                <Component {...pageProps} />
-                <Footer />
-              </UserContext.Provider>
-            </StyledComponentsThemeProvider>
-          </ThemeProvider>
-        </StyledEngineProvider>
-      </StylesProvider>
+      <ThemeProvider theme={theme}>
+        <UserContext.Provider value={{ currentUser, setCurrentUser }}>
+          <CssBaseline />
+          <Header />
+          <Component {...pageProps} />
+          <Footer />
+        </UserContext.Provider>
+      </ThemeProvider>
     </React.Fragment>
   );
 }
-
-MyApp.propTypes = {
-  Component: PropTypes.elementType.isRequired,
-  pageProps: PropTypes.object.isRequired,
-};
