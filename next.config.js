@@ -5,6 +5,7 @@ const withTM = require('next-transpile-modules')([
 ]);
 
 module.exports = withTM({
+  reactStrictMode: true,
   webpack: (config) => {
     config.resolve.alias = {
       ...config.resolve.alias,
@@ -12,5 +13,4 @@ module.exports = withTM({
      };
      return config;
   },
-  reactStrictMode: true
 });
