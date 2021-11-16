@@ -16,7 +16,7 @@ export default function Rule() {
 
   return (
     <Container>
-      <Button variant="contained" color="primary" onClick={handleOpen}>
+      <Button variant="contained" onClick={handleOpen}>
         ルール
       </Button>
       <Modal open={open} setOpen={setOpen}>

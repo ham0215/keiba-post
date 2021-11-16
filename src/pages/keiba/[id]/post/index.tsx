@@ -90,7 +90,7 @@ export default function Post() {
           <Button variant="outlined" onClick={onClickCancel}>
             キャンセル
           </Button>
-          <Button type="submit" variant="outlined" color="primary" disabled={!isDirty || isSubmitted || !isValid}>
+          <Button type="submit" variant="contained" disabled={!isDirty || isSubmitted || !isValid}>
             投稿
           </Button>
         </ButtonArea>
