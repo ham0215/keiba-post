@@ -16,7 +16,7 @@
     "test:ci": "jest --ci"
   },
   "dependencies": {
-    "@mui/icons-material": "^5.1.0",
+    "@mui/icons-material": "^5.2.0",
     "@mui/lab": "^5.0.0-alpha.57",
     "@mui/material": "^5.1.0",
     "@mui/styled-engine": "npm:@mui/styled-engine-sc@latest",
