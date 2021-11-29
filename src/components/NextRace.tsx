@@ -12,7 +12,7 @@ export default function List() {
   return (
     <Alert severity="info">
       <NextLink href={`/keiba/${nextRace.id}`}>
-        <Link>
+        <Link component="button">
           次のレースは{nextRace.date} {nextRace.name}({nextRace.big ? '3,000円' : '1,000円'})です！！
         </Link>
       </NextLink>
