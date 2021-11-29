@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import Backdrop from '@mui/material/Backdrop';
 
 const CustomBackdrop = styled(Backdrop)`

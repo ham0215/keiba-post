@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import firebaseApp from 'firebaseApp';
 import { getAuth, GoogleAuthProvider } from 'firebase/auth';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import 'firebaseui/dist/firebaseui.css';
 import CircularProgress from '@mui/material/CircularProgress';
 

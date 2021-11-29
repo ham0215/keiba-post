@@ -1,6 +1,6 @@
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import ExternalLink from 'components/ExternalLink';
 import { FaTrophy } from 'react-icons/fa';
 

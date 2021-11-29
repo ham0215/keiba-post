@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useContext } from 'react';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import { format } from 'date-fns';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
