@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import List from '@mui/material/List';
@@ -15,7 +15,7 @@ import { KeibaCalendar } from 'data/KeibaCalendar';
 import Error from 'components/Error';
 
 const CustomCard = styled(Card)`
-  margin: 8px 8px 8px 8px;
+  margin: 8px;
 `;
 
 export default function KeibaCard({ keibaId }: { keibaId: number }) {

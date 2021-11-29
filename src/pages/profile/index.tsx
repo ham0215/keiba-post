@@ -1,7 +1,7 @@
 import { useCallback, useContext } from 'react';
 import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import Typography from '@mui/material/Typography';
 import TextField from 'components/TextField';
 import Button from 'components/Button';

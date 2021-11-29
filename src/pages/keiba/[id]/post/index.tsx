@@ -1,7 +1,7 @@
 import { useState, useCallback, useContext, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import { getFirestore, getDoc, doc } from 'firebase/firestore';
 import TextField from 'components/TextField';
 import Button from 'components/Button';

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 
 const Contents = styled.div`
   background: #151515 url('/images/login.jpg') no-repeat scroll center bottom;

@@ -1,9 +1,9 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import Link from '@mui/material/Link';
 
 const Footer = styled.footer`
-  padding: 10px 0 10px;
+  padding: 10px 0;
   background-color: green;
   color: #fff;
   font-size: 0.8rem;

@@ -6,12 +6,20 @@ import CssBaseline from '@mui/material/CssBaseline';
 import firebaseApp from 'firebaseApp';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { UserContext } from 'UserContext';
+import { CacheProvider, EmotionCache } from '@emotion/react';
 import theme from 'theme';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 import { findUser, setUser, User } from 'firestore/User';
+import createEmotionCache from 'createEmotionCache';
 
-export default function MyApp({ Component, pageProps }: AppProps) {
+const clientSideEmotionCache = createEmotionCache();
+
+interface MyAppProps extends AppProps {
+  emotionCache?: EmotionCache;
+}
+
+export default function MyApp({ Component, emotionCache = clientSideEmotionCache, pageProps }: MyAppProps) {
   const [currentUser, setCurrentUser] = useState<User | null>(null);
 
   useEffect(() => {
@@ -34,9 +42,9 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   }, []);
 
   return (
-    <React.Fragment>
+    <CacheProvider value={emotionCache}>
       <Head>
-        <title>keiba post</title>
+        <title>Keiba Post</title>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
       <ThemeProvider theme={theme}>
@@ -47,6 +55,6 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           <Footer />
         </UserContext.Provider>
       </ThemeProvider>
-    </React.Fragment>
+    </CacheProvider>
   );
 }
