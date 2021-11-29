@@ -12,7 +12,7 @@ import { UserContext } from 'UserContext';
 import { deletePost } from 'firestore/Post';
 
 const CustomCard = styled(Card)`
-  margin: 8px 8px 8px 8px;
+  margin: 8px;
 `;
 
 type PostCard = {

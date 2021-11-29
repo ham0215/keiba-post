@@ -4,7 +4,7 @@ import Button from '@mui/material/Button';
 import Modal from 'components/Modal';
 
 const Container = styled.div`
-  margin: 5px 5px 5px 5px;
+  margin: 5px;
 `;
 
 export default function Rule() {
