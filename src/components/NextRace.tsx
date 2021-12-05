@@ -4,7 +4,8 @@ import Link from '@mui/material/Link';
 import { KeibaCalendar } from 'data/KeibaCalendar';
 
 export default function List() {
-  const today = new Date();
+  const now = new Date();
+  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
   const nextRace = KeibaCalendar.find((row) => today <= new Date(row.date));
 
   if (!nextRace) return <Alert severity="info">今年のレースは終了しました。</Alert>;
