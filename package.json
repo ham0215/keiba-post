@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "@stylelint/postcss-css-in-js": "^0.37.2",
-    "@testing-library/jest-dom": "^5.15.1",
+    "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.0.3",
@@ -49,7 +49,7 @@
     "eslint-config-next": "12.0.4",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-jest": "^25.3.0",
-    "jest": "^27.3.1",
+    "jest": "^27.4.3",
     "prettier": "^2.5.0",
     "stylelint": "^14.1.0",
     "stylelint-config-prettier": "^9.0.3",
