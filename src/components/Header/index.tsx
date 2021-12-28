@@ -26,6 +26,6 @@ export default function ButtonAppBar() {
           <UserMenu />
         </Toolbar>
       </AppBar>
-    </Header >
+    </Header>
   );
 }
