@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ExternalLink snapshot testing 1`] = `
+<DocumentFragment>
+  <a
+    class="MuiTypography-root MuiTypography-body1 MuiLink-root MuiLink-underlineNone css-1pq9bqg-MuiTypography-root-MuiLink-root"
+    href="/keiba"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    keiba
+  </a>
+</DocumentFragment>
+`;
