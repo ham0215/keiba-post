@@ -22,7 +22,8 @@ const TrophyWrap = styled.div`
 `;
 
 const Card = styled(CardBase)`
-  margin: auto;
+  margin: 0 auto;
+  width: 90%;
   max-width: 30rem;
 `;
 
