@@ -32,11 +32,6 @@ export default function MenuComponent() {
     setOpen(false);
   }, []);
 
-  const handleG1 = useCallback(() => {
-    setOpen(false);
-    router.push('/keiba');
-  }, [router]);
-
   const handleResult = useCallback(() => {
     setOpen(false);
     router.push('/result');

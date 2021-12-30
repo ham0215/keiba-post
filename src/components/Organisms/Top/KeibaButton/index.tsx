@@ -18,7 +18,7 @@ export default function KeibaButton() {
 
   return (
     <>
-      {currentUser && currentUser.enabled &&
+      {currentUser && currentUser.enabled && (
         <Link href="/keiba" prefetch={true}>
           <Button variant="contained" color="success">
             <GiHorseHead />
@@ -26,7 +26,7 @@ export default function KeibaButton() {
             <GiHorseHead />
           </Button>
         </Link>
-      }
+      )}
     </>
   );
 }
