@@ -57,13 +57,12 @@ export default function MenuComponent() {
     <>
       {currentUser ? (
         <>
-          <Tooltip title="メニューはこちらに移動しました！" open={tooltipOpen} placement="bottom" arrow={true}>
+          <Tooltip title="メニューはこちらに移動しました！" open={tooltipOpen} placement="bottom-end" arrow={true}>
             <MenuButton edge="start" color="inherit" aria-label="menu" onClick={handleClick} ref={menuButtonRef}>
               <UserAvatar url={currentUser.url} />
             </MenuButton>
           </Tooltip>
           <Menu anchorEl={menuButtonRef.current} keepMounted open={open} onClose={handleClose}>
-            {currentUser.enabled && <MenuItem onClick={handleG1}>GI Racing</MenuItem>}
             {currentUser.enabled && <MenuItem onClick={handleResult}>Ranking</MenuItem>}
             <MenuItem onClick={handleProfile}>Profile</MenuItem>
             <MenuItem color="inherit" onClick={handleLogout}>
