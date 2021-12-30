@@ -32,11 +32,6 @@ export default function MenuComponent() {
     setOpen(false);
   }, []);
 
-  const handleResult = useCallback(() => {
-    setOpen(false);
-    router.push('/result');
-  }, [router]);
-
   const handleProfile = useCallback(() => {
     setOpen(false);
     router.push('/profile');
@@ -58,7 +53,6 @@ export default function MenuComponent() {
             </MenuButton>
           </Tooltip>
           <Menu anchorEl={menuButtonRef.current} keepMounted open={open} onClose={handleClose}>
-            {currentUser.enabled && <MenuItem onClick={handleResult}>Ranking</MenuItem>}
             <MenuItem onClick={handleProfile}>Profile</MenuItem>
             <MenuItem color="inherit" onClick={handleLogout}>
               Logout

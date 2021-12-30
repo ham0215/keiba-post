@@ -37,15 +37,17 @@ function ResultCard({ title, winner, url, avatar }: ResultCardProps) {
             </TrophyWrap>
           </Grid>
           <Grid item xs>
-            <Typography align='left'>{title}</Typography>
+            <Typography align="left">{title}</Typography>
           </Grid>
           <Grid item xs={2}>
             <Avatar alt={winner} src={avatar} />
           </Grid>
           <Grid item xs={2}>
-            <Typography align='left'>{winner}</Typography>
+            <Typography align="left">{winner}</Typography>
           </Grid>
-          <Grid item xs={1}><LaunchIcon color='disabled' /></Grid>
+          <Grid item xs={1}>
+            <LaunchIcon color="disabled" />
+          </Grid>
         </Grid>
       </ExternalLink>
     </Grid>
