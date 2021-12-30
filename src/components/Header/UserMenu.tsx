@@ -18,27 +18,19 @@ const MenuButton = styled(IconButton)`
 export default function MenuComponent() {
   const router = useRouter();
   const [open, setOpen] = useState<boolean>(false);
+  const [tooltipOpen, setTooltipOpen] = useState<boolean>(true);
   const menuButtonRef = useRef(null);
 
   const { currentUser } = useContext(UserContext);
 
   const handleClick = useCallback(() => {
     setOpen(true);
+    setTooltipOpen(false);
   }, []);
 
   const handleClose = useCallback(() => {
     setOpen(false);
   }, []);
-
-  const handleG1 = useCallback(() => {
-    setOpen(false);
-    router.push('/keiba');
-  }, [router]);
-
-  const handleResult = useCallback(() => {
-    setOpen(false);
-    router.push('/result');
-  }, [router]);
 
   const handleProfile = useCallback(() => {
     setOpen(false);
@@ -55,14 +47,12 @@ export default function MenuComponent() {
     <>
       {currentUser ? (
         <>
-          <Tooltip title="メニューはこちらに移動しました！" open={true} placement="left" arrow={true}>
+          <Tooltip title="メニューはこちらに移動しました！" open={tooltipOpen} placement="bottom-end" arrow={true}>
             <MenuButton edge="start" color="inherit" aria-label="menu" onClick={handleClick} ref={menuButtonRef}>
               <UserAvatar url={currentUser.url} />
             </MenuButton>
           </Tooltip>
           <Menu anchorEl={menuButtonRef.current} keepMounted open={open} onClose={handleClose}>
-            {currentUser.enabled && <MenuItem onClick={handleG1}>GI Racing</MenuItem>}
-            {currentUser.enabled && <MenuItem onClick={handleResult}>Ranking</MenuItem>}
             <MenuItem onClick={handleProfile}>Profile</MenuItem>
             <MenuItem color="inherit" onClick={handleLogout}>
               Logout
