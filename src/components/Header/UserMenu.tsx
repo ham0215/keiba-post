@@ -18,12 +18,14 @@ const MenuButton = styled(IconButton)`
 export default function MenuComponent() {
   const router = useRouter();
   const [open, setOpen] = useState<boolean>(false);
+  const [tooltipOpen, setTooltipOpen] = useState<boolean>(true);
   const menuButtonRef = useRef(null);
 
   const { currentUser } = useContext(UserContext);
 
   const handleClick = useCallback(() => {
     setOpen(true);
+    setTooltipOpen(false);
   }, []);
 
   const handleClose = useCallback(() => {
@@ -55,7 +57,7 @@ export default function MenuComponent() {
     <>
       {currentUser ? (
         <>
-          <Tooltip title="メニューはこちらに移動しました！" open={true} placement="left" arrow={true}>
+          <Tooltip title="メニューはこちらに移動しました！" open={tooltipOpen} placement="bottom" arrow={true}>
             <MenuButton edge="start" color="inherit" aria-label="menu" onClick={handleClick} ref={menuButtonRef}>
               <UserAvatar url={currentUser.url} />
             </MenuButton>
