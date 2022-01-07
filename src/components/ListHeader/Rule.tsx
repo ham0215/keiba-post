@@ -1,11 +1,6 @@
 import { useState } from 'react';
-import styled from '@emotion/styled';
 import Button from '@mui/material/Button';
 import Modal from 'components/Modal';
-
-const Container = styled.div`
-  margin: 5px;
-`;
 
 export default function Rule() {
   const [open, setOpen] = useState(false);
@@ -15,7 +10,7 @@ export default function Rule() {
   };
 
   return (
-    <Container>
+    <>
       <Button variant="contained" onClick={handleOpen}>
         ルール
       </Button>
@@ -67,6 +62,6 @@ export default function Rule() {
           <br />
         </div>
       </Modal>
-    </Container>
+    </>
   );
 }
