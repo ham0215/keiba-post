@@ -17,7 +17,7 @@ type Post = {
   createdAt: Date;
 };
 
-export default function Detail() {
+export default function Detail({ canPost = true }: { canPost?: boolean }) {
   const router = useRouter();
   const { id, text } = router.query;
   const [open, setOpen] = useState<boolean>(false);
@@ -62,9 +62,11 @@ export default function Detail() {
           </Grid>
         ))}
       </Grid>
-      <Float bottom={'2px'} right={'2px'}>
-        <SpeedDial open={open} setOpen={setOpen} keibaId={keibaId} />
-      </Float>
+      {canPost && (
+        <Float bottom={'2px'} right={'2px'}>
+          <SpeedDial open={open} setOpen={setOpen} keibaId={keibaId} />
+        </Float>
+      )}
     </>
   );
 }
