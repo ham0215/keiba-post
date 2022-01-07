@@ -3,7 +3,7 @@ import Pleaselogin from 'components/PleaseLogin';
 import { UserContext } from 'UserContext';
 import NextRace from 'components/NextRace';
 import List from 'components/List';
-import Rule from 'components/Rule';
+import ListHeader from 'components/ListHeader';
 
 export default function Keiba() {
   const { currentUser } = useContext(UserContext);
@@ -12,7 +12,7 @@ export default function Keiba() {
   return (
     <>
       <NextRace />
-      <Rule />
+      <ListHeader />
       <List />
     </>
   );

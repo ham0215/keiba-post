@@ -8,6 +8,7 @@ import Error from 'components/Error';
 import KeibaCard from 'components/KeibaCard';
 import SpeedDial from 'components/SpeedDial';
 import PostCard from 'components/PostCard';
+import { KeibaCalendar } from 'data/KeibaCalendar';
 
 type Post = {
   uid: string;
@@ -29,7 +30,6 @@ export default function Detail() {
       if (!id) return;
       if (typeof id !== 'string') return;
 
-      // TODO: 投稿の種類にtext、imageを持たす
       const ps = await getDocs(collection(db, 'keibas', id, 'posts'));
       const posts = await Promise.all(
         ps.docs.map(async (doc) => {
@@ -50,7 +50,12 @@ export default function Detail() {
 
   const keibaId = Number(id);
   if (!keibaId) return <Error />;
+  const keiba = KeibaCalendar.find((item) => item.id === keibaId);
+  if (!keiba) return <Error />;
   if (text && typeof text !== 'string') return <Error />;
+  const now = new Date();
+  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  const canPost = today <= new Date(keiba.date);
 
   return (
     <>
@@ -62,9 +67,11 @@ export default function Detail() {
           </Grid>
         ))}
       </Grid>
-      <Float bottom={'2px'} right={'2px'}>
-        <SpeedDial open={open} setOpen={setOpen} keibaId={keibaId} />
-      </Float>
+      {canPost && (
+        <Float bottom={'2px'} right={'2px'}>
+          <SpeedDial open={open} setOpen={setOpen} keibaId={keibaId} />
+        </Float>
+      )}
     </>
   );
 }
