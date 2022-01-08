@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Grid from '@mui/material/Grid';
-import { getFirestore, getDocs, collection } from 'firebase/firestore';
-import { findUser } from 'firestore/User';
+import { findPosts } from 'firestore/Post';
 import Float from 'components/Float';
 import Error from 'components/Error';
 import KeibaCard from 'components/KeibaCard';
@@ -23,30 +22,15 @@ export default function Detail() {
   const { id, text } = router.query;
   const [open, setOpen] = useState<boolean>(false);
   const [posts, setPosts] = useState<Post[]>([]);
-  const db = getFirestore();
 
   useEffect(() => {
     (async () => {
       if (!id) return;
       if (typeof id !== 'string') return;
 
-      const ps = await getDocs(collection(db, 'keibas', id, 'posts'));
-      const posts = await Promise.all(
-        ps.docs.map(async (doc) => {
-          const user = await findUser(doc.id);
-
-          return {
-            uid: doc.id,
-            text: doc.data().text,
-            name: user?.name || '',
-            url: user?.url || '',
-            createdAt: doc.data().createdAt.toDate(),
-          };
-        })
-      );
-      setPosts(posts);
+      setPosts(await findPosts(id));
     })();
-  }, [id, db]);
+  }, [id]);
 
   const keibaId = Number(id);
   if (!keibaId) return <Error />;
