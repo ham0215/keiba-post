@@ -32,10 +32,10 @@ export default function Header({ tag }: { tag: string }) {
             </Select>
           </FormControl>
         </Grid>
-        <Grid item xs alignItems='right'>
+        <Grid item xs alignItems="right">
           <Rule />
         </Grid>
       </Grid>
-    </Container >
+    </Container>
   );
 }
