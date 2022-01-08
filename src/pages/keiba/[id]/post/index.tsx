@@ -2,7 +2,7 @@ import { useState, useCallback, useContext, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
 import styled from '@emotion/styled';
-import { getFirestore, getDoc, doc } from 'firebase/firestore';
+import { findPostText } from 'firestore/Post';
 import TextField from 'components/TextField';
 import Button from 'components/Button';
 import Error from 'components/Error';
@@ -31,8 +31,7 @@ export default function Post() {
 
   const { currentUser } = useContext(UserContext);
 
-  const db = getFirestore();
-  const [post, setPost] = useState<string>('');
+  const [postText, setPostText] = useState<string>('');
 
   useEffect(() => {
     (async () => {
@@ -40,13 +39,12 @@ export default function Post() {
       if (typeof id !== 'string') return;
       if (!currentUser) return;
 
-      const p = await getDoc(doc(db, 'keibas', id, 'posts', currentUser.id));
-      const data = p.data();
-      if (!data) return;
+      const text = await findPostText(id, currentUser.id);
+      if (!text) return;
 
-      setPost(data.text);
+      setPostText(text);
     })();
-  }, [currentUser, db, id]);
+  }, [currentUser, id]);
 
   const onClickCancel = useCallback(() => {
     router.push(`/keiba/${id}`);
@@ -83,7 +81,7 @@ export default function Post() {
           fullWidth
           rows={10}
           variant="outlined"
-          defaultValue={post}
+          defaultValue={postText}
           inputProps={{ ...register('keibaText', { required: true }) }}
         />
         <ButtonArea>

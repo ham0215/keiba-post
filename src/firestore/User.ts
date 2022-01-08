@@ -1,4 +1,4 @@
-import { getFirestore, getDoc, setDoc, doc } from 'firebase/firestore';
+import { getFirestore, getDoc, getDocs, collection, setDoc, doc } from 'firebase/firestore';
 
 export type User = {
   id: string;
@@ -20,6 +20,21 @@ export async function findUser(id: string): Promise<User | null> {
     url: userData.url,
     enabled: userData.enabled,
   };
+}
+
+export async function findUsers(): Promise<User[]> {
+  const users = await getDocs(collection(getFirestore(), 'users'));
+
+  return Promise.all(
+    users.docs.map(async (doc) => {
+      return {
+        id: doc.id,
+        name: doc.data().name,
+        url: doc.data().url,
+        enabled: doc.data().enabled,
+      };
+    })
+  );
 }
 
 export async function setUser({ id, name, url, enabled }: User) {

@@ -31,12 +31,12 @@ export default function List() {
             <TableRow>
               <TableCell>日付</TableCell>
               <TableCell>レース名</TableCell>
-              <TableCell>場所</TableCell>
+              <TableCell>Bet</TableCell>
             </TableRow>
           </StyledHeader>
           <TableBody>
             {KeibaCalendar.filter((row) => row.tag === selectedTag).map((row) => (
-              <Item key={row.id} {...row} />
+              <Item key={row.id} {...row} posts={[]} />
             ))}
           </TableBody>
         </Table>
