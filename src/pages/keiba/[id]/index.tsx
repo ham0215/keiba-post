@@ -59,11 +59,11 @@ export default function Detail() {
 
   return (
     <>
-      <KeibaCard keibaId={keibaId} />
+      <KeibaCard {...keiba} />
       <Grid container>
         {posts.map((post) => (
           <Grid key={post.uid} item xs={12} md={4}>
-            <PostCard {...post} keibaId={String(keibaId)} />
+            <PostCard {...post} keibaId={String(keibaId)} canDelete={canPost} />
           </Grid>
         ))}
       </Grid>

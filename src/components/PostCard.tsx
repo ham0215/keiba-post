@@ -22,9 +22,10 @@ type PostCard = {
   createdAt: Date;
   name: string;
   url: string;
+  canDelete: boolean;
 };
 
-export default function PostCard({ keibaId, uid, text, createdAt, name, url }: PostCard) {
+export default function PostCard({ keibaId, uid, text, createdAt, name, url, canDelete }: PostCard) {
   const [show, setShow] = useState(true);
   const { currentUser } = useContext(UserContext);
 
@@ -44,7 +45,8 @@ export default function PostCard({ keibaId, uid, text, createdAt, name, url }: P
       <CardHeader
         avatar={<UserAvatar url={url} />}
         action={
-          uid === currentUser?.id && (
+          uid === currentUser?.id &&
+          canDelete && (
             <IconButton aria-label="delete" onClick={handleDelete} size="large">
               <DeleteIcon />
             </IconButton>

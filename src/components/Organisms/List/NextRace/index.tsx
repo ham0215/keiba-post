@@ -3,12 +3,12 @@ import NextLink from 'next/link';
 import Link from '@mui/material/Link';
 import { KeibaCalendar } from 'data/KeibaCalendar';
 
-export default function List() {
+export default function NextRace({ tag }: { tag: string }) {
   const now = new Date();
   const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-  const nextRace = KeibaCalendar.find((row) => today <= new Date(row.date));
+  const nextRace = KeibaCalendar.find((row) => row.tag === tag && today <= new Date(row.date));
 
-  if (!nextRace) return <Alert severity="info">今年のレースは終了しました。</Alert>;
+  if (!nextRace) return <Alert severity="error">表示しているレースはすべて終了しています。</Alert>;
 
   return (
     <Alert severity="info">
