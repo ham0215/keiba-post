@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { useRouter } from 'next/router';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
@@ -10,7 +11,8 @@ const Container = styled.div`
   margin: 0.5rem;
 `;
 
-export default function Header({ tag, setTag }: { tag: string, setTag: (tag: string) => void }) {
+export default function Header({ tag }: { tag: string }) {
+  const router = useRouter();
 
   return (
     <Container>
@@ -23,7 +25,7 @@ export default function Header({ tag, setTag }: { tag: string, setTag: (tag: str
               id="selectTag"
               value={tag}
               label="selectTag"
-              onChange={(e) => { setTag(e.target.value); }}
+              onChange={(e) => router.push(`/keiba?tag=${e.target.value}`)}
             >
               <MenuItem value="2022a">2022年前半</MenuItem>
               <MenuItem value="2021">2021年</MenuItem>

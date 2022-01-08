@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRouter } from 'next/router';
 import styled from '@emotion/styled';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -10,19 +10,21 @@ import Paper from '@mui/material/Paper';
 import Item from './Item';
 import Header from './Header';
 import NextRace from './NextRace';
-import { KeibaCalendar, currentTag } from 'data/KeibaCalendar';
+import { KeibaCalendar, currentTag, tags } from 'data/KeibaCalendar';
 
 const StyledHeader = styled(TableHead)`
   background-color: lightgray;
 `;
 
 export default function List() {
-  const [tag, setTag] = useState(currentTag);
+  const router = useRouter();
+  const { tag } = router.query;
+  const selectedTag = typeof tag === 'string' && tags.includes(tag) ? tag : currentTag;
 
   return (
     <>
-      <Header tag={tag} setTag={setTag} />
-      <NextRace tag={tag} />
+      <Header tag={selectedTag} />
+      <NextRace tag={selectedTag} />
       <TableContainer component={Paper}>
         <Table aria-label="keiba calendar">
           <StyledHeader>

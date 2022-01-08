@@ -10,6 +10,7 @@ export type Props = {
 };
 
 export const currentTag = '2022a';
+export const tags = ['2021', '2022a'];
 
 export const KeibaCalendar = [
   {
