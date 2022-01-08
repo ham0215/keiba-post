@@ -1,5 +1,6 @@
 export type Props = {
   id: number;
+  tag: string;
   date: string;
   place: string;
   name: string;
@@ -8,9 +9,12 @@ export type Props = {
   big: boolean;
 };
 
+export const currentTag = '2022a';
+
 export const KeibaCalendar = [
   {
     id: 1,
+    tag: '2021',
     date: '2021/02/21',
     place: '東京',
     name: 'フェブラリーS',
@@ -20,6 +24,7 @@ export const KeibaCalendar = [
   },
   {
     id: 2,
+    tag: '2021',
     date: '2021/03/28',
     place: '中京',
     name: '高松宮記念',
@@ -29,6 +34,7 @@ export const KeibaCalendar = [
   },
   {
     id: 3,
+    tag: '2021',
     date: '2021/04/04',
     place: '阪神',
     name: '大阪杯',
@@ -38,6 +44,7 @@ export const KeibaCalendar = [
   },
   {
     id: 4,
+    tag: '2021',
     date: '2021/04/11',
     place: '阪神',
     name: '桜花賞',
@@ -47,6 +54,7 @@ export const KeibaCalendar = [
   },
   {
     id: 5,
+    tag: '2021',
     date: '2021/04/18',
     place: '中山',
     name: '皐月賞',
@@ -56,6 +64,7 @@ export const KeibaCalendar = [
   },
   {
     id: 6,
+    tag: '2021',
     date: '2021/05/02',
     place: '京都',
     name: '天皇賞（春）',
@@ -65,6 +74,7 @@ export const KeibaCalendar = [
   },
   {
     id: 7,
+    tag: '2021',
     date: '2021/05/09',
     place: '東京',
     name: 'NHKマイルC',
@@ -74,6 +84,7 @@ export const KeibaCalendar = [
   },
   {
     id: 8,
+    tag: '2021',
     date: '2021/05/16',
     place: '東京',
     name: 'ヴィクトリアマイル',
@@ -83,6 +94,7 @@ export const KeibaCalendar = [
   },
   {
     id: 9,
+    tag: '2021',
     date: '2021/05/23',
     place: '東京',
     name: 'オークス',
@@ -92,6 +104,7 @@ export const KeibaCalendar = [
   },
   {
     id: 10,
+    tag: '2021',
     date: '2021/05/30',
     place: '東京',
     name: '日本ダービー',
@@ -101,6 +114,7 @@ export const KeibaCalendar = [
   },
   {
     id: 11,
+    tag: '2021',
     date: '2021/06/06',
     place: '東京',
     name: '安田記念',
@@ -110,6 +124,7 @@ export const KeibaCalendar = [
   },
   {
     id: 12,
+    tag: '2021',
     date: '2021/06/27',
     place: '阪神',
     name: '宝塚記念',
@@ -119,6 +134,7 @@ export const KeibaCalendar = [
   },
   {
     id: 13,
+    tag: '2021',
     date: '2021/10/03',
     place: '中山',
     name: 'スプリンターズS',
@@ -128,6 +144,7 @@ export const KeibaCalendar = [
   },
   {
     id: 14,
+    tag: '2021',
     date: '2021/10/17',
     place: '京都',
     name: '秋華賞',
@@ -137,6 +154,7 @@ export const KeibaCalendar = [
   },
   {
     id: 15,
+    tag: '2021',
     date: '2021/10/24',
     place: '京都',
     name: '菊花賞',
@@ -146,6 +164,7 @@ export const KeibaCalendar = [
   },
   {
     id: 16,
+    tag: '2021',
     date: '2021/10/31',
     place: '東京',
     name: '天皇賞（秋）',
@@ -155,6 +174,7 @@ export const KeibaCalendar = [
   },
   {
     id: 17,
+    tag: '2021',
     date: '2021/11/14',
     place: '阪神',
     name: 'エリザベス女王杯',
@@ -164,6 +184,7 @@ export const KeibaCalendar = [
   },
   {
     id: 18,
+    tag: '2021',
     date: '2021/11/21',
     place: '阪神',
     name: 'マイルチャンピオンシップ',
@@ -173,6 +194,7 @@ export const KeibaCalendar = [
   },
   {
     id: 19,
+    tag: '2021',
     date: '2021/11/28',
     place: '東京',
     name: 'ジャパンC',
@@ -182,6 +204,7 @@ export const KeibaCalendar = [
   },
   {
     id: 20,
+    tag: '2021',
     date: '2021/12/05',
     place: '中京',
     name: 'チャンピオンズC',
@@ -191,6 +214,7 @@ export const KeibaCalendar = [
   },
   {
     id: 21,
+    tag: '2021',
     date: '2021/12/12',
     place: '阪神',
     name: '阪神ジュベナイルF',
@@ -200,6 +224,7 @@ export const KeibaCalendar = [
   },
   {
     id: 22,
+    tag: '2021',
     date: '2021/12/19',
     place: '阪神',
     name: '朝日杯フューチュリティS',
@@ -209,6 +234,7 @@ export const KeibaCalendar = [
   },
   {
     id: 23,
+    tag: '2021',
     date: '2021/12/26',
     place: '中山',
     name: '有馬記念',
@@ -218,6 +244,7 @@ export const KeibaCalendar = [
   },
   {
     id: 24,
+    tag: '2021',
     date: '2021/12/28',
     place: '中山',
     name: 'ホープフルS',
@@ -227,6 +254,7 @@ export const KeibaCalendar = [
   },
   {
     id: 22101,
+    tag: '2022a',
     date: '2022/02/20',
     place: '東京',
     name: 'フェブラリーS',
@@ -236,6 +264,7 @@ export const KeibaCalendar = [
   },
   {
     id: 22102,
+    tag: '2022a',
     date: '2022/03/27',
     place: '中京',
     name: '高松宮記念',
@@ -245,6 +274,7 @@ export const KeibaCalendar = [
   },
   {
     id: 22103,
+    tag: '2022a',
     date: '2022/04/03',
     place: '阪神',
     name: '大阪杯',
@@ -254,6 +284,7 @@ export const KeibaCalendar = [
   },
   {
     id: 22104,
+    tag: '2022a',
     date: '2022/04/10',
     place: '阪神',
     name: '桜花賞',
@@ -263,6 +294,7 @@ export const KeibaCalendar = [
   },
   {
     id: 22105,
+    tag: '2022a',
     date: '2022/04/17',
     place: '中山',
     name: '皐月賞',
@@ -272,6 +304,7 @@ export const KeibaCalendar = [
   },
   {
     id: 22106,
+    tag: '2022a',
     date: '2022/05/01',
     place: '阪神',
     name: '天皇賞（春）',
@@ -281,6 +314,7 @@ export const KeibaCalendar = [
   },
   {
     id: 22107,
+    tag: '2022a',
     date: '2022/05/08',
     place: '東京',
     name: 'NHKマイルC',
@@ -290,6 +324,7 @@ export const KeibaCalendar = [
   },
   {
     id: 22108,
+    tag: '2022a',
     date: '2022/05/15',
     place: '東京',
     name: 'ヴィクトリアマイル',
@@ -299,6 +334,7 @@ export const KeibaCalendar = [
   },
   {
     id: 22109,
+    tag: '2022a',
     date: '2022/05/22',
     place: '東京',
     name: 'オークス',
@@ -308,6 +344,7 @@ export const KeibaCalendar = [
   },
   {
     id: 22110,
+    tag: '2022a',
     date: '2022/05/29',
     place: '東京',
     name: '日本ダービー',
@@ -317,6 +354,7 @@ export const KeibaCalendar = [
   },
   {
     id: 22111,
+    tag: '2022a',
     date: '2022/06/05',
     place: '東京',
     name: '安田記念',
@@ -326,6 +364,7 @@ export const KeibaCalendar = [
   },
   {
     id: 22112,
+    tag: '2022a',
     date: '2022/06/26',
     place: '阪神',
     name: '宝塚記念',
@@ -335,6 +374,7 @@ export const KeibaCalendar = [
   },
   {
     id: 22201,
+    tag: '2022b',
     date: '2022/10/02',
     place: '中山',
     name: 'スプリンターズS',
@@ -344,6 +384,7 @@ export const KeibaCalendar = [
   },
   {
     id: 22202,
+    tag: '2022b',
     date: '2022/10/16',
     place: '阪神',
     name: '秋華賞',
@@ -353,6 +394,7 @@ export const KeibaCalendar = [
   },
   {
     id: 22203,
+    tag: '2022b',
     date: '2022/10/23',
     place: '阪神',
     name: '菊花賞',
@@ -362,6 +404,7 @@ export const KeibaCalendar = [
   },
   {
     id: 22204,
+    tag: '2022b',
     date: '2022/10/30',
     place: '東京',
     name: '天皇賞（秋）',
@@ -371,6 +414,7 @@ export const KeibaCalendar = [
   },
   {
     id: 22205,
+    tag: '2022b',
     date: '2022/11/13',
     place: '阪神',
     name: 'エリザベス女王杯',
@@ -380,6 +424,7 @@ export const KeibaCalendar = [
   },
   {
     id: 22206,
+    tag: '2022b',
     date: '2022/11/20',
     place: '阪神',
     name: 'マイルチャンピオンシップ',
@@ -389,6 +434,7 @@ export const KeibaCalendar = [
   },
   {
     id: 22207,
+    tag: '2022b',
     date: '2022/11/27',
     place: '東京',
     name: 'ジャパンC',
@@ -398,6 +444,7 @@ export const KeibaCalendar = [
   },
   {
     id: 22208,
+    tag: '2022b',
     date: '2022/12/04',
     place: '中京',
     name: 'チャンピオンズC',
@@ -407,6 +454,7 @@ export const KeibaCalendar = [
   },
   {
     id: 22209,
+    tag: '2022b',
     date: '2022/12/11',
     place: '阪神',
     name: '阪神ジュベナイルF',
@@ -416,6 +464,7 @@ export const KeibaCalendar = [
   },
   {
     id: 22210,
+    tag: '2022b',
     date: '2022/12/18',
     place: '阪神',
     name: '朝日杯フューチュリティS',
@@ -425,6 +474,7 @@ export const KeibaCalendar = [
   },
   {
     id: 22211,
+    tag: '2022b',
     date: '2022/12/25',
     place: '中山',
     name: '有馬記念',
@@ -434,6 +484,7 @@ export const KeibaCalendar = [
   },
   {
     id: 22212,
+    tag: '2022b',
     date: '2022/12/28',
     place: '中山',
     name: 'ホープフルS',
