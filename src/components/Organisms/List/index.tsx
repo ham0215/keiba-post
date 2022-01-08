@@ -35,7 +35,7 @@ export default function List() {
             </TableRow>
           </StyledHeader>
           <TableBody>
-            {KeibaCalendar.filter((row) => row.tag === tag).map((row) => (
+            {KeibaCalendar.filter((row) => row.tag === selectedTag).map((row) => (
               <Item key={row.id} {...row} />
             ))}
           </TableBody>
