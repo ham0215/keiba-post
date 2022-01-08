@@ -45,7 +45,8 @@ export default function PostCard({ keibaId, uid, text, createdAt, name, url, can
       <CardHeader
         avatar={<UserAvatar url={url} />}
         action={
-          uid === currentUser?.id && canDelete && (
+          uid === currentUser?.id &&
+          canDelete && (
             <IconButton aria-label="delete" onClick={handleDelete} size="large">
               <DeleteIcon />
             </IconButton>

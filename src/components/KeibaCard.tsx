@@ -11,17 +11,13 @@ import InfoIcon from '@mui/icons-material/Info';
 import AllInclusiveIcon from '@mui/icons-material/AllInclusive';
 import ConfirmationNumberIcon from '@mui/icons-material/ConfirmationNumber';
 import Badge from '@mui/material/Badge';
-import { KeibaCalendar } from 'data/KeibaCalendar';
-import Error from 'components/Error';
+import { Props } from 'data/KeibaCalendar';
 
 const CustomCard = styled(Card)`
   margin: 8px;
 `;
 
-export default function KeibaCard({ keibaId }: { keibaId: number }) {
-  const keiba = KeibaCalendar.find((item) => item.id === keibaId);
-  if (!keiba) return <Error />;
-
+export default function KeibaCard({ date, big, name, place, conditions, course }: Props) {
   return (
     <CustomCard>
       <CardContent>
@@ -30,37 +26,37 @@ export default function KeibaCard({ keibaId }: { keibaId: number }) {
             <ListItemIcon>
               <CalendarTodayIcon />
             </ListItemIcon>
-            <ListItemText primary={keiba.date} />
+            <ListItemText primary={date} />
           </ListItem>
           <ListItem>
             <ListItemIcon>
               <ConfirmationNumberIcon />
             </ListItemIcon>
-            {keiba.big ? (
+            {big ? (
               <Badge variant="dot" color="error">
-                <ListItemText primary={keiba.name} />
+                <ListItemText primary={name} />
               </Badge>
             ) : (
-              <ListItemText primary={keiba.name} />
+              <ListItemText primary={name} />
             )}
           </ListItem>
           <ListItem>
             <ListItemIcon>
               <PlaceIcon />
             </ListItemIcon>
-            <ListItemText primary={keiba.place} />
+            <ListItemText primary={place} />
           </ListItem>
           <ListItem>
             <ListItemIcon>
               <InfoIcon />
             </ListItemIcon>
-            <ListItemText primary={keiba.conditions} />
+            <ListItemText primary={conditions} />
           </ListItem>
           <ListItem>
             <ListItemIcon>
               <AllInclusiveIcon />
             </ListItemIcon>
-            <ListItemText primary={keiba.course} />
+            <ListItemText primary={course} />
           </ListItem>
         </List>
       </CardContent>
