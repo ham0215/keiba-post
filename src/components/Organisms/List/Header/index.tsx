@@ -5,7 +5,7 @@ const Container = styled.div`
   margin: 5px;
 `;
 
-export default function ListHeader() {
+export default function Header() {
   return (
     <Container>
       <Rule />

@@ -11,7 +11,7 @@ type Props = {
   place: string;
 };
 
-export default function ListItem({ id, date, big, name, place }: Props) {
+export default function Item({ id, date, big, name, place }: Props) {
   const router = useRouter();
 
   return (

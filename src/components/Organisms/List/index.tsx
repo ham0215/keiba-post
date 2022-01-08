@@ -6,8 +6,9 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import ListItem from 'components/ListItem';
-import NextRace from 'components/NextRace';
+import Item from './Item';
+import Header from './Header';
+import NextRace from './NextRace';
 import { KeibaCalendar, currentTag } from 'data/KeibaCalendar';
 
 const StyledHeader = styled(TableHead)`
@@ -18,6 +19,7 @@ export default function List() {
   const tag = currentTag;
   return (
     <>
+      <Header />
       <NextRace tag={tag} />
       <TableContainer component={Paper}>
         <Table aria-label="keiba calendar">
@@ -31,7 +33,7 @@ export default function List() {
           <TableBody>
             {KeibaCalendar.filter((row) => (row.tag === currentTag))
               .map((row) => (
-                <ListItem key={row.id} {...row} />
+                <Item key={row.id} {...row} />
               ))}
           </TableBody>
         </Table>
