@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Grid from '@mui/material/Grid';
 import { getFirestore, getDocs, collection } from 'firebase/firestore';
