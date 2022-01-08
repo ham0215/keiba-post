@@ -8,16 +8,17 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import ListItem from 'components/ListItem';
 import NextRace from 'components/NextRace';
-import { KeibaCalendar } from 'data/KeibaCalendar';
+import { KeibaCalendar, currentTag } from 'data/KeibaCalendar';
 
 const StyledHeader = styled(TableHead)`
   background-color: lightgray;
 `;
 
 export default function List() {
+  const tag = currentTag;
   return (
     <>
-      <NextRace />
+      <NextRace tag={tag} />
       <TableContainer component={Paper}>
         <Table aria-label="keiba calendar">
           <StyledHeader>
@@ -28,9 +29,10 @@ export default function List() {
             </TableRow>
           </StyledHeader>
           <TableBody>
-            {KeibaCalendar.map((row) => (
-              <ListItem key={row.id} {...row} />
-            ))}
+            {KeibaCalendar.filter((row) => (row.tag === currentTag))
+              .map((row) => (
+                <ListItem key={row.id} {...row} />
+              ))}
           </TableBody>
         </Table>
       </TableContainer>
