@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import styled from '@emotion/styled';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -16,10 +17,11 @@ const StyledHeader = styled(TableHead)`
 `;
 
 export default function List() {
-  const tag = currentTag;
+  const [tag, setTag] = useState(currentTag);
+
   return (
     <>
-      <Header />
+      <Header tag={tag} setTag={setTag} />
       <NextRace tag={tag} />
       <TableContainer component={Paper}>
         <Table aria-label="keiba calendar">
@@ -31,7 +33,7 @@ export default function List() {
             </TableRow>
           </StyledHeader>
           <TableBody>
-            {KeibaCalendar.filter((row) => row.tag === currentTag).map((row) => (
+            {KeibaCalendar.filter((row) => row.tag === tag).map((row) => (
               <Item key={row.id} {...row} />
             ))}
           </TableBody>
