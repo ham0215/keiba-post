@@ -7,7 +7,5 @@ export default function Keiba() {
   const { currentUser } = useContext(UserContext);
   if (!currentUser) return <Pleaselogin />;
 
-  return (
-    <List />
-  );
+  return <List />;
 }
