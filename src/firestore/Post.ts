@@ -49,7 +49,6 @@ export async function findPosts(keibaId: string): Promise<Post[]> {
 }
 
 export async function findPostText(keibaId: string, uid: string): Promise<string | null> {
-
   const p = await getDoc(doc(getFirestore(), 'keibas', keibaId, 'posts', uid));
   const data = p.data();
   if (!data) return null;
