@@ -8,13 +8,14 @@ import Typography from '@mui/material/Typography';
 import styled from '@emotion/styled';
 import ExternalLink from 'components/ExternalLink';
 import { FaTrophy } from 'react-icons/fa';
+import { BsQuestionLg } from 'react-icons/bs';
 import { UserContext } from 'UserContext';
 
 type ResultCardProps = {
   title: string;
   winner: string;
   url: string;
-  avatar: string;
+  avatar?: string;
 };
 
 const TrophyWrap = styled.div`
@@ -41,7 +42,11 @@ function ResultCard({ title, winner, url, avatar }: ResultCardProps) {
             <Typography align="left">{title}</Typography>
           </Grid>
           <Grid item xs={2}>
-            <Avatar alt={winner} src={avatar} />
+            {avatar ? (
+              <Avatar alt={winner} src={avatar} />
+            ) : (
+              <Avatar alt={winner}><BsQuestionLg /></Avatar>
+            )}
           </Grid>
           <Grid item xs={2}>
             <Typography align="left">{winner}</Typography>
@@ -64,6 +69,11 @@ export default function Result() {
         <Card>
           <CardContent>
             <Grid container spacing={4}>
+              <ResultCard
+                url="https://public.flourish.studio/visualisation/8528389/"
+                title="2022年前半戦"
+                winner="???"
+              />
               <ResultCard
                 url="https://public.flourish.studio/visualisation/7367172/"
                 title="2021年後半戦"
