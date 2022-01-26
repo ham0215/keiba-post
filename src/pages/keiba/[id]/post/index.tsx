@@ -58,9 +58,9 @@ export default function Post() {
       await updataPost({
         keibaId: id,
         uid: currentUser.id,
-        type: 'text',
+        name: currentUser.name,
+        url: currentUser.url,
         text: data.keibaText,
-        image: '',
         createdAt: new Date(),
       });
       router.push({ pathname: `/keiba/${id}` });
