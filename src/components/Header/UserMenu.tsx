@@ -5,7 +5,6 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
-import Tooltip from '@mui/material/Tooltip';
 import firebaseApp from 'firebaseApp';
 import { getAuth, signOut } from 'firebase/auth';
 import { UserContext } from 'UserContext';
@@ -18,14 +17,12 @@ const MenuButton = styled(IconButton)`
 export default function MenuComponent() {
   const router = useRouter();
   const [open, setOpen] = useState<boolean>(false);
-  const [tooltipOpen, setTooltipOpen] = useState<boolean>(true);
   const menuButtonRef = useRef(null);
 
   const { currentUser } = useContext(UserContext);
 
   const handleClick = useCallback(() => {
     setOpen(true);
-    setTooltipOpen(false);
   }, []);
 
   const handleClose = useCallback(() => {
@@ -47,11 +44,9 @@ export default function MenuComponent() {
     <>
       {currentUser ? (
         <>
-          <Tooltip title="メニューはこちらに移動しました！" open={tooltipOpen} placement="bottom-end" arrow={true}>
-            <MenuButton edge="start" color="inherit" aria-label="menu" onClick={handleClick} ref={menuButtonRef}>
-              <UserAvatar url={currentUser.url} />
-            </MenuButton>
-          </Tooltip>
+          <MenuButton edge="start" color="inherit" aria-label="menu" onClick={handleClick} ref={menuButtonRef}>
+            <UserAvatar url={currentUser.url} />
+          </MenuButton>
           <Menu anchorEl={menuButtonRef.current} keepMounted open={open} onClose={handleClose}>
             <MenuItem onClick={handleProfile}>Profile</MenuItem>
             <MenuItem color="inherit" onClick={handleLogout}>
