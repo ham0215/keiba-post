@@ -4,9 +4,9 @@ import { findUser } from 'firestore/User';
 type UpdatePost = {
   keibaId: string;
   uid: string;
-  type: 'text' | 'image';
+  name: string;
+  url: string;
   text: string;
-  image: string;
   createdAt: Date;
 };
 
@@ -18,11 +18,11 @@ type Post = {
   createdAt: Date;
 };
 
-export async function updataPost({ keibaId, uid, type, text, image, createdAt }: UpdatePost) {
+export async function updataPost({ keibaId, uid, name, url, text, createdAt }: UpdatePost) {
   await setDoc(doc(getFirestore(), 'keibas', keibaId, 'posts', uid), {
-    type: type,
     text: text,
-    image: image,
+    name: name,
+    url: url,
     createdAt: createdAt,
   });
 }
@@ -35,13 +35,22 @@ export async function findPosts(keibaId: string): Promise<Post[]> {
   const ps = await getDocs(collection(getFirestore(), 'keibas', keibaId, 'posts'));
   return Promise.all(
     ps.docs.map(async (doc) => {
-      const user = await findUser(doc.id);
+      let name = '';
+      let url = '';
+      if (doc.data().name) {
+        name = doc.data().name;
+        url = doc.data().url;
+      } else {
+        const user = await findUser(doc.id);
+        name = user?.name || '';
+        url = user?.url || '';
+      }
 
       return {
         uid: doc.id,
         text: doc.data().text,
-        name: user?.name || '',
-        url: user?.url || '',
+        name,
+        url,
         createdAt: doc.data().createdAt.toDate(),
       };
     })
