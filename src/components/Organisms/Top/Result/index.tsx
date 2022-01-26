@@ -45,7 +45,9 @@ function ResultCard({ title, winner, url, avatar }: ResultCardProps) {
             {avatar ? (
               <Avatar alt={winner} src={avatar} />
             ) : (
-              <Avatar alt={winner}><BsQuestionLg /></Avatar>
+              <Avatar alt={winner}>
+                <BsQuestionLg />
+              </Avatar>
             )}
           </Grid>
           <Grid item xs={2}>
