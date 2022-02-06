@@ -10,16 +10,10 @@ type Props = {
   date: string;
   big: boolean;
   name: string;
-  posts: Post[];
+  bets: string[];
 };
 
-type Post = {
-  uid: string;
-  name: string;
-  url: string;
-};
-
-export default function Item({ id, date, big, name, posts }: Props) {
+export default function Item({ id, date, big, name, bets }: Props) {
   const router = useRouter();
 
   return (
@@ -38,8 +32,8 @@ export default function Item({ id, date, big, name, posts }: Props) {
       </TableCell>
       <TableCell>
         <AvatarGroup max={10}>
-          {posts.map((post) => (
-            <Avatar key={post.uid} alt={post.name} src={post.url} />
+          {bets.map((bet, index) => (
+            <Avatar key={index} src={bet} sx={{ width: 24, height: 24 }} />
           ))}
         </AvatarGroup>
       </TableCell>
