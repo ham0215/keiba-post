@@ -33,7 +33,7 @@ export type Keiba = {
   id: number;
   bets: string[];
   winners: string[];
-}
+};
 
 export async function updataPost({ keibaId, uid, name, url, text, createdAt }: UpdatePost) {
   const db = getFirestore();
@@ -59,13 +59,11 @@ export async function deletePost(keibaId: string, uid: string, url: string) {
 export async function findKeibas(): Promise<Keiba[]> {
   const keibas = await getDocs(collection(getFirestore(), 'keibas'));
   return Promise.all(
-    keibas.docs.map(async (doc) => (
-      {
-        id: Number(doc.id),
-        bets: doc.data().bets,
-        winners: doc.data().winners,
-      }
-    ))
+    keibas.docs.map(async (doc) => ({
+      id: Number(doc.id),
+      bets: doc.data().bets,
+      winners: doc.data().winners,
+    }))
   );
 }
 
