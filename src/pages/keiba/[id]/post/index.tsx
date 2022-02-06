@@ -2,11 +2,11 @@ import { useState, useCallback, useContext, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
 import styled from '@emotion/styled';
-import { findPostText } from 'firestore/Post';
+import { findPostText } from 'firestore/Keiba';
 import TextField from 'components/TextField';
 import Button from 'components/Button';
 import Error from 'components/Error';
-import { updataPost } from 'firestore/Post';
+import { updataPost } from 'firestore/Keiba';
 import { UserContext } from 'UserContext';
 
 const ButtonArea = styled.div`

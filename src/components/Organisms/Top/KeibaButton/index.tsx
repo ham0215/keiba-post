@@ -19,7 +19,7 @@ export default function KeibaButton() {
   return (
     <>
       {currentUser && currentUser.enabled && (
-        <Link href="/keiba" prefetch={true}>
+        <Link href="/keiba">
           <Button variant="contained" color="success">
             <GiHorseHead />
             レース選択

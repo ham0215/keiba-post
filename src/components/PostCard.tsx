@@ -9,7 +9,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import PreWrapTypography from './PreWrapTypography';
 import UserAvatar from './UserAvatar';
 import { UserContext } from 'UserContext';
-import { deletePost } from 'firestore/Post';
+import { deletePost } from 'firestore/Keiba';
 
 const CustomCard = styled(Card)`
   margin: 8px;
@@ -33,7 +33,7 @@ export default function PostCard({ keibaId, uid, text, createdAt, name, url, can
     if (!currentUser) return;
     if (!confirm('削除しますか？')) return;
 
-    deletePost(keibaId, currentUser.id);
+    deletePost(keibaId, currentUser.id, currentUser.url);
 
     setShow(false);
   }, [currentUser, keibaId]);
