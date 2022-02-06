@@ -32,10 +32,10 @@ type Post = {
 export async function updataPost({ keibaId, uid, name, url, text, createdAt }: UpdatePost) {
   const db = getFirestore();
   await setDoc(doc(db, 'keibas', keibaId, 'posts', uid), {
-    text: text,
-    name: name,
-    url: url,
-    createdAt: createdAt,
+    text,
+    name,
+    url,
+    createdAt,
   });
   await updateDoc(doc(db, 'keibas', keibaId), {
     bets: arrayUnion(url),
