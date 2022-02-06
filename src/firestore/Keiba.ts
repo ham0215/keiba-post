@@ -1,4 +1,15 @@
-import { getFirestore, doc, setDoc, getDocs, getDoc, collection, deleteDoc } from 'firebase/firestore';
+import {
+  getFirestore,
+  doc,
+  setDoc,
+  getDocs,
+  getDoc,
+  collection,
+  deleteDoc,
+  updateDoc,
+  arrayUnion,
+  arrayRemove,
+} from 'firebase/firestore';
 import { findUser } from 'firestore/User';
 
 type UpdatePost = {
@@ -19,16 +30,24 @@ type Post = {
 };
 
 export async function updataPost({ keibaId, uid, name, url, text, createdAt }: UpdatePost) {
-  await setDoc(doc(getFirestore(), 'keibas', keibaId, 'posts', uid), {
+  const db = getFirestore();
+  await setDoc(doc(db, 'keibas', keibaId, 'posts', uid), {
     text: text,
     name: name,
     url: url,
     createdAt: createdAt,
   });
+  await updateDoc(doc(db, 'keibas', keibaId), {
+    bets: arrayUnion(url),
+  });
 }
 
-export async function deletePost(keibaId: string, uid: string) {
-  await deleteDoc(doc(getFirestore(), 'keibas', keibaId, 'posts', uid));
+export async function deletePost(keibaId: string, uid: string, url: string) {
+  const db = getFirestore();
+  await deleteDoc(doc(db, 'keibas', keibaId, 'posts', uid));
+  await updateDoc(doc(db, 'keibas', keibaId), {
+    bets: arrayRemove(url),
+  });
 }
 
 export async function findPosts(keibaId: string): Promise<Post[]> {
