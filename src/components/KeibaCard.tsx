@@ -31,7 +31,10 @@ export default function KeibaCard({ date, big, name, place, conditions, course }
   return (
     <>
       <Back>
-        <Link href="/keiba"><ArrowBackIosIcon />レース一覧へ</Link>
+        <Link href="/keiba">
+          <ArrowBackIosIcon />
+          レース一覧へ
+        </Link>
       </Back>
       <CustomCard>
         <CardContent>
