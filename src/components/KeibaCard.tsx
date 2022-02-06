@@ -21,6 +21,7 @@ const CustomCard = styled(Card)`
 
 const Back = styled.div`
   padding: 8px;
+
   a {
     display: flex;
     align-items: center;
