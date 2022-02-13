@@ -43,9 +43,16 @@ export async function updataPost({ keibaId, uid, name, url, text, createdAt }: U
     url,
     createdAt,
   });
-  await updateDoc(doc(db, 'keibas', keibaId), {
-    bets: arrayUnion(url),
-  });
+  const keiba = await getDoc(doc(db, 'keibas', keibaId));
+  if (keiba.data()?.bets) {
+    await updateDoc(doc(db, 'keibas', keibaId), {
+      bets: arrayUnion(url),
+    });
+  } else {
+    await setDoc(doc(db, 'keibas', keibaId), {
+      bets: [url],
+    });
+  }
 }
 
 export async function deletePost(keibaId: string, uid: string, url: string) {
