@@ -10,14 +10,15 @@ type Props = {
   date: string;
   big: boolean;
   name: string;
+  tag: string;
   bets: string[];
 };
 
-export default function Item({ id, date, big, name, bets }: Props) {
+export default function Item({ id, date, big, name, tag, bets }: Props) {
   const router = useRouter();
 
   return (
-    <TableRow onClick={() => router.push(`/keiba/${id}`)}>
+    <TableRow onClick={() => router.push({ pathname: `/keiba/${id}`, query: { tag } })}>
       <TableCell component="th" scope="row">
         {date}
       </TableCell>

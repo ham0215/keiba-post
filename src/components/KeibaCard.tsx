@@ -28,11 +28,11 @@ const Back = styled.div`
   }
 `;
 
-export default function KeibaCard({ date, big, name, place, conditions, course }: Props) {
+export default function KeibaCard({ date, big, name, place, conditions, course, tag }: Props) {
   return (
     <>
       <Back>
-        <Link href="/keiba">
+        <Link href={`/keiba?tag=${tag}`}>
           <ArrowBackIosIcon />
           レース一覧へ
         </Link>
