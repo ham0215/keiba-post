@@ -14,7 +14,7 @@ export default function NextRace({ tag }: { tag: string }) {
     <Alert severity="info">
       <NextLink href={`/keiba/${nextRace.id}`}>
         <Link component="button">
-          次のレースは{nextRace.date} {nextRace.name}({nextRace.big ? '3,000円' : '1,000円'})です！！
+          次回レース:[{nextRace.date.substring(5)}]{nextRace.name} ({nextRace.big ? '3,000円' : '1,000円'})
         </Link>
       </NextLink>
     </Alert>
