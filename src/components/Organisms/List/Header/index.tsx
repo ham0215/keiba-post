@@ -17,7 +17,7 @@ export default function Header({ tag }: { tag: string }) {
   return (
     <Container>
       <Grid container spacing={2} alignItems="center">
-        <Grid item xs={4}>
+        <Grid item xs={6}>
           <FormControl fullWidth>
             <InputLabel id="selectTagLabel">年度</InputLabel>
             <Select
