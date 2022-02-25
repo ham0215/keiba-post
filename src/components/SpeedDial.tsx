@@ -3,8 +3,9 @@ import { useRouter } from 'next/router';
 import SpeedDial from '@mui/material/SpeedDial';
 import SpeedDialIcon from '@mui/material/SpeedDialIcon';
 import SpeedDialAction from '@mui/material/SpeedDialAction';
-import TextFieldsIcon from '@mui/icons-material/TextFields';
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
+import BedroomBabyIcon from '@mui/icons-material/BedroomBaby';
+
 
 type Props = {
   open: boolean;
@@ -41,8 +42,14 @@ export default function SpeedDialComponent({ open, setOpen, keibaId }: Props) {
       onOpen={handleOpen}
       open={open}
     >
-      <SpeedDialAction key="text" icon={<TextFieldsIcon />} tooltipTitle="text" tooltipOpen onClick={onClickText} />
-      <SpeedDialAction key="result" icon={<EmojiEventsIcon />} tooltipTitle="触らないでね💗" tooltipOpen onClick={onClickResult} />
+      <SpeedDialAction key="text" icon={<BedroomBabyIcon />} tooltipTitle="投票" tooltipOpen onClick={onClickText} />
+      <SpeedDialAction
+        key="result"
+        icon={<EmojiEventsIcon />}
+        tooltipTitle="秘密"
+        tooltipOpen
+        onClick={onClickResult}
+      />
     </SpeedDial>
   );
 }
