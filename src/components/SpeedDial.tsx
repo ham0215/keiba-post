@@ -4,6 +4,7 @@ import SpeedDial from '@mui/material/SpeedDial';
 import SpeedDialIcon from '@mui/material/SpeedDialIcon';
 import SpeedDialAction from '@mui/material/SpeedDialAction';
 import TextFieldsIcon from '@mui/icons-material/TextFields';
+import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 
 type Props = {
   open: boolean;
@@ -11,7 +12,7 @@ type Props = {
   keibaId: number;
 };
 
-export default function SpeedDialTooltipOpen({ open, setOpen, keibaId }: Props) {
+export default function SpeedDialComponent({ open, setOpen, keibaId }: Props) {
   const router = useRouter();
 
   const handleOpen = useCallback(() => {
@@ -26,6 +27,10 @@ export default function SpeedDialTooltipOpen({ open, setOpen, keibaId }: Props) 
     router.push(`/keiba/${keibaId}/post`);
   }, [keibaId, router]);
 
+  const onClickResult = useCallback(() => {
+    router.push(`/keiba/${keibaId}/result`);
+  }, [keibaId, router]);
+
   return (
     <SpeedDial
       ariaLabel="SpeedDial"
@@ -37,6 +42,7 @@ export default function SpeedDialTooltipOpen({ open, setOpen, keibaId }: Props) 
       open={open}
     >
       <SpeedDialAction key="text" icon={<TextFieldsIcon />} tooltipTitle="text" tooltipOpen onClick={onClickText} />
+      <SpeedDialAction key="result" icon={<EmojiEventsIcon />} tooltipTitle="触らないでね💗" tooltipOpen onClick={onClickResult} />
     </SpeedDial>
   );
 }
