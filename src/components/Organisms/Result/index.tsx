@@ -2,11 +2,10 @@ import { useState, useContext, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
 import styled from '@emotion/styled';
-import { findPostText } from 'firestore/Keiba';
+import { findBets } from 'firestore/Keiba';
 import TextField from 'components/TextField';
 import Button from 'components/Button';
 import Error from 'components/Error';
-import { updataPost } from 'firestore/Keiba';
 import { UserContext } from 'UserContext';
 
 const ButtonArea = styled.div`
@@ -31,7 +30,7 @@ export default function Result() {
 
   const { currentUser } = useContext(UserContext);
 
-  const [postText, setPostText] = useState<string>('');
+  const [bets, setBets] = useState<string[]>([]);
 
   useEffect(() => {
     (async () => {
@@ -39,10 +38,7 @@ export default function Result() {
       if (typeof id !== 'string') return;
       if (!currentUser) return;
 
-      const text = await findPostText(id, currentUser.id);
-      if (!text) return;
-
-      setPostText(text);
+      setBets(await findBets(id));
     })();
   }, [currentUser, id]);
 
@@ -73,17 +69,18 @@ export default function Result() {
   return (
     <>
       <form onSubmit={handleSubmit(onClickPost)}>
-        <TextField
-          id="keibaText"
-          name="keibaText"
-          label="予想"
-          multiline
-          fullWidth
-          rows={10}
-          variant="outlined"
-          defaultValue={postText}
-          inputProps={{ ...register('keibaText', { required: true }) }}
-        />
+        {bets.map((bet, index) => (
+          <TextField
+            key={index}
+            id={bet}
+            name={bet}
+            label={bet}
+            multiline
+            fullWidth
+            variant="outlined"
+            defaultValue=""
+          />
+        ))}
         <ButtonArea>
           <Button variant="outlined" onClick={onClickCancel}>
             キャンセル

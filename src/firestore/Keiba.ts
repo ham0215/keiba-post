@@ -74,6 +74,14 @@ export async function findKeibas(): Promise<Keiba[]> {
   );
 }
 
+export async function findBets(keibaId: string): Promise<string[]> {
+  const keiba = await getDoc(doc(getFirestore(), 'keibas', keibaId));
+  const data = keiba.data();
+  if (!data) return [];
+
+  return data.bets;
+}
+
 export async function findPosts(keibaId: string): Promise<Post[]> {
   const ps = await getDocs(collection(getFirestore(), 'keibas', keibaId, 'posts'));
   return Promise.all(
