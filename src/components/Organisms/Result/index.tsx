@@ -86,7 +86,7 @@ export default function Result() {
             キャンセル
           </Button>
           <Button type="submit" variant="contained" disabled={!isDirty || isSubmitted || !isValid}>
-            投稿
+            更新
           </Button>
         </ButtonArea>
       </form>

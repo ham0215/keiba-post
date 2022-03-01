@@ -46,7 +46,7 @@ export default function SpeedDialComponent({ open, setOpen, keibaId }: Props) {
       <SpeedDialAction
         key="result"
         icon={<EmojiEventsIcon />}
-        tooltipTitle="秘密"
+        tooltipTitle="結果"
         tooltipOpen
         onClick={onClickResult}
       />
