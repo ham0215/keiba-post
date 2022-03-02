@@ -42,9 +42,9 @@ export default function SpeedDialComponent({ open, setOpen, keibaId, canPost }: 
       onOpen={handleOpen}
       open={open}
     >
-      {canPost ?
+      {canPost ? (
         <SpeedDialAction key="text" icon={<BedroomBabyIcon />} tooltipTitle="投票" tooltipOpen onClick={onClickText} />
-        :
+      ) : (
         <SpeedDialAction
           key="result"
           icon={<EmojiEventsIcon />}
@@ -52,7 +52,7 @@ export default function SpeedDialComponent({ open, setOpen, keibaId, canPost }: 
           tooltipOpen
           onClick={onClickResult}
         />
-      }
+      )}
     </SpeedDial>
   );
 }
