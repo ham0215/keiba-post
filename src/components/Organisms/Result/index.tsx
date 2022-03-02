@@ -4,7 +4,6 @@ import { useForm } from 'react-hook-form';
 import styled from '@emotion/styled';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
 import { findBets } from 'firestore/Keiba';
