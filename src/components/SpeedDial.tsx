@@ -6,7 +6,6 @@ import SpeedDialAction from '@mui/material/SpeedDialAction';
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import BedroomBabyIcon from '@mui/icons-material/BedroomBaby';
 
-
 type Props = {
   open: boolean;
   setOpen: (open: boolean) => void;

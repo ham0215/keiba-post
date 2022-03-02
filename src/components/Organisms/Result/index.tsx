@@ -21,7 +21,6 @@ export default function Result() {
   const { id } = router.query;
 
   const {
-    register,
     handleSubmit,
     formState: { isDirty, isSubmitted, isValid },
   } = useForm<FormInputType>({
@@ -46,23 +45,11 @@ export default function Result() {
     router.push(`/keiba/${id}`);
   }, [id, router]);
 
-  const onClickPost = useCallback(
-    async (data) => {
-      if (!currentUser) return;
-      if (typeof id !== 'string') return;
+  const onClickPost = useCallback(async () => {
+    if (!currentUser) return;
 
-      await updataPost({
-        keibaId: id,
-        uid: currentUser.id,
-        name: currentUser.name,
-        url: currentUser.url,
-        text: data.keibaText,
-        createdAt: new Date(),
-      });
-      router.push({ pathname: `/keiba/${id}` });
-    },
-    [currentUser, id, router]
-  );
+    router.push({ pathname: `/keiba/${id}` });
+  }, [currentUser, id, router]);
 
   if (!currentUser) return <Error />;
 
@@ -72,11 +59,9 @@ export default function Result() {
         {bets.map((bet, index) => (
           <TextField
             key={index}
-            id={bet}
-            name={bet}
-            label={bet}
-            multiline
-            fullWidth
+            id={`result${index}`}
+            name={`result${index}`}
+            label={`result${index}`}
             variant="outlined"
             defaultValue=""
           />
