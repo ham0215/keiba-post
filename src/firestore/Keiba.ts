@@ -35,6 +35,11 @@ export type Keiba = {
   winners: string[];
 };
 
+export type BetsResults = {
+  bets: string[] | undefined;
+  results: number[] | undefined;
+};
+
 export async function updataPost({ keibaId, uid, name, url, text, createdAt }: UpdatePost) {
   const db = getFirestore();
   await setDoc(doc(db, 'keibas', keibaId, 'posts', uid), {
@@ -74,12 +79,12 @@ export async function findKeibas(): Promise<Keiba[]> {
   );
 }
 
-export async function findBets(keibaId: string): Promise<string[]> {
+export async function findBets(keibaId: string): Promise<BetsResults | null> {
   const keiba = await getDoc(doc(getFirestore(), 'keibas', keibaId));
   const data = keiba.data();
-  if (!data) return [];
+  if (!data) return null;
 
-  return data.bets;
+  return { bets: data.bets, results: data.results };
 }
 
 export async function findPosts(keibaId: string): Promise<Post[]> {
