@@ -51,11 +51,9 @@ export default function Detail() {
           </Grid>
         ))}
       </Grid>
-      {canPost && (
-        <Float bottom={'2px'} right={'2px'}>
-          <SpeedDial open={open} setOpen={setOpen} keibaId={keibaId} />
-        </Float>
-      )}
+      <Float bottom={'2px'} right={'2px'}>
+        <SpeedDial open={open} setOpen={setOpen} keibaId={keibaId} canPost={canPost} />
+      </Float>
     </>
   );
 }

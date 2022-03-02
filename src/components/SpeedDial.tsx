@@ -10,9 +10,10 @@ type Props = {
   open: boolean;
   setOpen: (open: boolean) => void;
   keibaId: number;
+  canPost: boolean;
 };
 
-export default function SpeedDialComponent({ open, setOpen, keibaId }: Props) {
+export default function SpeedDialComponent({ open, setOpen, keibaId, canPost }: Props) {
   const router = useRouter();
 
   const handleOpen = useCallback(() => {
@@ -41,14 +42,17 @@ export default function SpeedDialComponent({ open, setOpen, keibaId }: Props) {
       onOpen={handleOpen}
       open={open}
     >
-      <SpeedDialAction key="text" icon={<BedroomBabyIcon />} tooltipTitle="投票" tooltipOpen onClick={onClickText} />
-      <SpeedDialAction
-        key="result"
-        icon={<EmojiEventsIcon />}
-        tooltipTitle="結果"
-        tooltipOpen
-        onClick={onClickResult}
-      />
+      {canPost ?
+        <SpeedDialAction key="text" icon={<BedroomBabyIcon />} tooltipTitle="投票" tooltipOpen onClick={onClickText} />
+        :
+        <SpeedDialAction
+          key="result"
+          icon={<EmojiEventsIcon />}
+          tooltipTitle="結果"
+          tooltipOpen
+          onClick={onClickResult}
+        />
+      }
     </SpeedDial>
   );
 }
