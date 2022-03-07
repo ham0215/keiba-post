@@ -8,8 +8,8 @@ import CurrencyYenIcon from '@mui/icons-material/CurrencyYen';
 import ConfirmationNumberIcon from '@mui/icons-material/ConfirmationNumber';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import Link from 'components/Link';
+import Card from 'components/Card';
 import { Props } from 'data/KeibaCalendar';
-import Card from '../Card';
 
 const Back = styled.div`
   padding: 8px;

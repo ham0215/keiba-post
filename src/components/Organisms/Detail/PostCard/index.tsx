@@ -6,9 +6,9 @@ import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 import PreWrapTypography from 'components/PreWrapTypography';
 import UserAvatar from 'components/UserAvatar';
+import Card from 'components/Card';
 import { UserContext } from 'UserContext';
 import { deletePost } from 'firestore/Keiba';
-import Card from '../Card';
 
 type PostCard = {
   keibaId: string;
