@@ -4,10 +4,10 @@ import Grid from '@mui/material/Grid';
 import { findPosts } from 'firestore/Keiba';
 import Float from 'components/Float';
 import Error from 'components/Error';
-import KeibaCard from 'components/KeibaCard';
-import SpeedDial from 'components/SpeedDial';
-import PostCard from 'components/PostCard';
 import { KeibaCalendar } from 'data/KeibaCalendar';
+import KeibaCard from './KeibaCard';
+import PostCard from './PostCard';
+import SpeedDial from './SpeedDial';
 
 type Post = {
   uid: string;
