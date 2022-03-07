@@ -21,6 +21,11 @@ type UpdatePost = {
   createdAt: Date;
 };
 
+type UpdateResuls = {
+  keibaId: string;
+  results: number[];
+};
+
 type Post = {
   uid: string;
   text: string;
@@ -65,6 +70,13 @@ export async function deletePost(keibaId: string, uid: string, url: string) {
   await deleteDoc(doc(db, 'keibas', keibaId, 'posts', uid));
   await updateDoc(doc(db, 'keibas', keibaId), {
     bets: arrayRemove(url),
+  });
+}
+
+export async function updataResults({ keibaId, results }: UpdateResuls) {
+  const db = getFirestore();
+  await updateDoc(doc(db, 'keibas', keibaId), {
+    results,
   });
 }
 

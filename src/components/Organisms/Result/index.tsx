@@ -1,12 +1,12 @@
-import { useState, useContext, useEffect, useCallback } from 'react';
+import { useContext, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/router';
-import { useForm } from 'react-hook-form';
+import { useForm, useFieldArray } from 'react-hook-form';
 import styled from '@emotion/styled';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
-import { findBets, BetsResults } from 'firestore/Keiba';
+import { findBets, updataResults } from 'firestore/Keiba';
 import TextField from 'components/TextField';
 import Button from 'components/Button';
 import Error from 'components/Error';
@@ -17,7 +17,10 @@ const ButtonArea = styled.div`
 `;
 
 type FormInputType = {
-  keibaText: string;
+  results: {
+    bet: string;
+    result: number;
+  }[];
 };
 
 export default function Result() {
@@ -25,15 +28,19 @@ export default function Result() {
   const { id } = router.query;
 
   const {
+    control,
+    register,
     handleSubmit,
     formState: { isDirty, isSubmitted, isValid },
   } = useForm<FormInputType>({
     mode: 'all',
   });
+  const { fields, replace } = useFieldArray({
+    name: 'results',
+    control,
+  });
 
   const { currentUser } = useContext(UserContext);
-
-  const [betsResults, setBetsResults] = useState<BetsResults>();
 
   useEffect(() => {
     (async () => {
@@ -42,40 +49,53 @@ export default function Result() {
       if (!currentUser) return;
 
       const betsResults = await findBets(id);
-      if (!betsResults) return;
+      if (!betsResults || !betsResults.bets) return;
 
-      setBetsResults(betsResults);
+      const results = betsResults.bets.map((bet, index) => ({
+        bet,
+        result: betsResults.results ? betsResults.results[index] : 0,
+      }));
+
+      replace(results);
     })();
-  }, [currentUser, id]);
+  }, [replace, currentUser, id]);
 
   const onClickCancel = useCallback(() => {
     router.push(`/keiba/${id}`);
   }, [id, router]);
 
-  const onClickPost = useCallback(async () => {
-    if (!currentUser) return;
+  const onSubmit = useCallback(
+    async (data: FormInputType) => {
+      if (!id) return;
+      if (typeof id !== 'string') return;
+      if (!currentUser) return;
 
-    router.push({ pathname: `/keiba/${id}` });
-  }, [currentUser, id, router]);
+      await updataResults({
+        keibaId: id,
+        results: data.results.map((result) => result.result),
+      });
 
-  if (!currentUser || !betsResults?.bets) return <Error />;
+      router.push({ pathname: `/keiba/${id}` });
+    },
+    [currentUser, id, router]
+  );
+
+  if (!currentUser) return <Error />;
 
   return (
-    <form onSubmit={handleSubmit(onClickPost)}>
+    <form onSubmit={handleSubmit(onSubmit)}>
       <List sx={{ width: '100%', maxWidth: 360, margin: '0 auto', padding: 0 }}>
-        {betsResults.bets.map((bet, index) => (
-          <ListItem key={index} sx={{ padding: 0 }}>
+        {fields.map((field, index) => (
+          <ListItem key={field.id} sx={{ padding: 0 }}>
             <ListItemAvatar>
-              <Avatar alt={`result${index}`} src={bet} />
+              <Avatar alt={`result${index}`} src={field.bet} />
             </ListItemAvatar>
             <TextField
-              key={index}
-              id={`result${index}`}
-              name={`result${index}`}
               variant="standard"
               type="number"
               fullWidth
-              defaultValue={betsResults.results ? betsResults.results[index] : 0}
+              defaultValue={field.result}
+              inputProps={{ ...register(`results.${index}.result`, { required: true, min: 0 }) }}
             />
           </ListItem>
         ))}
