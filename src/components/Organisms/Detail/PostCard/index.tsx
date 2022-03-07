@@ -1,19 +1,14 @@
 import React, { useState, useCallback, useContext } from 'react';
-import styled from '@emotion/styled';
 import { format } from 'date-fns';
-import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import CardContent from '@mui/material/CardContent';
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
-import PreWrapTypography from './PreWrapTypography';
-import UserAvatar from './UserAvatar';
+import PreWrapTypography from 'components/PreWrapTypography';
+import UserAvatar from 'components/UserAvatar';
 import { UserContext } from 'UserContext';
 import { deletePost } from 'firestore/Keiba';
-
-const CustomCard = styled(Card)`
-  margin: 8px;
-`;
+import Card from '../Card';
 
 type PostCard = {
   keibaId: string;
@@ -41,7 +36,7 @@ export default function PostCard({ keibaId, uid, text, createdAt, name, url, can
   if (!show || !text) return <div />;
 
   return (
-    <CustomCard>
+    <Card>
       <CardHeader
         avatar={<UserAvatar url={url} />}
         action={
@@ -58,6 +53,6 @@ export default function PostCard({ keibaId, uid, text, createdAt, name, url, can
       <CardContent>
         <PreWrapTypography variant="body1">{text}</PreWrapTypography>
       </CardContent>
-    </CustomCard>
+    </Card>
   );
 }
