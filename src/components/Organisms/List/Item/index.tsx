@@ -20,7 +20,7 @@ export default function Item({ id, date, big, name, tag, bets }: Props) {
   return (
     <TableRow onClick={() => router.push({ pathname: `/keiba/${id}`, query: { tag } })}>
       <TableCell component="th" scope="row">
-        {date}
+        {date.substring(5)}
       </TableCell>
       <TableCell>
         {big ? (

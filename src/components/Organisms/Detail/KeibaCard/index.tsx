@@ -13,6 +13,7 @@ import { Props } from 'data/KeibaCalendar';
 
 const Back = styled.div`
   padding: 8px;
+  font-size: 0.875rem;
 
   a {
     display: flex;
