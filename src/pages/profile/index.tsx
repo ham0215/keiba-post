@@ -37,7 +37,7 @@ export default function Profile() {
 
   const onClickPost = useCallback(
     async (data: FormInputType) => {
-      if (!currentUser) return;
+      if (!currentUser || !currentUser.enabled) return;
       if (!setCurrentUser) return;
 
       const updatedUser = await setUser({
@@ -53,7 +53,7 @@ export default function Profile() {
     [currentUser, router, setCurrentUser]
   );
 
-  if (!currentUser) return <Error />;
+  if (!currentUser || !currentUser.enabled) return <Error />;
 
   return (
     <Card>

@@ -5,7 +5,7 @@ import styled from '@emotion/styled';
 import { findPostText } from 'firestore/Keiba';
 import TextField from 'components/TextField';
 import Button from 'components/Button';
-import Error from 'components/Error';
+import WithAuth from 'components/templates/WithAuth';
 import { updataPost } from 'firestore/Keiba';
 import { UserContext } from 'UserContext';
 
@@ -68,10 +68,8 @@ export default function Post() {
     [currentUser, id, router]
   );
 
-  if (!currentUser) return <Error />;
-
   return (
-    <>
+    <WithAuth>
       <form onSubmit={handleSubmit(onClickPost)}>
         <TextField
           id="keibaText"
@@ -93,6 +91,6 @@ export default function Post() {
           </Button>
         </ButtonArea>
       </form>
-    </>
+    </WithAuth>
   );
 }
