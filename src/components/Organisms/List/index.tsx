@@ -46,7 +46,12 @@ export default function List() {
           </StyledHeader>
           <TableBody>
             {KeibaCalendar.filter((row) => row.tag === selectedTag).map((row) => (
-              <Item key={row.id} {...row} bets={keibas.find((keiba) => keiba.id === row.id)?.bets || []} />
+              <Item
+                key={row.id}
+                {...row}
+                bets={keibas.find((keiba) => keiba.id === row.id)?.bets || []}
+                results={keibas.find((keiba) => keiba.id === row.id)?.results || []}
+              />
             ))}
           </TableBody>
         </Table>
