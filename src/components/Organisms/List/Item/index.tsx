@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router';
+import styled from '@emotion/styled';
 import TableCell from '@mui/material/TableCell';
 import TableRow from '@mui/material/TableRow';
 import Badge from '@mui/material/Badge';
@@ -13,6 +14,10 @@ type Props = {
   tag: string;
   bets: string[];
 };
+
+const AvatarGroupRow = styled(AvatarGroup)`
+  flex-direction: row;
+`;
 
 export default function Item({ id, date, big, name, tag, bets }: Props) {
   const router = useRouter();
@@ -32,11 +37,11 @@ export default function Item({ id, date, big, name, tag, bets }: Props) {
         )}
       </TableCell>
       <TableCell>
-        <AvatarGroup max={10}>
+        <AvatarGroupRow max={10}>
           {bets.map((bet, index) => (
             <Avatar key={index} src={bet} sx={{ width: 24, height: 24 }} />
           ))}
-        </AvatarGroup>
+        </AvatarGroupRow>
       </TableCell>
     </TableRow>
   );
