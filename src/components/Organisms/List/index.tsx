@@ -41,7 +41,7 @@ export default function List() {
             <TableRow>
               <TableCell>日付</TableCell>
               <TableCell>レース名</TableCell>
-              <TableCell>Bet</TableCell>
+              <TableCell>的中！</TableCell>
             </TableRow>
           </StyledHeader>
           <TableBody>

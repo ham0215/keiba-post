@@ -1,3 +1,4 @@
+import { useCallback, useState } from 'react';
 import { useRouter } from 'next/router';
 import styled from '@emotion/styled';
 import TableCell from '@mui/material/TableCell';
@@ -5,6 +6,7 @@ import TableRow from '@mui/material/TableRow';
 import Badge from '@mui/material/Badge';
 import Avatar from '@mui/material/Avatar';
 import AvatarGroup from '@mui/material/AvatarGroup';
+import ResultModal from './ResultModal';
 
 type Props = {
   id: number;
@@ -22,10 +24,17 @@ const AvatarGroupRow = styled(AvatarGroup)`
 
 export default function Item({ id, date, big, name, tag, bets, results }: Props) {
   const router = useRouter();
+  const [openResult, setOpenResult] = useState(false);
 
-  const onClickToDetail = () => router.push({ pathname: `/keiba/${id}`, query: { tag } });
-  const onClickResults = () => router.push({ pathname: `/keiba/${id}`, query: { tag } });
+  const onClickToDetail = useCallback(
+    () => router.push({ pathname: `/keiba/${id}`, query: { tag } }),
+    [id, router, tag]
+  );
+  const onClickResults = useCallback(() => setOpenResult(!openResult), [openResult]);
   const hasResults = results.length > 0;
+  const winners = bets.filter((bet, index) => results[index] > 0);
+  const winnerResults = results.filter((result) => result > 0);
+  const hasWinners = winners.length > 0;
 
   return (
     <TableRow>
@@ -41,12 +50,33 @@ export default function Item({ id, date, big, name, tag, bets, results }: Props)
           name
         )}
       </TableCell>
-      <TableCell onClick={hasResults ? onClickResults : onClickToDetail}>
-        <AvatarGroupRow max={10}>
-          {bets.filter((bet, index) => (!hasResults || results[index] > 0)).map((bet, index) => (
-            <Avatar key={index} src={bet} sx={{ width: 24, height: 24 }} />
+      <TableCell onClick={hasWinners ? onClickResults : onClickToDetail}>
+        {!hasResults && (
+          <AvatarGroupRow max={10}>
+            {bets.map((bet, index) => (
+              <Avatar key={index} src={bet} sx={{ width: 24, height: 24 }} />
+            ))}
+          </AvatarGroupRow>
+        )}
+        {hasResults &&
+          (hasWinners ? (
+            <>
+              <AvatarGroupRow max={10}>
+                {winners.map((bet, index) => (
+                  <Avatar key={index} src={bet} sx={{ width: 24, height: 24 }} />
+                ))}
+              </AvatarGroupRow>
+              <ResultModal
+                name={name}
+                winners={winners}
+                winnerResults={winnerResults}
+                open={openResult}
+                setOpen={setOpenResult}
+              />
+            </>
+          ) : (
+            <div>的中なし</div>
           ))}
-        </AvatarGroupRow>
       </TableCell>
     </TableRow>
   );
