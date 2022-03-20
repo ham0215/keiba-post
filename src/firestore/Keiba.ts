@@ -37,7 +37,7 @@ type Post = {
 export type Keiba = {
   id: number;
   bets: string[];
-  winners: string[];
+  results: number[];
 };
 
 export type BetsResults = {
@@ -86,7 +86,7 @@ export async function findKeibas(): Promise<Keiba[]> {
     keibas.docs.map(async (doc) => ({
       id: Number(doc.id),
       bets: doc.data().bets,
-      winners: doc.data().winners,
+      results: doc.data().results,
     }))
   );
 }
