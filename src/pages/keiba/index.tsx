@@ -1,11 +1,10 @@
-import React, { useContext } from 'react';
-import Pleaselogin from 'components/PleaseLogin';
-import { UserContext } from 'UserContext';
+import WithAuth from 'components/templates/WithAuth';
 import List from 'components/Organisms/List';
 
 export default function Keiba() {
-  const { currentUser } = useContext(UserContext);
-  if (!currentUser) return <Pleaselogin />;
-
-  return <List />;
+  return (
+    <WithAuth>
+      <List />
+    </WithAuth>
+  );
 }
