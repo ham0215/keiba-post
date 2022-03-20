@@ -43,7 +43,7 @@ export default function Item({ id, date, big, name, tag, bets, results }: Props)
       </TableCell>
       <TableCell onClick={hasResults ? onClickResults : onClickToDetail}>
         <AvatarGroupRow max={10}>
-          {bets.map((bet, index) => (
+          {bets.filter((bet, index) => (!hasResults || results[index] > 0)).map((bet, index) => (
             <Avatar key={index} src={bet} sx={{ width: 24, height: 24 }} />
           ))}
         </AvatarGroupRow>
