@@ -9,7 +9,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { findKeibas, Keiba } from 'firestore/Keiba';
-import Item from './Item';
+import Row from './Row';
 import Header from './Header';
 import NextRace from './NextRace';
 import { KeibaCalendar, currentTag, tags } from 'data/KeibaCalendar';
@@ -46,7 +46,7 @@ export default function List() {
           </StyledHeader>
           <TableBody>
             {KeibaCalendar.filter((row) => row.tag === selectedTag).map((row) => (
-              <Item
+              <Row
                 key={row.id}
                 {...row}
                 bets={keibas.find((keiba) => keiba.id === row.id)?.bets || []}
