@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import firebaseApp from 'firebaseApp';
 import { getAuth, GoogleAuthProvider } from 'firebase/auth';
 import styled from '@emotion/styled';

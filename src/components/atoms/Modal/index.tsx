@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import { ReactElement } from 'react';
 import styled from '@emotion/styled';
 import Modal from '@mui/material/Modal';
 import Paper from '@mui/material/Paper';
