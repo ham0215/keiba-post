@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import Grid from '@mui/material/Grid';
 import { findPosts } from 'firestore/Keiba';
 import { KeibaCalendar } from 'data/KeibaCalendar';
-import Error from 'components/organisms/Error';
+import Error from 'components/atoms/Error';
 import Float from 'components/atoms/Float';
 import KeibaCard from './KeibaCard';
 import PostCard from './PostCard';
