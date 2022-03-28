@@ -44,7 +44,7 @@ export default function SiteFooter() {
           </Link>
         </FooterItem>
       </FooterList>
-      <Copyright>Copyright ©︎ 2021 Ham</Copyright>
+      <Copyright>Copyright ©︎ 2022 Ham</Copyright>
     </Footer>
   );
 }

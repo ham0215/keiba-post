@@ -6,8 +6,11 @@ const Contents = styled.div`
   background: #151515 url('/images/login.jpg') no-repeat scroll center bottom;
   background-size: cover;
   color: #fff;
+  padding: 5rem 0;
   text-align: center;
-  height: 90vh;
+  @media (min-width: 767px) {
+    height: 87vh;
+  }
 `;
 
 export default function Top() {
