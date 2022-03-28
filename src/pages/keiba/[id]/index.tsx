@@ -1,5 +1,5 @@
 import WithAuth from 'components/templates/WithAuth';
-import Detail from 'components/organisms/Detail';
+import Detail from 'components/Organisms/Detail';
 
 export default function DetailPage() {
   return (
