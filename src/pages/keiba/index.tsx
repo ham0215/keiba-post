@@ -1,5 +1,5 @@
 import WithAuth from 'components/templates/WithAuth';
-import List from 'components/hoges/List';
+import List from 'components/organisms/List';
 
 export default function Keiba() {
   return (

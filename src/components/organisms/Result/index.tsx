@@ -9,7 +9,7 @@ import Avatar from '@mui/material/Avatar';
 import { findBets, updataResults } from 'firestore/Keiba';
 import TextField from 'components/atoms/TextField';
 import Button from 'components/atoms/Button';
-import Error from 'components/hoges/Error';
+import Error from 'components/organisms/Error';
 import { UserContext } from 'UserContext';
 
 const ButtonArea = styled.div`
