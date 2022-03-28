@@ -4,9 +4,9 @@ import CardHeader from '@mui/material/CardHeader';
 import CardContent from '@mui/material/CardContent';
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
-import PreWrapTypography from 'components/PreWrapTypography';
-import UserAvatar from 'components/UserAvatar';
-import Card from 'components/Card';
+import PreWrapTypography from 'components/atoms/PreWrapTypography';
+import UserAvatar from 'components/atoms/UserAvatar';
+import Card from 'components/atoms/Card';
 import { UserContext } from 'UserContext';
 import { deletePost } from 'firestore/Keiba';
 

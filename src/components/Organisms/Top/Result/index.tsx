@@ -6,7 +6,7 @@ import Avatar from '@mui/material/Avatar';
 import LaunchIcon from '@mui/icons-material/Launch';
 import Typography from '@mui/material/Typography';
 import styled from '@emotion/styled';
-import ExternalLink from 'components/ExternalLink';
+import ExternalLink from 'components/atoms/ExternalLink';
 import { FaTrophy } from 'react-icons/fa';
 import { BsQuestionLg } from 'react-icons/bs';
 import { UserContext } from 'UserContext';

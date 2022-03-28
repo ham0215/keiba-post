@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Button from '@mui/material/Button';
-import Modal from 'components/Modal';
+import Modal from 'components/atoms/Modal';
 
 export default function Rule() {
   const [open, setOpen] = useState(false);

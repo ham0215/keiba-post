@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react';
 import Avatar from '@mui/material/Avatar';
-import AvatarGroup from 'components/AvatarGroup';
+import AvatarGroup from 'components/atoms/AvatarGroup';
 import TableCell from '@mui/material/TableCell';
 import ResultModal from './ResultModal';
 

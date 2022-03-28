@@ -1,5 +1,5 @@
 import React, { ReactNode, useContext } from 'react';
-import Pleaselogin from 'components/PleaseLogin';
+import Pleaselogin from 'components/organisms/PleaseLogin';
 import { UserContext } from 'UserContext';
 
 type Props = {
