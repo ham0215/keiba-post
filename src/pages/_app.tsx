@@ -12,7 +12,7 @@ import Header from 'components/atoms/Header';
 import Footer from 'components/atoms/Footer';
 import { findUser, setUser, User } from 'firestore/User';
 import createEmotionCache from 'createEmotionCache';
-import Loading from 'components/organisms/Loading';
+import Loading from 'components/hoges/Loading';
 
 const clientSideEmotionCache = createEmotionCache();
 

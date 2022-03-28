@@ -1,5 +1,5 @@
 import WithAuth from 'components/templates/WithAuth';
-import Result from 'components/organisms/Result';
+import Result from 'components/hoges/Result';
 
 export default function ResultPage() {
   return (
