@@ -6,7 +6,7 @@ import Link from 'components/Link';
 import { UserContext } from 'UserContext';
 
 const Button = styled(ButtonBase)`
-  margin: 5rem auto;
+  margin-bottom: 5rem;
   width: 90%;
   max-width: 30rem;
   height: 5rem;

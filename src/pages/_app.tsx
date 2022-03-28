@@ -12,6 +12,7 @@ import Header from 'components/Header';
 import Footer from 'components/Footer';
 import { findUser, setUser, User } from 'firestore/User';
 import createEmotionCache from 'createEmotionCache';
+import Loading from 'components/Organisms/Loading';
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -20,7 +21,7 @@ interface MyAppProps extends AppProps {
 }
 
 export default function MyApp({ Component, emotionCache = clientSideEmotionCache, pageProps }: MyAppProps) {
-  const [currentUser, setCurrentUser] = useState<User | null>(null);
+  const [currentUser, setCurrentUser] = useState<User | null | undefined>();
 
   useEffect(() => {
     const auth = getAuth(firebaseApp);
@@ -48,12 +49,16 @@ export default function MyApp({ Component, emotionCache = clientSideEmotionCache
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
       <ThemeProvider theme={theme}>
-        <UserContext.Provider value={{ currentUser, setCurrentUser }}>
-          <CssBaseline />
-          <Header />
-          <Component {...pageProps} />
-          <Footer />
-        </UserContext.Provider>
+        <CssBaseline />
+        {currentUser === undefined ? (
+          <Loading />
+        ) : (
+          <UserContext.Provider value={{ currentUser, setCurrentUser }}>
+            <Header />
+            <Component {...pageProps} />
+            <Footer />
+          </UserContext.Provider>
+        )}
       </ThemeProvider>
     </CacheProvider>
   );

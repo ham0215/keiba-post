@@ -3,7 +3,7 @@ import { User } from './firestore/User';
 
 type UserContextType = {
   currentUser: User | null;
-  setCurrentUser: Dispatch<User | null> | undefined;
+  setCurrentUser: Dispatch<User | null | undefined> | undefined;
 };
 
 export const UserContext = createContext<UserContextType>({
