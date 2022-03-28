@@ -1,6 +1,6 @@
-import React, { ReactNode, useContext } from 'react';
-import Pleaselogin from 'components/PleaseLogin';
+import { ReactNode, useContext } from 'react';
 import { UserContext } from 'UserContext';
+import Pleaselogin from './PleaseLogin';
 
 type Props = {
   children: ReactNode;
