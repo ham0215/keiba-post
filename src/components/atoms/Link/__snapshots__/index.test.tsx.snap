@@ -3,7 +3,7 @@
 exports[`Link snapshot testing 1`] = `
 <DocumentFragment>
   <a
-    class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone css-uxrmkj-MuiTypography-root-MuiLink-root"
+    class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone css-189vkvf-MuiTypography-root-MuiLink-root"
     href="/keiba"
   >
     keiba

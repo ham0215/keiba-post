@@ -4,7 +4,7 @@ import TableCell from '@mui/material/TableCell';
 import TableRow from '@mui/material/TableRow';
 import Badge from '@mui/material/Badge';
 import BetCel from './BetCel';
-import ResultCel from './HazureCel';
+import ResultCel from './ResultCel';
 
 type Props = {
   id: number;
@@ -40,7 +40,7 @@ export default function Row({ id, date, big, name, tag, bets, results }: Props) 
         )}
       </TableCell>
       {hasResults ? (
-        <ResultCel bets={bets} results={results} onClickToDetail={onClickToDetail} />
+        <ResultCel name={name} bets={bets} results={results} onClickToDetail={onClickToDetail} />
       ) : (
         <BetCel bets={bets} onClick={onClickToDetail} />
       )}
