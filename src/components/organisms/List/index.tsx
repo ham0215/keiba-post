@@ -41,7 +41,7 @@ export default function List() {
             <TableRow>
               <TableCell>日付</TableCell>
               <TableCell>レース名</TableCell>
-              <TableCell>ハズレ/投票</TableCell>
+              <TableCell>的中 or 投票済</TableCell>
             </TableRow>
           </StyledHeader>
           <TableBody>
