@@ -3,7 +3,7 @@
 exports[`ExternalLink snapshot testing 1`] = `
 <DocumentFragment>
   <a
-    class="MuiTypography-root MuiTypography-body1 MuiLink-root MuiLink-underlineNone css-qwpvau-MuiTypography-root-MuiLink-root"
+    class="MuiTypography-root MuiTypography-body1 MuiLink-root MuiLink-underlineNone css-17qmxgc-MuiTypography-root-MuiLink-root"
     href="/keiba"
     rel="noopener noreferrer"
     target="_blank"
