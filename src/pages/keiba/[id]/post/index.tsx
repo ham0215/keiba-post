@@ -51,7 +51,7 @@ export default function Post() {
   }, [id, router]);
 
   const onClickPost = useCallback(
-    async (data) => {
+    async ({ keibaText }: { keibaText: string; }) => {
       if (!currentUser) return;
       if (typeof id !== 'string') return;
 
@@ -60,7 +60,7 @@ export default function Post() {
         uid: currentUser.id,
         name: currentUser.name,
         url: currentUser.url,
-        text: data.keibaText,
+        text: keibaText,
         createdAt: new Date(),
       });
       router.push({ pathname: `/keiba/${id}` });
