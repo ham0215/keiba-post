@@ -51,7 +51,7 @@ export default function Post() {
   }, [id, router]);
 
   const onClickPost = useCallback(
-    async ({ keibaText }: { keibaText: string; }) => {
+    async ({ keibaText }: { keibaText: string }) => {
       if (!currentUser) return;
       if (typeof id !== 'string') return;
 
