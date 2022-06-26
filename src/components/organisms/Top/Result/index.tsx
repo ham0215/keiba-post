@@ -74,7 +74,8 @@ export default function Result() {
               <ResultCard
                 url="https://public.flourish.studio/visualisation/8528389/"
                 title="2022年前半戦"
-                winner="???"
+                winner="mc"
+                avatar="https://3.bp.blogspot.com/-BI9UKCTfC2U/WzC9rMr8rcI/AAAAAAABM6w/pfdTvR6aEFcXoaKWCwtQS8hK1F-xnO6owCLcBGAs/s800/keiba_yosouya.png"
               />
               <ResultCard
                 url="https://public.flourish.studio/visualisation/7367172/"
