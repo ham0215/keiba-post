@@ -1,10 +1,15 @@
+const esmPackages = [
+  "firebase",
+  "@firebase",
+];
+
 module.exports = {
   collectCoverageFrom: [
     '**/*.{js,jsx,ts,tsx}',
     '!**/*.d.ts',
     '!**/node_modules/**',
   ],
-  testEnvironment: 'jsdom',
+  testEnvironment: 'jest-environment-jsdom',
   moduleDirectories: [
     "node_modules",
     "<rootDir>/src/"
@@ -34,7 +39,7 @@ module.exports = {
     '^.+\\.(js|jsx|ts|tsx)$': ['babel-jest', { presets: ['next/babel'] }],
   },
   transformIgnorePatterns: [
-    '/node_modules/',
+    `node_modules/(?!(${esmPackages.join("|")})/)`,
     '^.+\\.module\\.(css|sass|scss)$',
   ],
 }
