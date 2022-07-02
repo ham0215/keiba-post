@@ -72,6 +72,11 @@ export default function Result() {
           <CardContent>
             <Grid container spacing={4}>
               <ResultCard
+                url="https://public.flourish.studio/visualisation/10524869/"
+                title="2022年後半戦"
+                winner="??"
+              />
+              <ResultCard
                 url="https://public.flourish.studio/visualisation/8528389/"
                 title="2022年前半戦"
                 winner="mc"
