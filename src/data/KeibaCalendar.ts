@@ -9,8 +9,8 @@ export type Props = {
   big: boolean;
 };
 
-export const currentTag = '2022a';
-export const tags = ['2021', '2022a'];
+export const currentTag = '2022b';
+export const tags = ['2021', '2022a', '2022b'];
 
 export const KeibaCalendar = [
   {

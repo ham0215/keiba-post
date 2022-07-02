@@ -27,6 +27,7 @@ export default function Header({ tag }: { tag: string }) {
               label="selectTag"
               onChange={(e) => router.push(`/keiba?tag=${e.target.value}`)}
             >
+              <MenuItem value="2022b">2022年後半</MenuItem>
               <MenuItem value="2022a">2022年前半</MenuItem>
               <MenuItem value="2021">2021年</MenuItem>
             </Select>
