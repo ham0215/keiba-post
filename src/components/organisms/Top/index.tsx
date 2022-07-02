@@ -8,9 +8,6 @@ const Contents = styled.div`
   color: #fff;
   padding: 5rem 0;
   text-align: center;
-  @media (min-width: 767px) {
-    height: 87vh;
-  }
 `;
 
 export default function Top() {

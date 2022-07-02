@@ -38,7 +38,7 @@ function ResultCard({ title, winner, url, avatar }: ResultCardProps) {
               <FaTrophy color="orange" />
             </TrophyWrap>
           </Grid>
-          <Grid item>
+          <Grid item xs={5}>
             <Typography align="left">{title}</Typography>
           </Grid>
           <Grid item xs={2}>
