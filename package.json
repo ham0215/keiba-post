@@ -33,7 +33,7 @@
     "react-dom": "18.2.0",
     "react-hook-form": "7.34.2",
     "react-icons": "4.4.0",
-    "stylelint-config-recommended": "8.0.0"
+    "stylelint-config-recommended": "9.0.0"
   },
   "devDependencies": {
     "@stylelint/postcss-css-in-js": "0.38.0",
