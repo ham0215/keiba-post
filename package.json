@@ -24,7 +24,7 @@
     "@mui/lab": "5.0.0-alpha.96",
     "@mui/material": "5.10.2",
     "@mui/styles": "5.10.2",
-    "date-fns": "2.29.2",
+    "date-fns": "2.29.3",
     "firebase": "9.9.3",
     "firebaseui": "6.0.1",
     "next": "12.2.5",
