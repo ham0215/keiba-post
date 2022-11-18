@@ -6,6 +6,8 @@
     "dev": "npm run dev:core & npm run dev:proxy",
     "dev:core": "next dev -p 3000",
     "dev:proxy": "local-ssl-proxy --key localhost-key.pem --cert localhost.pem --source 3002 --target 3000",
+    "build": "next build",
+    "start": "next start",
     "lint": "next lint --max-warnings=0",
     "lint:fix": "next lint --fix",
     "stylelint": "stylelint \"src/**/*.{ts,tsx}\"",
