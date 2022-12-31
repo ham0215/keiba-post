@@ -1,5 +1,5 @@
 import Avatar from '@mui/material/Avatar';
-import AvatarGroup from 'components/atoms/AvatarGroup';
+import AvatarGroup from 'libs/ui/AvatarGroup';
 import TableCell from '@mui/material/TableCell';
 
 type Props = {

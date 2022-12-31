@@ -3,10 +3,10 @@ import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
 import styled from '@emotion/styled';
 import Typography from '@mui/material/Typography';
-import TextField from 'components/atoms/TextField';
-import Button from 'components/atoms/Button';
-import Card from 'components/atoms/Card';
-import WithAuth from 'components/templates/WithAuth';
+import TextField from 'libs/ui/TextField';
+import Button from 'libs/ui/Button';
+import Card from 'libs/ui/Card';
+import WithAuth from 'libs/layouts/WithAuth';
 import { UserContext } from 'UserContext';
 import { setUser } from 'firestore/User';
 

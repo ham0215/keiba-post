@@ -3,9 +3,9 @@ import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
 import styled from '@emotion/styled';
 import { findPostText } from 'firestore/Keiba';
-import TextField from 'components/atoms/TextField';
-import Button from 'components/atoms/Button';
-import WithAuth from 'components/templates/WithAuth';
+import TextField from 'libs/ui/TextField';
+import Button from 'libs/ui/Button';
+import WithAuth from 'libs/layouts/WithAuth';
 import { updataPost } from 'firestore/Keiba';
 import { UserContext } from 'UserContext';
 

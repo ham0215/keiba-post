@@ -7,9 +7,9 @@ import ListItem from '@mui/material/ListItem';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
 import { findBets, updataResults } from 'firestore/Keiba';
-import TextField from 'components/atoms/TextField';
-import Button from 'components/atoms/Button';
-import Error from 'components/organisms/Error';
+import TextField from 'libs/ui/TextField';
+import Button from 'libs/ui/Button';
+import Error from 'libs/features/Error';
 import { UserContext } from 'UserContext';
 
 const ButtonArea = styled.div`

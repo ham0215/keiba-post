@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import styled from '@emotion/styled';
 import ButtonBase from '@mui/material/Button';
 import { GiHorseHead } from 'react-icons/gi';
-import Link from 'components/atoms/Link';
+import Link from 'libs/ui/Link';
 import { UserContext } from 'UserContext';
 
 const Button = styled(ButtonBase)`

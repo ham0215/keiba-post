@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import Link from 'components/atoms/Link';
+import Link from 'libs/ui/Link';
 import UserMenu from './UserMenu';
 
 const Header = styled.header`

@@ -1,9 +1,9 @@
 import Typography from '@mui/material/Typography';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
-import ContentPaper from 'components/atoms/ContentPaper';
-import Sentence from 'components/atoms/Sentence';
-import NestedList from 'components/atoms/NestedList';
+import ContentPaper from 'libs/ui/ContentPaper';
+import Sentence from 'libs/ui/Sentence';
+import NestedList from 'libs/ui/NestedList';
 
 export default function TermsOfService() {
   return (

@@ -1,5 +1,5 @@
-import WithAuth from 'components/templates/WithAuth';
-import Result from 'components/organisms/Result';
+import WithAuth from 'libs/layouts/WithAuth';
+import Result from 'libs/features/Result';
 
 export default function ResultPage() {
   return (

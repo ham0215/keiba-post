@@ -8,11 +8,11 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { UserContext } from 'UserContext';
 import { CacheProvider, EmotionCache } from '@emotion/react';
 import theme from 'theme';
-import Header from 'components/atoms/Header';
-import Footer from 'components/atoms/Footer';
+import Header from 'libs/ui/Header';
+import Footer from 'libs/ui/Footer';
 import { findUser, setUser, User } from 'firestore/User';
 import createEmotionCache from 'createEmotionCache';
-import Loading from 'components/organisms/Loading';
+import Loading from 'libs/features/Loading';
 
 const clientSideEmotionCache = createEmotionCache();
 
