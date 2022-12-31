@@ -10,7 +10,7 @@ import {
   arrayUnion,
   arrayRemove,
 } from 'firebase/firestore';
-import { findUser } from 'firestore/User';
+import { findUser } from 'libs/firestore/User';
 
 type UpdatePost = {
   keibaId: string;
@@ -21,7 +21,7 @@ type UpdatePost = {
   createdAt: Date;
 };
 
-type UpdateResuls = {
+type UpdateResults = {
   keibaId: string;
   results: number[];
 };
@@ -45,7 +45,7 @@ export type BetsResults = {
   results: number[] | undefined;
 };
 
-export async function updataPost({ keibaId, uid, name, url, text, createdAt }: UpdatePost) {
+export async function updatePost({ keibaId, uid, name, url, text, createdAt }: UpdatePost) {
   const db = getFirestore();
   await setDoc(doc(db, 'keibas', keibaId, 'posts', uid), {
     text,
@@ -73,7 +73,7 @@ export async function deletePost(keibaId: string, uid: string, url: string) {
   });
 }
 
-export async function updataResults({ keibaId, results }: UpdateResuls) {
+export async function updateResults({ keibaId, results }: UpdateResults) {
   const db = getFirestore();
   await updateDoc(doc(db, 'keibas', keibaId), {
     results,

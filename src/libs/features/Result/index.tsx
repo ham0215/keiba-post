@@ -6,11 +6,11 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
-import { findBets, updataResults } from 'firestore/Keiba';
+import { findBets, updateResults } from 'libs/firestore/Keiba';
 import TextField from 'libs/ui/TextField';
 import Button from 'libs/ui/Button';
 import Error from 'libs/features/Error';
-import { UserContext } from 'UserContext';
+import { UserContext } from 'libs/hooks/UserContext';
 
 const ButtonArea = styled.div`
   text-align: center;
@@ -70,7 +70,7 @@ export default function Result() {
       if (typeof id !== 'string') return;
       if (!currentUser) return;
 
-      await updataResults({
+      await updateResults({
         keibaId: id,
         results: data.results.map((result) => result.result),
       });

@@ -7,8 +7,8 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import PreWrapTypography from 'libs/ui/PreWrapTypography';
 import UserAvatar from 'libs/ui/UserAvatar';
 import Card from 'libs/ui/Card';
-import { UserContext } from 'UserContext';
-import { deletePost } from 'firestore/Keiba';
+import { UserContext } from 'libs/hooks/UserContext';
+import { deletePost } from 'libs/firestore/Keiba';
 
 type PostCard = {
   keibaId: string;

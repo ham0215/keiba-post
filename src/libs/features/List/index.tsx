@@ -8,7 +8,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { findKeibas, Keiba } from 'firestore/Keiba';
+import { findKeibas, Keiba } from 'libs/firestore/Keiba';
 import Row from './Row';
 import Header from './Header';
 import NextRace from './NextRace';

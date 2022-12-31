@@ -9,7 +9,7 @@ import styled from '@emotion/styled';
 import ExternalLink from 'libs/ui/ExternalLink';
 import { FaTrophy } from 'react-icons/fa';
 import { BsQuestionLg } from 'react-icons/bs';
-import { UserContext } from 'UserContext';
+import { UserContext } from 'libs/hooks/UserContext';
 
 type ResultCardProps = {
   title: string;

@@ -1,5 +1,5 @@
 import { Dispatch, createContext } from 'react';
-import { User } from './firestore/User';
+import { User } from '../firestore/User';
 
 type UserContextType = {
   currentUser: User | null;

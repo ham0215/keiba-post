@@ -1,5 +1,5 @@
 import { ReactNode, useContext } from 'react';
-import { UserContext } from 'UserContext';
+import { UserContext } from 'libs/hooks/UserContext';
 import PleaseLogin from './PleaseLogin';
 
 type Props = {
