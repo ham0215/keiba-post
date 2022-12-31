@@ -7,7 +7,7 @@ type Props = {
   onClick: () => void;
 };
 
-export default function BetCel({ bets, onClick }: Props) {
+export function BetCel({ bets, onClick }: Props) {
   return (
     <TableCell onClick={onClick}>
       <AvatarGroup max={10}>

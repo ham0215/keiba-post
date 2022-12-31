@@ -27,7 +27,7 @@ const style = {
   p: 4,
 };
 
-export default function ResultModal({ name, winners, winnerResults, open, setOpen }: Props) {
+export function ResultModal({ name, winners, winnerResults, open, setOpen }: Props) {
   return (
     <Modal open={open} onClose={() => setOpen(false)}>
       <Box sx={style}>

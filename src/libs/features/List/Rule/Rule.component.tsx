@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Button from '@mui/material/Button';
 import Modal from 'libs/ui/Modal';
 
-export default function Rule() {
+export function Rule() {
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
