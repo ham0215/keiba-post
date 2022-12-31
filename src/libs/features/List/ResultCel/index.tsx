@@ -2,7 +2,7 @@ import { useState, useCallback } from 'react';
 import Avatar from '@mui/material/Avatar';
 import AvatarGroup from 'libs/ui/AvatarGroup';
 import TableCell from '@mui/material/TableCell';
-import ResultModal from './ResultModal';
+import { ResultModal } from '../ResultModal';
 
 type Props = {
   name: string;
@@ -11,7 +11,7 @@ type Props = {
   onClickToDetail: () => void;
 };
 
-export default function ResultCel({ name, bets, results, onClickToDetail }: Props) {
+export function ResultCel({ name, bets, results, onClickToDetail }: Props) {
   const [openResult, setOpenResult] = useState(false);
   const winners = bets.filter((bet, index) => results[index] > 0);
   const winnerResults = results.filter((result) => result > 0);

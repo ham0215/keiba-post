@@ -9,9 +9,9 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { findKeibas, Keiba } from 'libs/firestore/Keiba';
-import Row from './Row';
-import Header from './Header';
-import NextRace from './NextRace';
+import { Row } from './Row';
+import { Header } from './Header';
+import { NextRace } from './NextRace';
 import { KeibaCalendar, currentTag, tags } from 'data/KeibaCalendar';
 
 const StyledHeader = styled(TableHead)`

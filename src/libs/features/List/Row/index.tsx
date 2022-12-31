@@ -3,8 +3,8 @@ import { useRouter } from 'next/router';
 import TableCell from '@mui/material/TableCell';
 import TableRow from '@mui/material/TableRow';
 import Badge from '@mui/material/Badge';
-import BetCel from './BetCel';
-import ResultCel from './ResultCel';
+import { BetCel } from '../BetCel';
+import { ResultCel } from '../ResultCel';
 
 type Props = {
   id: number;
@@ -16,7 +16,7 @@ type Props = {
   results: number[];
 };
 
-export default function Row({ id, date, big, name, tag, bets, results }: Props) {
+export function Row({ id, date, big, name, tag, bets, results }: Props) {
   const router = useRouter();
 
   const onClickToDetail = useCallback(
