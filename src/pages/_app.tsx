@@ -5,13 +5,13 @@ import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import firebaseApp from 'firebaseApp';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
-import { UserContext } from 'UserContext';
+import { UserContext } from 'libs/hooks/UserContext';
 import { CacheProvider, EmotionCache } from '@emotion/react';
-import theme from 'theme';
+import theme from 'libs/theme/theme';
 import Header from 'libs/ui/Header';
 import Footer from 'libs/ui/Footer';
-import { findUser, setUser, User } from 'firestore/User';
-import createEmotionCache from 'createEmotionCache';
+import { findUser, setUser, User } from 'libs/firestore/User';
+import createEmotionCache from 'libs/theme/createEmotionCache';
 import Loading from 'libs/features/Loading';
 
 const clientSideEmotionCache = createEmotionCache();

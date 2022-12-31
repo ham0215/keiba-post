@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import ButtonBase from '@mui/material/Button';
 import { GiHorseHead } from 'react-icons/gi';
 import Link from 'libs/ui/Link';
-import { UserContext } from 'UserContext';
+import { UserContext } from 'libs/hooks/UserContext';
 
 const Button = styled(ButtonBase)`
   margin-bottom: 5rem;

@@ -7,8 +7,8 @@ import TextField from 'libs/ui/TextField';
 import Button from 'libs/ui/Button';
 import Card from 'libs/ui/Card';
 import WithAuth from 'libs/layouts/WithAuth';
-import { UserContext } from 'UserContext';
-import { setUser } from 'firestore/User';
+import { UserContext } from 'libs/hooks/UserContext';
+import { setUser } from 'libs/firestore/User';
 
 const ButtonArea = styled.div`
   text-align: center;

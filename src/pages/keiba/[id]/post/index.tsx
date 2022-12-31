@@ -2,12 +2,12 @@ import { useState, useCallback, useContext, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
 import styled from '@emotion/styled';
-import { findPostText } from 'firestore/Keiba';
+import { findPostText } from 'libs/firestore/Keiba';
 import TextField from 'libs/ui/TextField';
 import Button from 'libs/ui/Button';
 import WithAuth from 'libs/layouts/WithAuth';
-import { updataPost } from 'firestore/Keiba';
-import { UserContext } from 'UserContext';
+import { updatePost } from 'libs/firestore/Keiba';
+import { UserContext } from 'libs/hooks/UserContext';
 
 const ButtonArea = styled.div`
   text-align: center;
@@ -55,7 +55,7 @@ export default function Post() {
       if (!currentUser) return;
       if (typeof id !== 'string') return;
 
-      await updataPost({
+      await updatePost({
         keibaId: id,
         uid: currentUser.id,
         name: currentUser.name,

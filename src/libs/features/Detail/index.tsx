@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Grid from '@mui/material/Grid';
-import { findPosts } from 'firestore/Keiba';
+import { findPosts } from 'libs/firestore/Keiba';
 import { KeibaCalendar } from 'data/KeibaCalendar';
 import Error from 'libs/features/Error';
 import Float from 'libs/ui/Float';
