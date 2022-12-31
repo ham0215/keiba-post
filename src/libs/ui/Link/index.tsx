@@ -6,7 +6,7 @@ type Props = { href: string; prefetch?: boolean; children: ReactNode };
 
 export default function LinkComponent({ href, prefetch = false, children }: Props) {
   return (
-    <NextLink href={href} prefetch={prefetch} passHref>
+    <NextLink href={href} prefetch={prefetch} passHref legacyBehavior>
       <Link color="inherit" underline="none">
         {children}
       </Link>
