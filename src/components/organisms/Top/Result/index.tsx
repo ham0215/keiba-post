@@ -74,7 +74,8 @@ export default function Result() {
               <ResultCard
                 url="https://public.flourish.studio/visualisation/10524869/"
                 title="2022年後半戦"
-                winner="??"
+                winner="natsu"
+                avatar="https://cdn.netkeiba.com/img.news/?pid=news_img&id=336842"
               />
               <ResultCard
                 url="https://public.flourish.studio/visualisation/8528389/"
