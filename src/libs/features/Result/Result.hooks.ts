@@ -77,6 +77,6 @@ export function useResult() {
     isSubmitted,
     isValid,
     fields,
-    currentUser
+    currentUser,
   } as const;
 }

@@ -9,17 +9,8 @@ import { useResult } from './Result.hooks';
 import * as Styles from './Result.styles';
 
 export function Result() {
-  const {
-    onClickCancel,
-    onSubmit,
-    register,
-    handleSubmit,
-    isDirty,
-    isSubmitted,
-    isValid,
-    fields,
-    currentUser
-  } = useResult();
+  const { onClickCancel, onSubmit, register, handleSubmit, isDirty, isSubmitted, isValid, fields, currentUser } =
+    useResult();
 
   if (!currentUser) return <Error />;
 
