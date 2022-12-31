@@ -1,6 +1,6 @@
 import { ReactNode, useContext } from 'react';
 import { UserContext } from 'UserContext';
-import Pleaselogin from './PleaseLogin';
+import PleaseLogin from './PleaseLogin';
 
 type Props = {
   children: ReactNode;
@@ -8,7 +8,7 @@ type Props = {
 
 export default function WithAuth({ children }: Props) {
   const { currentUser } = useContext(UserContext);
-  if (!currentUser || !currentUser.enabled) return <Pleaselogin />;
+  if (!currentUser || !currentUser.enabled) return <PleaseLogin />;
 
   return <>{children}</>;
 }
