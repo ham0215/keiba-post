@@ -14,7 +14,7 @@ const MenuButton = styled(IconButton)`
   margin-right: 2px;
 `;
 
-export default function MenuComponent() {
+export function UserMenu() {
   const router = useRouter();
   const [open, setOpen] = useState<boolean>(false);
   const menuButtonRef = useRef(null);

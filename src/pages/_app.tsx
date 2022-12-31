@@ -8,7 +8,7 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { UserContext } from 'libs/hooks/UserContext';
 import { CacheProvider, EmotionCache } from '@emotion/react';
 import theme from 'libs/theme/theme';
-import Header from 'libs/ui/Header';
+import { Header } from 'libs/ui/Header';
 import Footer from 'libs/ui/Footer';
 import { findUser, setUser, User } from 'libs/firestore/User';
 import createEmotionCache from 'libs/theme/createEmotionCache';
