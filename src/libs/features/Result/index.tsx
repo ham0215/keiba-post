@@ -1,1 +1,1 @@
-export * from './Result.component';
+export * from './Result.container';
