@@ -4,14 +4,20 @@ import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
 import TextField from 'libs/ui/TextField';
 import Button from 'libs/ui/Button';
-import Error from 'libs/features/Error';
-import { useResult } from './Result.hooks';
-import * as Styles from './Result.styles';
+import { useFormPresenter } from './Form.presenter';
+import * as Styles from './Form.styles';
+import type { BetsResults } from 'libs/firestore/Keiba';
+import type { FormInputType } from '../../Result.models';
 
-export function Result() {
-  const { onClickCancel, onSubmit, register, handleSubmit, disabledUpdate, fields, currentUser } = useResult();
+type Props = {
+  onSubmit: (data: FormInputType) => void;
+  onCancel: () => void;
+  betsResults: BetsResults;
+};
 
-  if (!currentUser) return <Error />;
+export function Form(props: Props) {
+  const { onSubmit, onCancel, betsResults } = props;
+  const { register, handleSubmit, disabledUpdate, fields } = useFormPresenter({ betsResults });
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -19,7 +25,7 @@ export function Result() {
         {fields.map((field, index) => (
           <ListItem key={field.id} sx={{ padding: 0 }}>
             <ListItemAvatar>
-              <Avatar alt={`result${index}`} src={field.bet} />
+              <Avatar alt={`result${index}`} src={betsResults?.bets?.[index]} />
             </ListItemAvatar>
             <TextField
               variant="standard"
@@ -32,7 +38,7 @@ export function Result() {
         ))}
       </List>
       <Styles.ButtonArea>
-        <Button variant="outlined" onClick={onClickCancel}>
+        <Button variant="outlined" onClick={onCancel}>
           キャンセル
         </Button>
         <Button type="submit" variant="contained" disabled={disabledUpdate}>
