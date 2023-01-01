@@ -34,7 +34,7 @@ export default function MyApp({ Component, emotionCache = clientSideEmotionCache
             id: fbUser.uid,
             name: fbUser.displayName || '',
             url: fbUser.photoURL || '',
-            enabled: false,
+            enabled: false
           });
         }
       }

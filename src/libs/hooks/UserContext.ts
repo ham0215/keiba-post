@@ -8,5 +8,5 @@ type UserContextType = {
 
 export const UserContext = createContext<UserContextType>({
   currentUser: null,
-  setCurrentUser: undefined,
+  setCurrentUser: undefined
 });

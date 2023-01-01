@@ -24,9 +24,9 @@ export default function Profile() {
   const {
     register,
     handleSubmit,
-    formState: { isDirty, isSubmitted, isValid, errors },
+    formState: { isDirty, isSubmitted, isValid, errors }
   } = useForm<FormInputType>({
-    mode: 'all',
+    mode: 'all'
   });
 
   const { currentUser, setCurrentUser } = useContext(UserContext);
@@ -44,7 +44,7 @@ export default function Profile() {
         id: currentUser.id,
         name: data.name,
         url: currentUser.url,
-        enabled: currentUser.enabled,
+        enabled: currentUser.enabled
       });
 
       setCurrentUser(updatedUser);

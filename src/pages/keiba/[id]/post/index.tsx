@@ -24,9 +24,9 @@ export default function Post() {
   const {
     register,
     handleSubmit,
-    formState: { isDirty, isSubmitted, isValid },
+    formState: { isDirty, isSubmitted, isValid }
   } = useForm<FormInputType>({
-    mode: 'all',
+    mode: 'all'
   });
 
   const { currentUser } = useContext(UserContext);
@@ -61,7 +61,7 @@ export default function Post() {
         name: currentUser.name,
         url: currentUser.url,
         text: keibaText,
-        createdAt: new Date(),
+        createdAt: new Date()
       });
       router.push({ pathname: `/keiba/${id}` });
     },

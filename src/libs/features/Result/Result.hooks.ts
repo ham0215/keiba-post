@@ -19,13 +19,13 @@ export function useResult() {
     control,
     register,
     handleSubmit,
-    formState: { isDirty, isSubmitted, isValid },
+    formState: { isDirty, isSubmitted, isValid }
   } = useForm<FormInputType>({
-    mode: 'all',
+    mode: 'all'
   });
   const { fields, replace } = useFieldArray({
     name: 'results',
-    control,
+    control
   });
 
   const { currentUser } = useContext(UserContext);
@@ -41,7 +41,7 @@ export function useResult() {
 
       const results = betsResults.bets.map((bet, index) => ({
         bet,
-        result: betsResults.results ? betsResults.results[index] : 0,
+        result: betsResults.results ? betsResults.results[index] : 0
       }));
 
       replace(results);
@@ -60,7 +60,7 @@ export function useResult() {
 
       await updateResults({
         keibaId: id,
-        results: data.results.map((result) => result.result),
+        results: data.results.map((result) => result.result)
       });
 
       router.push({ pathname: `/keiba/${id}` });
@@ -73,10 +73,8 @@ export function useResult() {
     onSubmit,
     register,
     handleSubmit,
-    isDirty,
-    isSubmitted,
-    isValid,
+    disabledUpdate: !isDirty || isSubmitted || !isValid,
     fields,
-    currentUser,
+    currentUser
   } as const;
 }
