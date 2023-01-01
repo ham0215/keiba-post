@@ -12,13 +12,12 @@ import type { FormInputType } from '../../Result.models';
 type Props = {
   onSubmit: (data: FormInputType) => void;
   onCancel: () => void;
-  betsResults?: BetsResults
-  defaultResults: FormInputType
+  betsResults: BetsResults
 };
 
 export function Form(props: Props) {
-  const { onSubmit, onCancel, betsResults, defaultResults } = props;
-  const { register, handleSubmit, disabledUpdate, fields } = useFormPresenter({ betsResults, defaultResults });
+  const { onSubmit, onCancel, betsResults } = props;
+  const { register, handleSubmit, disabledUpdate, fields } = useFormPresenter({ betsResults });
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>

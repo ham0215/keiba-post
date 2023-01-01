@@ -9,18 +9,16 @@ export function Result() {
     handleSubmit,
     currentUser,
     betsResults,
-    defaultResults
   } = useResultFacade();
 
   if (!currentUser) return <Error />;
-  if (!betsResults || !defaultResults) return <Loading />;
+  if (!betsResults) return <Loading />;
 
   return (
     <Form
       onSubmit={handleSubmit}
       onCancel={handleCancel}
       betsResults={betsResults}
-      defaultResults={defaultResults}
     />
   );
 }

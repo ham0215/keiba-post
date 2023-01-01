@@ -1,4 +1,4 @@
-import { useContext, useEffect, useCallback, useState, useMemo } from 'react';
+import { useContext, useEffect, useCallback, useState } from 'react';
 import { useRouter } from 'next/router';
 import { findBets, updateResults, BetsResults } from 'libs/firestore/Keiba';
 import { UserContext } from 'libs/hooks/UserContext';
@@ -24,16 +24,6 @@ export function useResultFacade() {
     })();
   }, [currentUser, id]);
 
-  const defaultResults = useMemo(() => {
-    if (!betsResults || !betsResults.bets) return undefined;
-
-    const results = betsResults.bets.map((bet, index) => {
-      const result = betsResults.results ? betsResults.results[index] : 0;
-      return { result };
-    });
-    return { results };
-  }, [betsResults]);
-
   const handleCancel = useCallback(() => {
     router.push(`/keiba/${id}`);
   }, [id, router]);
@@ -58,7 +48,6 @@ export function useResultFacade() {
     handleCancel,
     handleSubmit,
     currentUser,
-    betsResults,
-    defaultResults
+    betsResults
   } as const;
 }
