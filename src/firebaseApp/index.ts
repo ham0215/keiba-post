@@ -8,7 +8,7 @@ const firebaseConfig = {
   storageBucket: 'keiba-post.appspot.com',
   messagingSenderId: '730363267027',
   appId: '1:730363267027:web:681b341d40eabc84bbd126',
-  measurementId: 'G-8PQN7V94SN',
+  measurementId: 'G-8PQN7V94SN'
 };
 
 const firebaseApp = initializeApp(firebaseConfig);

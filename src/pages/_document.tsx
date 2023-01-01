@@ -59,7 +59,7 @@ MyDocument.getInitialProps = async (ctx) => {
       enhanceApp: (App: any) => {
         // eslint-disable-next-line react/display-name
         return (props) => <App emotionCache={cache} {...props} />;
-      },
+      }
     });
 
   const initialProps = await Document.getInitialProps(ctx);
@@ -75,6 +75,6 @@ MyDocument.getInitialProps = async (ctx) => {
 
   return {
     ...initialProps,
-    styles: [...Children.toArray(initialProps.styles), ...emotionStyleTags],
+    styles: [...Children.toArray(initialProps.styles), ...emotionStyleTags]
   };
 };

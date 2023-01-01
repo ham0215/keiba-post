@@ -8,7 +8,7 @@ import {
   deleteDoc,
   updateDoc,
   arrayUnion,
-  arrayRemove,
+  arrayRemove
 } from 'firebase/firestore';
 import { findUser } from 'libs/firestore/User';
 
@@ -51,16 +51,16 @@ export async function updatePost({ keibaId, uid, name, url, text, createdAt }: U
     text,
     name,
     url,
-    createdAt,
+    createdAt
   });
   const keiba = await getDoc(doc(db, 'keibas', keibaId));
   if (keiba.data()?.bets) {
     await updateDoc(doc(db, 'keibas', keibaId), {
-      bets: arrayUnion(url),
+      bets: arrayUnion(url)
     });
   } else {
     await setDoc(doc(db, 'keibas', keibaId), {
-      bets: [url],
+      bets: [url]
     });
   }
 }
@@ -69,14 +69,14 @@ export async function deletePost(keibaId: string, uid: string, url: string) {
   const db = getFirestore();
   await deleteDoc(doc(db, 'keibas', keibaId, 'posts', uid));
   await updateDoc(doc(db, 'keibas', keibaId), {
-    bets: arrayRemove(url),
+    bets: arrayRemove(url)
   });
 }
 
 export async function updateResults({ keibaId, results }: UpdateResults) {
   const db = getFirestore();
   await updateDoc(doc(db, 'keibas', keibaId), {
-    results,
+    results
   });
 }
 
@@ -86,7 +86,7 @@ export async function findKeibas(): Promise<Keiba[]> {
     keibas.docs.map(async (doc) => ({
       id: Number(doc.id),
       bets: doc.data().bets,
-      results: doc.data().results,
+      results: doc.data().results
     }))
   );
 }
@@ -119,7 +119,7 @@ export async function findPosts(keibaId: string): Promise<Post[]> {
         text: doc.data().text,
         name,
         url,
-        createdAt: doc.data().createdAt.toDate(),
+        createdAt: doc.data().createdAt.toDate()
       };
     })
   );
