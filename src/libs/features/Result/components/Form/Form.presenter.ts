@@ -4,7 +4,7 @@ import type { FormInputType } from '../../Result.models';
 import { useMemo } from 'react';
 
 type Props = {
-  betsResults: BetsResults
+  betsResults: BetsResults;
 };
 
 export function useFormPresenter({ betsResults }: Props) {
@@ -22,7 +22,7 @@ export function useFormPresenter({ betsResults }: Props) {
     control,
     register,
     handleSubmit,
-    formState: { isDirty, isSubmitted, isValid },
+    formState: { isDirty, isSubmitted, isValid }
   } = useForm<FormInputType>({
     mode: 'all',
     defaultValues: defaultResults

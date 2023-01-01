@@ -12,7 +12,7 @@ import type { FormInputType } from '../../Result.models';
 type Props = {
   onSubmit: (data: FormInputType) => void;
   onCancel: () => void;
-  betsResults: BetsResults
+  betsResults: BetsResults;
 };
 
 export function Form(props: Props) {
