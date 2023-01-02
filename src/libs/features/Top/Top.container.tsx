@@ -1,5 +1,5 @@
 import { Contents } from './components/Contents';
 
-export default function Top() {
+export function Top() {
   return <Contents />;
 }
