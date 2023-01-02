@@ -1,5 +1,5 @@
-import { ExternalLink } from './ExternalLink.component';
 import { render } from '@testing-library/react';
+import { ExternalLink } from './ExternalLink.component';
 
 describe('ExternalLink', () => {
   it('snapshot testing', () => {

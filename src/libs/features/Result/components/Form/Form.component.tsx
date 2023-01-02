@@ -2,12 +2,12 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
-import { TextField } from 'libs/ui/TextField';
-import { Button } from 'libs/ui/Button';
+import type { FormInputType } from '../../Result.models';
 import { useFormPresenter } from './Form.presenter';
 import * as Styles from './Form.styles';
+import { TextField } from 'libs/ui/TextField';
+import { Button } from 'libs/ui/Button';
 import type { BetsResults } from 'libs/firestore/Keiba';
-import type { FormInputType } from '../../Result.models';
 
 type Props = {
   onSubmit: (data: FormInputType) => void;

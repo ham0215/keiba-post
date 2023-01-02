@@ -1,6 +1,6 @@
 import Avatar from '@mui/material/Avatar';
-import { AvatarGroup } from 'libs/ui/AvatarGroup';
 import TableCell from '@mui/material/TableCell';
+import { AvatarGroup } from 'libs/ui/AvatarGroup';
 
 type Props = {
   bets: string[];

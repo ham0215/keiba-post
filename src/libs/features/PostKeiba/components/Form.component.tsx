@@ -1,8 +1,8 @@
-import { TextField } from 'libs/ui/TextField';
-import { Button } from 'libs/ui/Button';
+import type { FormInputType } from '../PostKeiba.models';
 import * as Styles from './Form.styles';
 import { useFormPresenter } from './Form.presenter';
-import type { FormInputType } from '../PostKeiba.models';
+import { TextField } from 'libs/ui/TextField';
+import { Button } from 'libs/ui/Button';
 
 type Props = {
   onSubmit: (input: FormInputType) => void;

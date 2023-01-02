@@ -5,8 +5,8 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
-import firebaseApp from 'firebaseApp';
 import { getAuth, signOut } from 'firebase/auth';
+import firebaseApp from 'firebaseApp';
 import { UserContext } from 'libs/hooks/UserContext';
 import { UserAvatar } from 'libs/ui/UserAvatar';
 

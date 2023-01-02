@@ -2,10 +2,10 @@ import Grid from '@mui/material/Grid';
 import Avatar from '@mui/material/Avatar';
 import LaunchIcon from '@mui/icons-material/Launch';
 import Typography from '@mui/material/Typography';
-import { ExternalLink } from 'libs/ui/ExternalLink';
 import { FaTrophy } from 'react-icons/fa';
 import { BsQuestionLg } from 'react-icons/bs';
 import * as Styles from './ResultCard.styles';
+import { ExternalLink } from 'libs/ui/ExternalLink';
 
 type ResultCardProps = {
   title: string;

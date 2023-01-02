@@ -1,9 +1,9 @@
 import Typography from '@mui/material/Typography';
+import type { FormInputType } from '../../Profile.models';
+import * as Styles from './Form.styles';
+import { useFormPresenter } from './Form.presenter';
 import { TextField } from 'libs/ui/TextField';
 import { Button } from 'libs/ui/Button';
-import * as Styles from './Form.styles';
-import type { FormInputType } from '../../Profile.models';
-import { useFormPresenter } from './Form.presenter';
 import type { User } from 'libs/firestore/User';
 
 type Props = {

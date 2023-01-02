@@ -1,6 +1,6 @@
-import { Card } from 'libs/ui/Card';
 import { Form } from './components/Form';
 import { useProfileFacade } from './Profile.facade';
+import { Card } from 'libs/ui/Card';
 
 export function Profile() {
   const { handleCancel, handleSubmit, currentUser } = useProfileFacade();

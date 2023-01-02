@@ -1,8 +1,8 @@
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-import { Link } from 'libs/ui/Link';
 import { UserMenu } from './components/UserMenu';
 import * as Styles from './Header.styles';
+import { Link } from 'libs/ui/Link';
 
 export function Header() {
   return (
