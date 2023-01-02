@@ -1,7 +1,7 @@
 import Button from '@mui/material/Button';
 import { useRouter } from 'next/router';
 
-export default function PleaseLogin() {
+export function PleaseLogin() {
   const router = useRouter();
 
   return (

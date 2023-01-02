@@ -5,9 +5,9 @@ import styled from '@emotion/styled';
 import { findPostText } from 'libs/firestore/Keiba';
 import TextField from 'libs/ui/TextField';
 import Button from 'libs/ui/Button';
-import WithAuth from 'libs/layouts/WithAuth';
 import { updatePost } from 'libs/firestore/Keiba';
 import { UserContext } from 'libs/hooks/UserContext';
+import { PleaseLogin } from 'libs/features/PleaseLogin';
 
 const ButtonArea = styled.div`
   text-align: center;
@@ -68,29 +68,29 @@ export default function Post() {
     [currentUser, id, router]
   );
 
+  if (!currentUser || !currentUser.enabled) return <PleaseLogin />;
+
   return (
-    <WithAuth>
-      <form onSubmit={handleSubmit(onClickPost)}>
-        <TextField
-          id="keibaText"
-          name="keibaText"
-          label="予想"
-          multiline
-          fullWidth
-          rows={10}
-          variant="outlined"
-          defaultValue={postText}
-          inputProps={{ ...register('keibaText', { required: true }) }}
-        />
-        <ButtonArea>
-          <Button variant="outlined" onClick={onClickCancel}>
-            キャンセル
-          </Button>
-          <Button type="submit" variant="contained" disabled={!isDirty || isSubmitted || !isValid}>
-            投稿
-          </Button>
-        </ButtonArea>
-      </form>
-    </WithAuth>
+    <form onSubmit={handleSubmit(onClickPost)}>
+      <TextField
+        id="keibaText"
+        name="keibaText"
+        label="予想"
+        multiline
+        fullWidth
+        rows={10}
+        variant="outlined"
+        defaultValue={postText}
+        inputProps={{ ...register('keibaText', { required: true }) }}
+      />
+      <ButtonArea>
+        <Button variant="outlined" onClick={onClickCancel}>
+          キャンセル
+        </Button>
+        <Button type="submit" variant="contained" disabled={!isDirty || isSubmitted || !isValid}>
+          投稿
+        </Button>
+      </ButtonArea>
+    </form>
   );
 }

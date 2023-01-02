@@ -1,10 +1,11 @@
-import WithAuth from 'libs/layouts/WithAuth';
+import { useContext } from 'react';
 import { Result } from 'libs/features/Result';
+import { PleaseLogin } from 'libs/features/PleaseLogin';
+import { UserContext } from 'libs/hooks/UserContext';
 
 export default function ResultPage() {
-  return (
-    <WithAuth>
-      <Result />
-    </WithAuth>
-  );
+  const { currentUser } = useContext(UserContext);
+  if (!currentUser || !currentUser.enabled) return <PleaseLogin />;
+
+  return <Result />;
 }
