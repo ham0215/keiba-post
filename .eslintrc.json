@@ -51,6 +51,7 @@
     "jest/expect-expect": "off",
     "jest/require-top-level-describe": "error",
     "jest/no-disabled-tests": "off",
-    "no-console": "error"
+    "no-console": "error",
+    "import/order": "error"
   }
 }

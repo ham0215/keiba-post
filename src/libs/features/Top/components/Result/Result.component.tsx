@@ -1,9 +1,9 @@
 import { useContext } from 'react';
 import CardContent from '@mui/material/CardContent';
 import Grid from '@mui/material/Grid';
-import { UserContext } from 'libs/hooks/UserContext';
 import { ResultCard } from '../ResultCard';
 import * as Styles from './Result.styles';
+import { UserContext } from 'libs/hooks/UserContext';
 
 export function Result() {
   const { currentUser } = useContext(UserContext);

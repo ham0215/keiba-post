@@ -5,10 +5,10 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { findKeibas, Keiba } from 'libs/firestore/Keiba';
 import { Row } from '../Row';
-import { KeibaCalendar } from 'data/KeibaCalendar';
 import * as Styles from './Table.styles';
+import { findKeibas, Keiba } from 'libs/firestore/Keiba';
+import { KeibaCalendar } from 'data/KeibaCalendar';
 
 export function Table({ tag }: { tag: string }) {
   const [keibas, setKeibas] = useState<Keiba[]>([]);

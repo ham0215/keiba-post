@@ -1,8 +1,8 @@
 import { useContext, useEffect, useCallback, useState } from 'react';
 import { useRouter } from 'next/router';
+import type { FormInputType } from './Result.models';
 import { findBets, updateResults, BetsResults } from 'libs/firestore/Keiba';
 import { UserContext } from 'libs/hooks/UserContext';
-import type { FormInputType } from './Result.models';
 
 export function useResultFacade() {
   const router = useRouter();

@@ -1,8 +1,8 @@
 import { useRouter } from 'next/router';
 import { Header } from './components/Header';
 import { NextRace } from './components/NextRace';
-import { currentTag, tags } from 'data/KeibaCalendar';
 import { Table } from './components/Table';
+import { currentTag, tags } from 'data/KeibaCalendar';
 
 export function List() {
   const router = useRouter();

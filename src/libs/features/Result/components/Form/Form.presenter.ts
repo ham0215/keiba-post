@@ -1,7 +1,7 @@
 import { useForm, useFieldArray } from 'react-hook-form';
-import type { BetsResults } from 'libs/firestore/Keiba';
-import type { FormInputType } from '../../Result.models';
 import { useMemo } from 'react';
+import type { FormInputType } from '../../Result.models';
+import type { BetsResults } from 'libs/firestore/Keiba';
 
 type Props = {
   betsResults: BetsResults;

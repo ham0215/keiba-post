@@ -1,8 +1,8 @@
 import { useCallback, useContext } from 'react';
 import { useRouter } from 'next/router';
+import type { FormInputType } from './Profile.models';
 import { UserContext } from 'libs/hooks/UserContext';
 import { setUser } from 'libs/firestore/User';
-import type { FormInputType } from './Profile.models';
 
 export function useProfileFacade() {
   const router = useRouter();
