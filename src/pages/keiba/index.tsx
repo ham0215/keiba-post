@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import List from 'libs/features/List';
+import { List } from 'libs/features/List';
 import { PleaseLogin } from 'libs/features/PleaseLogin';
 import { UserContext } from 'libs/hooks/UserContext';
 
