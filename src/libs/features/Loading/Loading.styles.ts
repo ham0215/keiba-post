@@ -1,8 +1,6 @@
 import styled from '@emotion/styled';
-import LinearProgress from '@mui/material/LinearProgress';
-import Typography from '@mui/material/Typography';
 
-const Contents = styled.div`
+export const Contents = styled.div`
   background: #151515 url('/images/login.jpg') no-repeat scroll center bottom;
   background-size: cover;
   color: #fff;
@@ -19,12 +17,3 @@ const Contents = styled.div`
     margin: 0 auto;
   }
 `;
-
-export default function Loading() {
-  return (
-    <Contents>
-      <Typography variant="h4">NOW LOADING</Typography>
-      <LinearProgress />
-    </Contents>
-  );
-}

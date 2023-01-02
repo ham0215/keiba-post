@@ -12,7 +12,7 @@ import { Header } from 'libs/features/Header';
 import { Footer } from 'libs/features/Footer';
 import { findUser, setUser, User } from 'libs/firestore/User';
 import createEmotionCache from 'libs/theme/createEmotionCache';
-import Loading from 'libs/features/Loading';
+import { Loading } from 'libs/features/Loading';
 
 const clientSideEmotionCache = createEmotionCache();
 
