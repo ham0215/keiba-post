@@ -1,74 +1,17 @@
 import { useContext } from 'react';
-import CardBase from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Grid from '@mui/material/Grid';
-import Avatar from '@mui/material/Avatar';
-import LaunchIcon from '@mui/icons-material/Launch';
-import Typography from '@mui/material/Typography';
-import styled from '@emotion/styled';
-import { ExternalLink } from 'libs/ui/ExternalLink';
-import { FaTrophy } from 'react-icons/fa';
-import { BsQuestionLg } from 'react-icons/bs';
 import { UserContext } from 'libs/hooks/UserContext';
+import { ResultCard } from '../ResultCard';
+import * as Styles from './Result.styles';
 
-type ResultCardProps = {
-  title: string;
-  winner: string;
-  url: string;
-  avatar?: string;
-};
-
-const TrophyWrap = styled.div`
-  font-size: 2rem;
-`;
-
-const Card = styled(CardBase)`
-  margin: 0 auto;
-  width: 90%;
-  max-width: 30rem;
-`;
-
-function ResultCard({ title, winner, url, avatar }: ResultCardProps) {
-  return (
-    <Grid item xs={12}>
-      <ExternalLink href={url} variant="body1" color="black">
-        <Grid container spacing={2} alignItems="center">
-          <Grid item xs={2}>
-            <TrophyWrap>
-              <FaTrophy color="orange" />
-            </TrophyWrap>
-          </Grid>
-          <Grid item xs={5}>
-            <Typography align="left">{title}</Typography>
-          </Grid>
-          <Grid item xs={2}>
-            {avatar ? (
-              <Avatar alt={winner} src={avatar} />
-            ) : (
-              <Avatar alt={winner}>
-                <BsQuestionLg />
-              </Avatar>
-            )}
-          </Grid>
-          <Grid item xs={2}>
-            <Typography align="left">{winner}</Typography>
-          </Grid>
-          <Grid item xs={1}>
-            <LaunchIcon color="disabled" />
-          </Grid>
-        </Grid>
-      </ExternalLink>
-    </Grid>
-  );
-}
-
-export default function Result() {
+export function Result() {
   const { currentUser } = useContext(UserContext);
 
   return (
     <>
       {currentUser && currentUser.enabled && (
-        <Card>
+        <Styles.Card>
           <CardContent>
             <Grid container spacing={4}>
               <ResultCard
@@ -109,7 +52,7 @@ export default function Result() {
               />
             </Grid>
           </CardContent>
-        </Card>
+        </Styles.Card>
       )}
     </>
   );

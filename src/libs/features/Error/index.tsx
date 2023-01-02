@@ -1,3 +1,1 @@
-export default function Error() {
-  return <p>Error :(</p>;
-}
+export * from './Error.container';
