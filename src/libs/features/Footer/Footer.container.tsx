@@ -11,7 +11,7 @@ export function Footer() {
           </Link>
         </Styles.FirstItem>
         <Styles.Item>
-          <Link href="/terms/privacy-policy" color="inherit" underline="none">
+          <Link href="/terms/privacy" color="inherit" underline="none">
             Privacy Policy
           </Link>
         </Styles.Item>
