@@ -1,10 +1,9 @@
-import { useCallback } from 'react';
-import { useRouter } from 'next/router';
 import TableCell from '@mui/material/TableCell';
 import TableRow from '@mui/material/TableRow';
 import Badge from '@mui/material/Badge';
-import { BetCel } from '../BetCel';
+import { BetCel } from '../../BetCel';
 import { ResultCel } from '../ResultCel';
+import { useRowPresenter } from './Row.presenter';
 
 type Props = {
   id: number;
@@ -17,20 +16,14 @@ type Props = {
 };
 
 export function Row({ id, date, big, name, tag, bets, results }: Props) {
-  const router = useRouter();
-
-  const onClickToDetail = useCallback(
-    () => router.push({ pathname: `/keiba/${id}`, query: { tag } }),
-    [id, router, tag]
-  );
-  const hasResults = results.length > 0;
+  const { handleClickToDetail, hasResults } = useRowPresenter({ id, tag, results });
 
   return (
     <TableRow>
-      <TableCell component="th" scope="row" onClick={onClickToDetail}>
+      <TableCell component="th" scope="row" onClick={handleClickToDetail}>
         {date.substring(5)}
       </TableCell>
-      <TableCell onClick={onClickToDetail}>
+      <TableCell onClick={handleClickToDetail}>
         {big ? (
           <Badge variant="dot" color="error">
             {name}
@@ -40,9 +33,9 @@ export function Row({ id, date, big, name, tag, bets, results }: Props) {
         )}
       </TableCell>
       {hasResults ? (
-        <ResultCel name={name} bets={bets} results={results} onClickToDetail={onClickToDetail} />
+        <ResultCel name={name} bets={bets} results={results} onClickToDetail={handleClickToDetail} />
       ) : (
-        <BetCel bets={bets} onClick={onClickToDetail} />
+        <BetCel bets={bets} onClick={handleClickToDetail} />
       )}
     </TableRow>
   );

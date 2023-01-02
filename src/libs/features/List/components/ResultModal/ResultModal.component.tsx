@@ -6,6 +6,7 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
+import { style } from './ResultModal.styles';
 
 type Props = {
   name: string;
@@ -13,18 +14,6 @@ type Props = {
   winnerResults: number[];
   open: boolean;
   setOpen: (open: boolean) => void;
-};
-
-const style = {
-  position: 'absolute' as const,
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  width: 400,
-  bgcolor: 'background.paper',
-  border: '2px solid #000',
-  boxShadow: 24,
-  p: 4
 };
 
 export function ResultModal({ name, winners, winnerResults, open, setOpen }: Props) {
