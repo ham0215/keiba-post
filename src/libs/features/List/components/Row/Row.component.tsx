@@ -1,7 +1,7 @@
 import TableCell from '@mui/material/TableCell';
 import TableRow from '@mui/material/TableRow';
 import Badge from '@mui/material/Badge';
-import { BetCel } from '../../BetCel';
+import { BetCel } from '../BetCel';
 import { ResultCel } from '../ResultCel';
 import { useRowPresenter } from './Row.presenter';
 
