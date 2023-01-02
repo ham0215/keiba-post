@@ -13,12 +13,7 @@ type Props = {
 };
 
 export function Form({ onSubmit, onCancel, currentUser }: Props) {
-  const {
-    register,
-    handleSubmit,
-    errors,
-    disabledSubmit,
-  } = useFormPresenter();
+  const { register, handleSubmit, errors, disabledSubmit } = useFormPresenter();
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>

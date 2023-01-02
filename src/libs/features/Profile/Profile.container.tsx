@@ -3,11 +3,7 @@ import { Form } from './components/Form';
 import { useProfileFacade } from './Profile.facade';
 
 export function Profile() {
-  const {
-    handleCancel,
-    handleSubmit,
-    currentUser
-  } = useProfileFacade();
+  const { handleCancel, handleSubmit, currentUser } = useProfileFacade();
 
   return (
     <Card>
