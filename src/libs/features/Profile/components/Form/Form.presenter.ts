@@ -6,9 +6,7 @@ export function useFormPresenter() {
     register,
     handleSubmit,
     formState: { isDirty, isSubmitted, isValid, errors }
-  } = useForm<FormInputType>({
-    mode: 'all'
-  });
+  } = useForm<FormInputType>({ mode: 'all' });
 
   return {
     register,
