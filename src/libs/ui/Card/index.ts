@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
-import Card from '@mui/material/Card';
+import MuiCard from '@mui/material/Card';
 
-export default styled(Card)`
+export const Card = styled(MuiCard)`
   margin: 4px;
 `;

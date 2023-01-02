@@ -1,4 +1,4 @@
-import Card from 'libs/ui/Card';
+import { Card } from 'libs/ui/Card';
 import { Form } from './components/Form';
 import { useProfileFacade } from './Profile.facade';
 

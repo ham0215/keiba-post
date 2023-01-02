@@ -1,5 +1,5 @@
-import TextField from 'libs/ui/TextField';
-import Button from 'libs/ui/Button';
+import { TextField } from 'libs/ui/TextField';
+import { Button } from 'libs/ui/Button';
 import * as Styles from './Form.styles';
 import { useFormPresenter } from './Form.presenter';
 import type { FormInputType } from '../PostKeiba.models';
