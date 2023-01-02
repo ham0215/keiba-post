@@ -7,8 +7,8 @@ import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import CurrencyYenIcon from '@mui/icons-material/CurrencyYen';
 import ConfirmationNumberIcon from '@mui/icons-material/ConfirmationNumber';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import Link from 'libs/ui/Link';
-import Card from 'libs/ui/Card';
+import { Link } from 'libs/ui/Link';
+import { Card } from 'libs/ui/Card';
 import { Props } from 'data/KeibaCalendar';
 
 const Back = styled.div`

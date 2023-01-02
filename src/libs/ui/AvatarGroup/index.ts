@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
-import AvatarGroup from '@mui/material/AvatarGroup';
+import MuiAvatarGroup from '@mui/material/AvatarGroup';
 
-export default styled(AvatarGroup)`
+export const AvatarGroup = styled(MuiAvatarGroup)`
   flex-direction: row;
 `;

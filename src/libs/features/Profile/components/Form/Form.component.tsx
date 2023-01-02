@@ -1,6 +1,6 @@
 import Typography from '@mui/material/Typography';
-import TextField from 'libs/ui/TextField';
-import Button from 'libs/ui/Button';
+import { TextField } from 'libs/ui/TextField';
+import { Button } from 'libs/ui/Button';
 import * as Styles from './Form.styles';
 import type { FormInputType } from '../../Profile.models';
 import { useFormPresenter } from './Form.presenter';

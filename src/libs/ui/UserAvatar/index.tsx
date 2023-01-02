@@ -5,7 +5,7 @@ type UserAvatar = {
   url?: string;
 };
 
-export default function UserAvatar({ name, url }: UserAvatar) {
+export function UserAvatar({ name, url }: UserAvatar) {
   if (url) {
     return <Avatar aria-label="avatar" src={url} />;
   } else if (name) {

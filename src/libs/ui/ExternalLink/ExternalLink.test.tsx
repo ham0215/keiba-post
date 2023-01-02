@@ -1,4 +1,4 @@
-import ExternalLink from '.';
+import { ExternalLink } from './ExternalLink.component';
 import { render } from '@testing-library/react';
 
 describe('ExternalLink', () => {

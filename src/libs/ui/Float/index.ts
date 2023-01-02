@@ -7,7 +7,7 @@ type Props = {
   left?: string;
 };
 
-export default styled.div<Props>`
+export const Float = styled.div<Props>`
   margin: 0;
   top: ${(props) => props.top || 'auto'};
   right: ${(props) => props.right || 'auto'};

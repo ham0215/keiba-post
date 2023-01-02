@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
-import Button from '@mui/material/Button';
+import MuiButton from '@mui/material/Button';
 
-export default styled(Button)`
+export const Button = styled(MuiButton)`
   margin: 8px;
   width: 160px;
 `;

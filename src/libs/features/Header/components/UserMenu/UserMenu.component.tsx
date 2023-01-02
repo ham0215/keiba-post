@@ -8,7 +8,7 @@ import IconButton from '@mui/material/IconButton';
 import firebaseApp from 'firebaseApp';
 import { getAuth, signOut } from 'firebase/auth';
 import { UserContext } from 'libs/hooks/UserContext';
-import UserAvatar from 'libs/ui/UserAvatar';
+import { UserAvatar } from 'libs/ui/UserAvatar';
 
 const MenuButton = styled(IconButton)`
   margin-right: 2px;
