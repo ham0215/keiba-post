@@ -6,7 +6,7 @@ import { ResultCel } from '../ResultCel';
 import { useRowPresenter } from './Row.presenter';
 
 type Props = {
-  id: number;
+  id: string;
   date: string;
   big: boolean;
   name: string;
