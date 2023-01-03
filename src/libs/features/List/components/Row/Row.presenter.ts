@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 import { useRouter } from 'next/router';
 
 type Props = {
-  id: number;
+  id: string;
   tag: string;
   results: number[];
 };

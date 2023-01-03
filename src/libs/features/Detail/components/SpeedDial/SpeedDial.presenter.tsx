@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 import { useRouter } from 'next/router';
 
 type Props = {
-  keibaId: number;
+  keibaId: string;
 };
 
 export function useSpeedDialPresenter({ keibaId }: Props) {

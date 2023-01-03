@@ -35,7 +35,7 @@ type Post = {
 };
 
 export type Keiba = {
-  id: number;
+  id: string;
   bets: string[];
   results: number[];
 };
@@ -84,7 +84,7 @@ export async function findKeibas(): Promise<Keiba[]> {
   const keibas = await getDocs(collection(getFirestore(), 'keibas'));
   return Promise.all(
     keibas.docs.map(async (doc) => ({
-      id: Number(doc.id),
+      id: doc.id,
       bets: doc.data().bets,
       results: doc.data().results
     }))
