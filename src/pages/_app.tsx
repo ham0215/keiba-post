@@ -50,7 +50,7 @@ export default function MyApp({ Component, emotionCache = clientSideEmotionCache
       </Head>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        {!currentUser ? (
+        {currentUser === undefined ? (
           <Loading />
         ) : (
           <UserContext.Provider value={{ currentUser, setCurrentUser }}>

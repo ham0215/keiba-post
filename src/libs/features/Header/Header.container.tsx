@@ -6,7 +6,7 @@ import { Link } from 'libs/ui/Link';
 import type { User } from 'libs/firestore/User';
 
 type Props = {
-  currentUser: User;
+  currentUser: User | null;
 };
 
 export function Header({ currentUser }: Props) {
