@@ -7,5 +7,5 @@ export default function ProfilePage() {
   const { currentUser } = useContext(UserContext);
   if (!currentUser || !currentUser.enabled) return <PleaseLogin />;
 
-  return <Profile />;
+  return <Profile currentUser={currentUser} />;
 }

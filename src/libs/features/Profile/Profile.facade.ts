@@ -3,11 +3,16 @@ import { useRouter } from 'next/router';
 import type { FormInputType } from './Profile.models';
 import { UserContext } from 'libs/hooks/UserContext';
 import { setUser } from 'libs/firestore/User';
+import type { User } from 'libs/firestore/User';
 
-export function useProfileFacade() {
+type Props = {
+  currentUser: User;
+};
+
+export function useProfileFacade({ currentUser }: Props) {
   const router = useRouter();
 
-  const { currentUser, setCurrentUser } = useContext(UserContext);
+  const { setCurrentUser } = useContext(UserContext);
 
   const handleCancel = useCallback(() => {
     router.push('/');
@@ -33,7 +38,6 @@ export function useProfileFacade() {
 
   return {
     handleCancel,
-    handleSubmit,
-    currentUser
+    handleSubmit
   } as const;
 }

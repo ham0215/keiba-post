@@ -1,12 +1,10 @@
-import { KeibaButton } from '../KeibaButton';
-import { Result } from '../Result';
+import { ReactNode } from 'react';
 import * as Styles from './Contents.styles';
 
-export function Contents() {
-  return (
-    <Styles.Contents>
-      <KeibaButton />
-      <Result />
-    </Styles.Contents>
-  );
+type Props = {
+  children: ReactNode;
+};
+
+export function Contents({ children }: Props) {
+  return <Styles.Contents>{children}</Styles.Contents>;
 }

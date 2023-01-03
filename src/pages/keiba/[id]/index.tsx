@@ -7,5 +7,5 @@ export default function DetailPage() {
   const { currentUser } = useContext(UserContext);
   if (!currentUser || !currentUser.enabled) return <PleaseLogin />;
 
-  return <Detail />;
+  return <Detail currentUser={currentUser} />;
 }

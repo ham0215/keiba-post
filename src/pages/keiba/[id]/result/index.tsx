@@ -7,5 +7,5 @@ export default function ResultPage() {
   const { currentUser } = useContext(UserContext);
   if (!currentUser || !currentUser.enabled) return <PleaseLogin />;
 
-  return <Result />;
+  return <Result currentUser={currentUser} />;
 }

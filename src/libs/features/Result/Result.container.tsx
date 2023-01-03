@@ -1,12 +1,15 @@
 import { useResultFacade } from './Result.facade';
 import { Form } from './components/Form';
-import { Error } from 'libs/features/Error';
 import { Loading } from 'libs/features/Loading';
+import type { User } from 'libs/firestore/User';
 
-export function Result() {
-  const { handleCancel, handleSubmit, currentUser, betsResults } = useResultFacade();
+type Props = {
+  currentUser: User;
+};
 
-  if (!currentUser) return <Error />;
+export function Result({ currentUser }: Props) {
+  const { handleCancel, handleSubmit, betsResults } = useResultFacade({ currentUser });
+
   if (!betsResults) return <Loading />;
 
   return <Form onSubmit={handleSubmit} onCancel={handleCancel} betsResults={betsResults} />;

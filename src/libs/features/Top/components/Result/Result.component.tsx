@@ -1,13 +1,14 @@
-import { useContext } from 'react';
 import CardContent from '@mui/material/CardContent';
 import Grid from '@mui/material/Grid';
 import { ResultCard } from '../ResultCard';
 import * as Styles from './Result.styles';
-import { UserContext } from 'libs/hooks/UserContext';
+import type { User } from 'libs/firestore/User';
 
-export function Result() {
-  const { currentUser } = useContext(UserContext);
+type Props = {
+  currentUser: User;
+};
 
+export function Result({ currentUser }: Props) {
   return (
     <>
       {currentUser && currentUser.enabled && (
