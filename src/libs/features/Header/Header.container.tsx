@@ -3,8 +3,13 @@ import Toolbar from '@mui/material/Toolbar';
 import { UserMenu } from './components/UserMenu';
 import * as Styles from './Header.styles';
 import { Link } from 'libs/ui/Link';
+import type { User } from 'libs/firestore/User';
 
-export function Header() {
+type Props = {
+  currentUser: User | null;
+};
+
+export function Header({ currentUser }: Props) {
   return (
     <Styles.Container>
       <AppBar position="static" color="transparent">
@@ -12,7 +17,7 @@ export function Header() {
           <Styles.Title variant="h6">
             <Link href="/">Keiba Post</Link>
           </Styles.Title>
-          <UserMenu />
+          <UserMenu currentUser={currentUser} />
         </Toolbar>
       </AppBar>
     </Styles.Container>

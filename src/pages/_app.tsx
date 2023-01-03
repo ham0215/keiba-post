@@ -54,7 +54,7 @@ export default function MyApp({ Component, emotionCache = clientSideEmotionCache
           <Loading />
         ) : (
           <UserContext.Provider value={{ currentUser, setCurrentUser }}>
-            <Header />
+            <Header currentUser={currentUser} />
             <Component {...pageProps} />
             <Footer />
           </UserContext.Provider>

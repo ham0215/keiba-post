@@ -1,15 +1,17 @@
-import { useContext, useEffect, useCallback, useState } from 'react';
+import { useEffect, useCallback, useState } from 'react';
 import { useRouter } from 'next/router';
 import type { FormInputType } from './Result.models';
 import { findBets, updateResults, BetsResults } from 'libs/firestore/Keiba';
-import { UserContext } from 'libs/hooks/UserContext';
+import type { User } from 'libs/firestore/User';
 
-export function useResultFacade() {
+type Props = {
+  currentUser: User;
+};
+
+export function useResultFacade({ currentUser }: Props) {
   const router = useRouter();
   const { id } = router.query;
   const [betsResults, setBetsResults] = useState<BetsResults>();
-
-  const { currentUser } = useContext(UserContext);
 
   useEffect(() => {
     (async () => {
@@ -47,7 +49,6 @@ export function useResultFacade() {
   return {
     handleCancel,
     handleSubmit,
-    currentUser,
     betsResults
   } as const;
 }

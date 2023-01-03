@@ -8,6 +8,7 @@ import { findPosts } from 'libs/firestore/Keiba';
 import { KeibaCalendar } from 'data/KeibaCalendar';
 import { Error } from 'libs/features/Error';
 import { Float } from 'libs/ui/Float';
+import type { User } from 'libs/firestore/User';
 
 type Post = {
   uid: string;
@@ -17,7 +18,11 @@ type Post = {
   createdAt: Date;
 };
 
-export function Detail() {
+type Props = {
+  currentUser: User;
+};
+
+export function Detail({ currentUser }: Props) {
   const router = useRouter();
   const { id, text } = router.query;
   const [open, setOpen] = useState<boolean>(false);
@@ -47,7 +52,7 @@ export function Detail() {
       <Grid container>
         {posts.map((post) => (
           <Grid key={post.uid} item xs={12} md={4}>
-            <PostCard {...post} keibaId={String(keibaId)} canDelete={canPost} />
+            <PostCard {...post} keibaId={String(keibaId)} canDelete={canPost} currentUser={currentUser} />
           </Grid>
         ))}
       </Grid>

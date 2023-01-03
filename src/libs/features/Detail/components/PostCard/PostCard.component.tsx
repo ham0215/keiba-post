@@ -1,4 +1,4 @@
-import { useState, useCallback, useContext } from 'react';
+import { useState, useCallback } from 'react';
 import { format } from 'date-fns';
 import CardHeader from '@mui/material/CardHeader';
 import CardContent from '@mui/material/CardContent';
@@ -7,8 +7,8 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import { PreWrapTypography } from 'libs/ui/PreWrapTypography';
 import { UserAvatar } from 'libs/ui/UserAvatar';
 import { Card } from 'libs/ui/Card';
-import { UserContext } from 'libs/hooks/UserContext';
 import { deletePost } from 'libs/firestore/Keiba';
+import type { User } from 'libs/firestore/User';
 
 type Props = {
   keibaId: string;
@@ -18,14 +18,13 @@ type Props = {
   name: string;
   url: string;
   canDelete: boolean;
+  currentUser: User;
 };
 
-export function PostCard({ keibaId, uid, text, createdAt, name, url, canDelete }: Props) {
+export function PostCard({ keibaId, uid, text, createdAt, name, url, canDelete, currentUser }: Props) {
   const [show, setShow] = useState(true);
-  const { currentUser } = useContext(UserContext);
 
   const handleDelete = useCallback(() => {
-    if (!currentUser) return;
     if (!confirm('削除しますか？')) return;
 
     deletePost(keibaId, currentUser.id, currentUser.url);
@@ -40,7 +39,7 @@ export function PostCard({ keibaId, uid, text, createdAt, name, url, canDelete }
       <CardHeader
         avatar={<UserAvatar url={url} />}
         action={
-          uid === currentUser?.id &&
+          uid === currentUser.id &&
           canDelete && (
             <IconButton aria-label="delete" onClick={handleDelete} size="large">
               <DeleteIcon />

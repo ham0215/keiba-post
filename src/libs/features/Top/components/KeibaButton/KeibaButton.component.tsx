@@ -1,12 +1,13 @@
-import { useContext } from 'react';
 import { GiHorseHead } from 'react-icons/gi';
 import * as Styles from './KeibaButton.styles';
 import { Link } from 'libs/ui/Link';
-import { UserContext } from 'libs/hooks/UserContext';
+import type { User } from 'libs/firestore/User';
 
-export function KeibaButton() {
-  const { currentUser } = useContext(UserContext);
+type Props = {
+  currentUser: User;
+};
 
+export function KeibaButton({ currentUser }: Props) {
   return (
     <>
       {currentUser && currentUser.enabled && (
