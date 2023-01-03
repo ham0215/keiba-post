@@ -8,7 +8,7 @@ import { useSpeedDialPresenter } from './SpeedDial.presenter';
 type Props = {
   open: boolean;
   setOpen: (open: boolean) => void;
-  keibaId: number;
+  keibaId: string;
   canPost: boolean;
 };
 
