@@ -10,7 +10,7 @@ import { Card } from 'libs/ui/Card';
 import { UserContext } from 'libs/hooks/UserContext';
 import { deletePost } from 'libs/firestore/Keiba';
 
-type PostCard = {
+type Props = {
   keibaId: string;
   uid: string;
   text: string | undefined;
@@ -20,7 +20,7 @@ type PostCard = {
   canDelete: boolean;
 };
 
-export default function PostCard({ keibaId, uid, text, createdAt, name, url, canDelete }: PostCard) {
+export function PostCard({ keibaId, uid, text, createdAt, name, url, canDelete }: Props) {
   const [show, setShow] = useState(true);
   const { currentUser } = useContext(UserContext);
 

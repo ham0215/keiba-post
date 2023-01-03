@@ -1,4 +1,3 @@
-import styled from '@emotion/styled';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
@@ -7,29 +6,20 @@ import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import CurrencyYenIcon from '@mui/icons-material/CurrencyYen';
 import ConfirmationNumberIcon from '@mui/icons-material/ConfirmationNumber';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import * as Styles from './KeibaCard.styles';
 import { Link } from 'libs/ui/Link';
 import { Card } from 'libs/ui/Card';
 import { Props } from 'data/KeibaCalendar';
 
-const Back = styled.div`
-  padding: 8px;
-  font-size: 0.875rem;
-
-  a {
-    display: flex;
-    align-items: center;
-  }
-`;
-
-export default function KeibaCard({ date, big, name, tag }: Props) {
+export function KeibaCard({ date, big, name, tag }: Props) {
   return (
     <>
-      <Back>
+      <Styles.Back>
         <Link href={`/keiba?tag=${tag}`}>
           <ArrowBackIosIcon />
           レース一覧へ
         </Link>
-      </Back>
+      </Styles.Back>
       <Card>
         <List dense>
           <ListItem>

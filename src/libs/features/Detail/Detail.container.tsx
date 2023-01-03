@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Grid from '@mui/material/Grid';
-import KeibaCard from './KeibaCard';
-import PostCard from './PostCard';
-import SpeedDial from './SpeedDial';
+import { KeibaCard } from './components/KeibaCard';
+import { PostCard } from './components/PostCard';
+import { SpeedDial } from './components/SpeedDial';
 import { findPosts } from 'libs/firestore/Keiba';
 import { KeibaCalendar } from 'data/KeibaCalendar';
 import { Error } from 'libs/features/Error';
@@ -17,7 +17,7 @@ type Post = {
   createdAt: Date;
 };
 
-export default function Detail() {
+export function Detail() {
   const router = useRouter();
   const { id, text } = router.query;
   const [open, setOpen] = useState<boolean>(false);
