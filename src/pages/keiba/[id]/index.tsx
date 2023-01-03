@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import Detail from 'libs/features/Detail';
+import { Detail } from 'libs/features/Detail';
 import { PleaseLogin } from 'libs/features/PleaseLogin';
 import { UserContext } from 'libs/hooks/UserContext';
 
