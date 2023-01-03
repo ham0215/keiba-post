@@ -5,47 +5,40 @@ import { updatePost } from 'libs/firestore/Keiba';
 import type { User } from 'libs/firestore/User';
 
 type Props = {
+  keibaId: string;
   currentUser: User;
 };
 
-export function usePostKeibaFacade({ currentUser }: Props) {
+export function usePostKeibaFacade({ keibaId, currentUser }: Props) {
   const router = useRouter();
-  const { id } = router.query;
-
   const [postText, setPostText] = useState<string>('');
 
   useEffect(() => {
     (async () => {
-      if (!id) return;
-      if (typeof id !== 'string') return;
-
-      const text = await findPostText(id, currentUser.id);
+      const text = await findPostText(keibaId, currentUser.id);
       if (!text) return;
 
       setPostText(text);
     })();
-  }, [currentUser, id]);
+  }, [currentUser, keibaId]);
 
   const handleCancel = useCallback(() => {
-    router.push(`/keiba/${id}`);
-  }, [id, router]);
+    router.push(`/keiba/${keibaId}`);
+  }, [keibaId, router]);
 
   const handleSubmit = useCallback(
     async ({ keibaText }: { keibaText: string }) => {
-      if (!currentUser) return;
-      if (typeof id !== 'string') return;
-
       await updatePost({
-        keibaId: id,
+        keibaId,
         uid: currentUser.id,
         name: currentUser.name,
         url: currentUser.url,
         text: keibaText,
         createdAt: new Date()
       });
-      router.push({ pathname: `/keiba/${id}` });
+      router.push({ pathname: `/keiba/${keibaId}` });
     },
-    [currentUser, id, router]
+    [currentUser, keibaId, router]
   );
 
   return {
