@@ -1,6 +1,7 @@
 import Alert from '@mui/material/Alert';
-import NextLink from 'next/link';
 import Link from '@mui/material/Link';
+import NextLink from 'next/link';
+
 import { useNextRace } from './NextRace.presenter';
 
 export function NextRace({ tag }: { tag: string }) {

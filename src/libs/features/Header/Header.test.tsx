@@ -1,4 +1,5 @@
 import { render } from '@testing-library/react';
+
 import { Header } from './Header.container';
 
 jest.mock('next/router', () => require('next-router-mock'));

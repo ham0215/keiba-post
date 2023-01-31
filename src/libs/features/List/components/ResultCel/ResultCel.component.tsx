@@ -1,8 +1,9 @@
 import Avatar from '@mui/material/Avatar';
 import TableCell from '@mui/material/TableCell';
+import { AvatarGroup } from 'libs/ui/AvatarGroup';
+
 import { ResultModal } from '../ResultModal';
 import { useResultCelPresenter } from './ResultCel.presenter';
-import { AvatarGroup } from 'libs/ui/AvatarGroup';
 
 type Props = {
   name: string;

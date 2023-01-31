@@ -1,7 +1,8 @@
+import type { User } from 'libs/firestore/User';
+
 import { Contents } from './components/Contents';
 import { KeibaButton } from './components/KeibaButton';
 import { Result } from './components/Result';
-import type { User } from 'libs/firestore/User';
 
 type Props = {
   currentUser: User;

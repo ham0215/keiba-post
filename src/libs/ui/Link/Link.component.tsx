@@ -1,6 +1,6 @@
-import { ReactNode } from 'react';
-import NextLink from 'next/link';
 import MuiLink from '@mui/material/Link';
+import NextLink from 'next/link';
+import { ReactNode } from 'react';
 
 type Props = { href: string; prefetch?: boolean; children: ReactNode };
 

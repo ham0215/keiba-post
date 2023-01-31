@@ -1,8 +1,9 @@
-import { useEffect, useCallback, useState } from 'react';
-import { useRouter } from 'next/router';
-import type { FormInputType } from './Result.models';
-import { findBets, updateResults, BetsResults } from 'libs/firestore/Keiba';
+import { BetsResults, findBets, updateResults } from 'libs/firestore/Keiba';
 import type { User } from 'libs/firestore/User';
+import { useRouter } from 'next/router';
+import { useCallback, useEffect, useState } from 'react';
+
+import type { FormInputType } from './Result.models';
 
 type Props = {
   keibaId: string;

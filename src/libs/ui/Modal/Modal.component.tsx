@@ -1,4 +1,5 @@
 import { ReactElement, useCallback } from 'react';
+
 import * as Styles from './Modal.styles';
 
 type Props = {

@@ -1,4 +1,5 @@
 import Link from '@mui/material/Link';
+
 import * as Styles from './Footer.styles';
 
 export function Footer() {

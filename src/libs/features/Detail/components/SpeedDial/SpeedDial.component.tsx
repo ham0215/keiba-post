@@ -1,8 +1,9 @@
-import MuiSpeedDial from '@mui/material/SpeedDial';
-import SpeedDialIcon from '@mui/material/SpeedDialIcon';
-import SpeedDialAction from '@mui/material/SpeedDialAction';
-import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import BedroomBabyIcon from '@mui/icons-material/BedroomBaby';
+import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
+import MuiSpeedDial from '@mui/material/SpeedDial';
+import SpeedDialAction from '@mui/material/SpeedDialAction';
+import SpeedDialIcon from '@mui/material/SpeedDialIcon';
+
 import { useSpeedDialPresenter } from './SpeedDial.presenter';
 
 type Props = {

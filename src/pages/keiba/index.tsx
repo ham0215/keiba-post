@@ -1,9 +1,9 @@
-import { useContext } from 'react';
-import { useRouter } from 'next/router';
+import { currentTag, tags } from 'data/KeibaCalendar';
 import { List } from 'libs/features/List';
 import { PleaseLogin } from 'libs/features/PleaseLogin';
 import { UserContext } from 'libs/hooks/UserContext';
-import { currentTag, tags } from 'data/KeibaCalendar';
+import { useRouter } from 'next/router';
+import { useContext } from 'react';
 
 export default function Keiba() {
   const { currentUser } = useContext(UserContext);

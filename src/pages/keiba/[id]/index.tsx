@@ -1,9 +1,9 @@
-import { useContext } from 'react';
-import { useRouter } from 'next/router';
 import { Detail } from 'libs/features/Detail';
+import { Error } from 'libs/features/Error';
 import { PleaseLogin } from 'libs/features/PleaseLogin';
 import { UserContext } from 'libs/hooks/UserContext';
-import { Error } from 'libs/features/Error';
+import { useRouter } from 'next/router';
+import { useContext } from 'react';
 
 export default function DetailPage() {
   const { currentUser } = useContext(UserContext);

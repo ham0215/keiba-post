@@ -1,7 +1,8 @@
-import { GiHorseHead } from 'react-icons/gi';
-import * as Styles from './KeibaButton.styles';
-import { Link } from 'libs/ui/Link';
 import type { User } from 'libs/firestore/User';
+import { Link } from 'libs/ui/Link';
+import { GiHorseHead } from 'react-icons/gi';
+
+import * as Styles from './KeibaButton.styles';
 
 type Props = {
   currentUser: User;

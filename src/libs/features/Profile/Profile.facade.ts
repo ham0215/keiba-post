@@ -1,9 +1,10 @@
-import { useCallback, useContext } from 'react';
-import { useRouter } from 'next/router';
-import type { FormInputType } from './Profile.models';
-import { UserContext } from 'libs/hooks/UserContext';
-import { setUser } from 'libs/firestore/User';
 import type { User } from 'libs/firestore/User';
+import { setUser } from 'libs/firestore/User';
+import { UserContext } from 'libs/hooks/UserContext';
+import { useRouter } from 'next/router';
+import { useCallback, useContext } from 'react';
+
+import type { FormInputType } from './Profile.models';
 
 type Props = {
   currentUser: User;
