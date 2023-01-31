@@ -1,7 +1,7 @@
-import { useContext } from 'react';
-import { Profile } from 'libs/features/Profile';
 import { PleaseLogin } from 'libs/features/PleaseLogin';
+import { Profile } from 'libs/features/Profile';
 import { UserContext } from 'libs/hooks/UserContext';
+import { useContext } from 'react';
 
 export default function ProfilePage() {
   const { currentUser } = useContext(UserContext);

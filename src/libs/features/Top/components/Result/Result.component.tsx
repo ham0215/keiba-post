@@ -1,8 +1,9 @@
 import CardContent from '@mui/material/CardContent';
 import Grid from '@mui/material/Grid';
+import type { User } from 'libs/firestore/User';
+
 import { ResultCard } from '../ResultCard';
 import * as Styles from './Result.styles';
-import type { User } from 'libs/firestore/User';
 
 type Props = {
   currentUser: User;

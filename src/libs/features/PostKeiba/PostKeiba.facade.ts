@@ -1,8 +1,8 @@
-import { useState, useCallback, useEffect } from 'react';
-import { useRouter } from 'next/router';
 import { findPostText } from 'libs/firestore/Keiba';
 import { updatePost } from 'libs/firestore/Keiba';
 import type { User } from 'libs/firestore/User';
+import { useRouter } from 'next/router';
+import { useCallback, useEffect, useState } from 'react';
 
 type Props = {
   keibaId: string;

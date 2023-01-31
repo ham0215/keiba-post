@@ -1,18 +1,18 @@
-import { useState, useEffect } from 'react';
+import { CacheProvider, EmotionCache } from '@emotion/react';
+import CssBaseline from '@mui/material/CssBaseline';
+import { ThemeProvider } from '@mui/material/styles';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import firebaseApp from 'firebaseApp';
+import { Footer } from 'libs/features/Footer';
+import { Header } from 'libs/features/Header';
+import { Loading } from 'libs/features/Loading';
+import { findUser, setUser, User } from 'libs/firestore/User';
+import { UserContext } from 'libs/hooks/UserContext';
+import createEmotionCache from 'libs/theme/createEmotionCache';
+import theme from 'libs/theme/theme';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
-import { ThemeProvider } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
-import { getAuth, onAuthStateChanged } from 'firebase/auth';
-import { CacheProvider, EmotionCache } from '@emotion/react';
-import firebaseApp from 'firebaseApp';
-import { UserContext } from 'libs/hooks/UserContext';
-import theme from 'libs/theme/theme';
-import { Header } from 'libs/features/Header';
-import { Footer } from 'libs/features/Footer';
-import { findUser, setUser, User } from 'libs/firestore/User';
-import createEmotionCache from 'libs/theme/createEmotionCache';
-import { Loading } from 'libs/features/Loading';
+import { useEffect, useState } from 'react';
 
 const clientSideEmotionCache = createEmotionCache();
 

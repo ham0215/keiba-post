@@ -1,5 +1,5 @@
-import { useCallback } from 'react';
 import { useRouter } from 'next/router';
+import { useCallback } from 'react';
 
 type Props = {
   id: string;

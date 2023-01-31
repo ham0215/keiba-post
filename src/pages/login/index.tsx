@@ -1,9 +1,10 @@
-import { useEffect } from 'react';
-import { getAuth, GoogleAuthProvider } from 'firebase/auth';
-import styled from '@emotion/styled';
 import 'firebaseui/dist/firebaseui.css';
+
+import styled from '@emotion/styled';
 import CircularProgress from '@mui/material/CircularProgress';
+import { getAuth, GoogleAuthProvider } from 'firebase/auth';
 import firebaseApp from 'firebaseApp';
+import { useEffect } from 'react';
 
 const Contents = styled.div`
   background: #151515 url('/images/login.jpg') no-repeat scroll center bottom;

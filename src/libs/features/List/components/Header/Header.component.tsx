@@ -1,9 +1,10 @@
-import { useRouter } from 'next/router';
+import FormControl from '@mui/material/FormControl';
+import Grid from '@mui/material/Grid';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import Grid from '@mui/material/Grid';
+import { useRouter } from 'next/router';
+
 import { Rule } from '../Rule/Rule.component';
 import * as Styles from './Header.styles';
 

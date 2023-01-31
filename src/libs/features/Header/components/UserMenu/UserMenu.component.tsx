@@ -1,11 +1,12 @@
-import { useRef } from 'react';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import { useUserMenuPresenter } from './UserMenu.presenter';
-import * as Styles from './UserMenu.styles';
-import { UserAvatar } from 'libs/ui/UserAvatar';
 import type { User } from 'libs/firestore/User';
 import { LoginButton } from 'libs/ui/LoginButton';
+import { UserAvatar } from 'libs/ui/UserAvatar';
+import { useRef } from 'react';
+
+import { useUserMenuPresenter } from './UserMenu.presenter';
+import * as Styles from './UserMenu.styles';
 
 type Props = {
   currentUser: User | null;

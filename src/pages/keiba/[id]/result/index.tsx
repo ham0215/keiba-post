@@ -1,9 +1,9 @@
-import { useContext } from 'react';
-import { useRouter } from 'next/router';
-import { Result } from 'libs/features/Result';
-import { PleaseLogin } from 'libs/features/PleaseLogin';
-import { UserContext } from 'libs/hooks/UserContext';
 import { Error } from 'libs/features/Error';
+import { PleaseLogin } from 'libs/features/PleaseLogin';
+import { Result } from 'libs/features/Result';
+import { UserContext } from 'libs/hooks/UserContext';
+import { useRouter } from 'next/router';
+import { useContext } from 'react';
 
 export default function ResultPage() {
   const { currentUser } = useContext(UserContext);

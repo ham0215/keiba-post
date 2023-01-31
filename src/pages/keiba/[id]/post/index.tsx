@@ -1,9 +1,9 @@
-import { useContext } from 'react';
-import { useRouter } from 'next/router';
-import { UserContext } from 'libs/hooks/UserContext';
+import { Error } from 'libs/features/Error';
 import { PleaseLogin } from 'libs/features/PleaseLogin';
 import { PostKeiba } from 'libs/features/PostKeiba';
-import { Error } from 'libs/features/Error';
+import { UserContext } from 'libs/hooks/UserContext';
+import { useRouter } from 'next/router';
+import { useContext } from 'react';
 
 export default function Post() {
   const { currentUser } = useContext(UserContext);

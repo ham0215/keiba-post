@@ -1,4 +1,4 @@
-import { getFirestore, getDoc, getDocs, collection, setDoc, doc } from 'firebase/firestore';
+import { collection, doc, getDoc, getDocs, getFirestore, setDoc } from 'firebase/firestore';
 
 export type User = {
   id: string;

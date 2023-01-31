@@ -1,14 +1,15 @@
-import { useEffect, useState } from 'react';
+import Paper from '@mui/material/Paper';
 import MuiTable from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
+import { KeibaCalendar } from 'data/KeibaCalendar';
+import { findKeibas, Keiba } from 'libs/firestore/Keiba';
+import { useEffect, useState } from 'react';
+
 import { Row } from '../Row';
 import * as Styles from './Table.styles';
-import { findKeibas, Keiba } from 'libs/firestore/Keiba';
-import { KeibaCalendar } from 'data/KeibaCalendar';
 
 export function Table({ tag }: { tag: string }) {
   const [keibas, setKeibas] = useState<Keiba[]>([]);

@@ -1,7 +1,8 @@
-import { useResultFacade } from './Result.facade';
-import { Form } from './components/Form';
 import { Loading } from 'libs/features/Loading';
 import type { User } from 'libs/firestore/User';
+
+import { Form } from './components/Form';
+import { useResultFacade } from './Result.facade';
 
 type Props = {
   keibaId: string;

@@ -1,7 +1,8 @@
+import type { User } from 'libs/firestore/User';
+import { Card } from 'libs/ui/Card';
+
 import { Form } from './components/Form';
 import { useProfileFacade } from './Profile.facade';
-import { Card } from 'libs/ui/Card';
-import type { User } from 'libs/firestore/User';
 
 type Props = {
   currentUser: User;

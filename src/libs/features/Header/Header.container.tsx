@@ -1,9 +1,10 @@
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
+import type { User } from 'libs/firestore/User';
+import { Link } from 'libs/ui/Link';
+
 import { UserMenu } from './components/UserMenu';
 import * as Styles from './Header.styles';
-import { Link } from 'libs/ui/Link';
-import type { User } from 'libs/firestore/User';
 
 type Props = {
   currentUser: User | null;
