@@ -13,7 +13,11 @@ export function Profile({ currentUser }: Props) {
 
   return (
     <Card>
-      <Form onCancel={handleCancel} onSubmit={handleSubmit} currentUser={currentUser} />
+      <Form
+        onCancel={handleCancel}
+        onSubmit={handleSubmit}
+        currentUser={currentUser}
+      />
     </Card>
   );
 }

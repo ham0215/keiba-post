@@ -23,14 +23,14 @@ export function useFormPresenter({ betsResults }: Props) {
     control,
     register,
     handleSubmit,
-    formState: { isDirty, isSubmitted, isValid }
+    formState: { isDirty, isSubmitted, isValid },
   } = useForm<FormInputType>({
     mode: 'all',
-    defaultValues: defaultResults
+    defaultValues: defaultResults,
   });
   const { fields } = useFieldArray({
     name: 'results',
-    control
+    control,
   });
 
   return {
@@ -38,6 +38,6 @@ export function useFormPresenter({ betsResults }: Props) {
     handleSubmit,
     disabledUpdate: !isDirty || isSubmitted || !isValid,
     betsResults,
-    fields
+    fields,
   } as const;
 }

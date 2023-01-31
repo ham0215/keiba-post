@@ -22,7 +22,8 @@ export default function TermsOfService() {
         <List>
           <ListItem>
             <Typography>
-              1. 本規約は、ユーザーと当社との間の本サービスの利用に関わる一切の関係に適用されるものとします。
+              1.
+              本規約は、ユーザーと当社との間の本サービスの利用に関わる一切の関係に適用されるものとします。
             </Typography>
           </ListItem>
           <ListItem>
@@ -54,21 +55,30 @@ export default function TermsOfService() {
           </ListItem>
           <NestedList>
             <ListItem>
-              <Typography>1. 利用登録の申請に際して虚偽の事項を届け出た場合</Typography>
+              <Typography>
+                1. 利用登録の申請に際して虚偽の事項を届け出た場合
+              </Typography>
             </ListItem>
             <ListItem>
-              <Typography>2. 本規約に違反したことがある者からの申請である場合</Typography>
+              <Typography>
+                2. 本規約に違反したことがある者からの申請である場合
+              </Typography>
             </ListItem>
             <ListItem>
-              <Typography>3. その他、当社が利用登録を相当でないと判断した場合</Typography>
+              <Typography>
+                3. その他、当社が利用登録を相当でないと判断した場合
+              </Typography>
             </ListItem>
           </NestedList>
         </List>
-        <Typography variant="h5">第3条（ユーザーIDおよびパスワードの管理）</Typography>
+        <Typography variant="h5">
+          第3条（ユーザーIDおよびパスワードの管理）
+        </Typography>
         <List>
           <ListItem>
             <Typography>
-              1. ユーザーは、自己の責任において、本サービスのユーザーIDおよびパスワードを適切に管理するものとします。
+              1.
+              ユーザーは、自己の責任において、本サービスのユーザーIDおよびパスワードを適切に管理するものとします。
             </Typography>
           </ListItem>
           <ListItem>
@@ -115,10 +125,14 @@ export default function TermsOfService() {
             </Typography>
           </ListItem>
           <ListItem>
-            <Typography>4. 当社のサービスの運営を妨害するおそれのある行為</Typography>
+            <Typography>
+              4. 当社のサービスの運営を妨害するおそれのある行為
+            </Typography>
           </ListItem>
           <ListItem>
-            <Typography>5. 他のユーザーに関する個人情報等を収集または蓄積する行為</Typography>
+            <Typography>
+              5. 他のユーザーに関する個人情報等を収集または蓄積する行為
+            </Typography>
           </ListItem>
           <ListItem>
             <Typography>6. 不正アクセスをし、またはこれを試みる行為</Typography>
@@ -127,7 +141,10 @@ export default function TermsOfService() {
             <Typography>7. 他のユーザーに成りすます行為</Typography>
           </ListItem>
           <ListItem>
-            <Typography>8. 当社のサービスに関連して、反社会的勢力に対して直接または間接に利益を供与する行為</Typography>
+            <Typography>
+              8.
+              当社のサービスに関連して、反社会的勢力に対して直接または間接に利益を供与する行為
+            </Typography>
           </ListItem>
           <ListItem>
             <Typography>
@@ -137,7 +154,8 @@ export default function TermsOfService() {
           </ListItem>
           <ListItem>
             <Typography>
-              10. 以下の表現を含み、または含むと当社が判断する内容を本サービス上に投稿し、または送信する行為
+              10.
+              以下の表現を含み、または含むと当社が判断する内容を本サービス上に投稿し、または送信する行為
             </Typography>
           </ListItem>
           <NestedList>
@@ -148,40 +166,58 @@ export default function TermsOfService() {
               <Typography>2. 露骨な性的表現</Typography>
             </ListItem>
             <ListItem>
-              <Typography>3. 人種、国籍、信条、性別、社会的身分、門地等による差別につながる表現</Typography>
+              <Typography>
+                3.
+                人種、国籍、信条、性別、社会的身分、門地等による差別につながる表現
+              </Typography>
             </ListItem>
             <ListItem>
-              <Typography>4. 自殺、自傷行為、薬物乱用を誘引または助長する表現</Typography>
+              <Typography>
+                4. 自殺、自傷行為、薬物乱用を誘引または助長する表現
+              </Typography>
             </ListItem>
             <ListItem>
-              <Typography>5. その他反社会的な内容を含み他人に不快感を与える表現</Typography>
+              <Typography>
+                5. その他反社会的な内容を含み他人に不快感を与える表現
+              </Typography>
             </ListItem>
           </NestedList>
           <ListItem>
-            <Typography>11. 以下を目的とし、または目的とすると当社が判断する行為</Typography>
+            <Typography>
+              11. 以下を目的とし、または目的とすると当社が判断する行為
+            </Typography>
           </ListItem>
           <NestedList>
             <ListItem>
               <Typography>
-                1. 営業、宣伝、広告、勧誘、その他営利を目的とする行為（当社の認めたものを除きます。）
+                1.
+                営業、宣伝、広告、勧誘、その他営利を目的とする行為（当社の認めたものを除きます。）
               </Typography>
             </ListItem>
             <ListItem>
               <Typography>2. 性行為やわいせつな行為を目的とする行為</Typography>
             </ListItem>
             <ListItem>
-              <Typography>3. 面識のない異性との出会いや交際を目的とする行為</Typography>
-            </ListItem>
-            <ListItem>
-              <Typography>4. 他のユーザーに対する嫌がらせや誹謗中傷を目的とする行為</Typography>
-            </ListItem>
-            <ListItem>
               <Typography>
-                5. 当社、本サービスの他のユーザー、または第三者に不利益、損害または不快感を与えることを目的とする行為
+                3. 面識のない異性との出会いや交際を目的とする行為
               </Typography>
             </ListItem>
             <ListItem>
-              <Typography>6. その他本サービスが予定している利用目的と異なる目的で本サービスを利用する行為</Typography>
+              <Typography>
+                4. 他のユーザーに対する嫌がらせや誹謗中傷を目的とする行為
+              </Typography>
+            </ListItem>
+            <ListItem>
+              <Typography>
+                5.
+                当社、本サービスの他のユーザー、または第三者に不利益、損害または不快感を与えることを目的とする行為
+              </Typography>
+            </ListItem>
+            <ListItem>
+              <Typography>
+                6.
+                その他本サービスが予定している利用目的と異なる目的で本サービスを利用する行為
+              </Typography>
             </ListItem>
           </NestedList>
           <ListItem>
@@ -201,18 +237,26 @@ export default function TermsOfService() {
           </ListItem>
           <NestedList>
             <ListItem>
-              <Typography>1. 本サービスにかかるコンピュータシステムの保守点検または更新を行う場合</Typography>
-            </ListItem>
-            <ListItem>
               <Typography>
-                2. 地震、落雷、火災、停電または天災などの不可抗力により、本サービスの提供が困難となった場合
+                1.
+                本サービスにかかるコンピュータシステムの保守点検または更新を行う場合
               </Typography>
             </ListItem>
             <ListItem>
-              <Typography>3. コンピュータまたは通信回線等が事故により停止した場合</Typography>
+              <Typography>
+                2.
+                地震、落雷、火災、停電または天災などの不可抗力により、本サービスの提供が困難となった場合
+              </Typography>
             </ListItem>
             <ListItem>
-              <Typography>4. その他、当社が本サービスの提供が困難と判断した場合</Typography>
+              <Typography>
+                3. コンピュータまたは通信回線等が事故により停止した場合
+              </Typography>
+            </ListItem>
+            <ListItem>
+              <Typography>
+                4. その他、当社が本サービスの提供が困難と判断した場合
+              </Typography>
             </ListItem>
           </NestedList>
           <ListItem>
@@ -259,22 +303,33 @@ export default function TermsOfService() {
               <Typography>1. 本規約のいずれかの条項に違反した場合</Typography>
             </ListItem>
             <ListItem>
-              <Typography>2. 登録事項に虚偽の事実があることが判明した場合</Typography>
+              <Typography>
+                2. 登録事項に虚偽の事実があることが判明した場合
+              </Typography>
             </ListItem>
             <ListItem>
-              <Typography>3. 決済手段として当該ユーザーが届け出たクレジットカードが利用停止となった場合</Typography>
+              <Typography>
+                3.
+                決済手段として当該ユーザーが届け出たクレジットカードが利用停止となった場合
+              </Typography>
             </ListItem>
             <ListItem>
               <Typography>4. 料金等の支払債務の不履行があった場合</Typography>
             </ListItem>
             <ListItem>
-              <Typography>5. 当社からの連絡に対し、一定期間返答がない場合</Typography>
+              <Typography>
+                5. 当社からの連絡に対し、一定期間返答がない場合
+              </Typography>
             </ListItem>
             <ListItem>
-              <Typography>6. 本サービスについて、最終の利用から一定期間利用がない場合</Typography>
+              <Typography>
+                6. 本サービスについて、最終の利用から一定期間利用がない場合
+              </Typography>
             </ListItem>
             <ListItem>
-              <Typography>7. その他、当社が本サービスの利用を適当でないと判断した場合</Typography>
+              <Typography>
+                7. その他、当社が本サービスの利用を適当でないと判断した場合
+              </Typography>
             </ListItem>
           </NestedList>
           <ListItem>
@@ -285,13 +340,16 @@ export default function TermsOfService() {
           </ListItem>
           <ListItem>
             <Typography>
-              3. 当社は、本条に基づき当社が行った行為によりユーザーに生じた損害について、一切の責任を負いません。
+              3.
+              当社は、本条に基づき当社が行った行為によりユーザーに生じた損害について、一切の責任を負いません。
             </Typography>
           </ListItem>
         </List>
         <Typography variant="h5">第9条（退会）</Typography>
         <Sentence>
-          <Typography>ユーザーは、当社の定める退会手続により、本サービスから退会できるものとします。</Typography>
+          <Typography>
+            ユーザーは、当社の定める退会手続により、本サービスから退会できるものとします。
+          </Typography>
         </Sentence>
         <Typography variant="h5">第10条（保証の否認および免責事項）</Typography>
         <List>
@@ -304,7 +362,8 @@ export default function TermsOfService() {
           </ListItem>
           <ListItem>
             <Typography>
-              2. 当社は、本サービスに起因してユーザーに生じたあらゆる損害について一切の責任を負いません。
+              2.
+              当社は、本サービスに起因してユーザーに生じたあらゆる損害について一切の責任を負いません。
               ただし、本サービスに関する当社とユーザーとの間の契約（本規約を含みます。）が消費者契約法に定める消費者契約となる場合、この免責規定は適用されません。
             </Typography>
           </ListItem>
@@ -358,11 +417,14 @@ export default function TermsOfService() {
         <Typography variant="h5">第16条（準拠法・裁判管轄）</Typography>
         <List>
           <ListItem>
-            <Typography>1. 本規約の解釈にあたっては、日本法を準拠法とします。</Typography>
+            <Typography>
+              1. 本規約の解釈にあたっては、日本法を準拠法とします。
+            </Typography>
           </ListItem>
           <ListItem>
             <Typography>
-              2. 本サービスに関して紛争が生じた場合には、当社の本店所在地を管轄する裁判所を専属的合意管轄とします。
+              2.
+              本サービスに関して紛争が生じた場合には、当社の本店所在地を管轄する裁判所を専属的合意管轄とします。
             </Typography>
           </ListItem>
         </List>

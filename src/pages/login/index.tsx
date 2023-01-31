@@ -26,13 +26,13 @@ export default function Login() {
         uiShown: () => {
           const loader = document.getElementById('loader');
           if (loader) loader.style.display = 'none';
-        }
+        },
       },
       signInFlow: 'popup',
       signInSuccessUrl: '/',
       signInOptions: [GoogleAuthProvider.PROVIDER_ID],
       tosUrl: '/terms/terms-of-service',
-      privacyPolicyUrl: '/terms/privacy'
+      privacyPolicyUrl: '/terms/privacy',
     };
     ui.start('#firebaseui-auth-container', uiConfig);
   });

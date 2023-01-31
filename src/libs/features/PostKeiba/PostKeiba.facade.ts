@@ -34,7 +34,7 @@ export function usePostKeibaFacade({ keibaId, currentUser }: Props) {
         name: currentUser.name,
         url: currentUser.url,
         text: keibaText,
-        createdAt: new Date()
+        createdAt: new Date(),
       });
       router.push({ pathname: `/keiba/${keibaId}` });
     },
@@ -44,6 +44,6 @@ export function usePostKeibaFacade({ keibaId, currentUser }: Props) {
   return {
     handleCancel,
     handleSubmit,
-    postText
+    postText,
   } as const;
 }

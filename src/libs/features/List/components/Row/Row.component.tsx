@@ -17,7 +17,11 @@ type Props = {
 };
 
 export function Row({ id, date, big, name, tag, bets, results }: Props) {
-  const { handleClickToDetail, hasResults } = useRowPresenter({ id, tag, results });
+  const { handleClickToDetail, hasResults } = useRowPresenter({
+    id,
+    tag,
+    results,
+  });
 
   return (
     <TableRow>
@@ -34,7 +38,12 @@ export function Row({ id, date, big, name, tag, bets, results }: Props) {
         )}
       </TableCell>
       {hasResults ? (
-        <ResultCel name={name} bets={bets} results={results} onClickToDetail={handleClickToDetail} />
+        <ResultCel
+          name={name}
+          bets={bets}
+          results={results}
+          onClickToDetail={handleClickToDetail}
+        />
       ) : (
         <BetCel bets={bets} onClick={handleClickToDetail} />
       )}

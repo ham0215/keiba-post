@@ -31,7 +31,7 @@ export function useResultFacade({ keibaId, currentUser }: Props) {
     async (data: FormInputType) => {
       await updateResults({
         keibaId,
-        results: data.results.map((result) => result.result)
+        results: data.results.map((result) => result.result),
       });
 
       router.push({ pathname: `/keiba/${keibaId}` });
@@ -42,6 +42,6 @@ export function useResultFacade({ keibaId, currentUser }: Props) {
   return {
     handleCancel,
     handleSubmit,
-    betsResults
+    betsResults,
   } as const;
 }

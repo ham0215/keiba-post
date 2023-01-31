@@ -30,7 +30,12 @@ export function UserMenu({ currentUser }: Props) {
           >
             <UserAvatar url={currentUser.url} />
           </Styles.MenuButton>
-          <Menu anchorEl={menuButtonRef.current} keepMounted open={open} onClose={() => setOpen(false)}>
+          <Menu
+            anchorEl={menuButtonRef.current}
+            keepMounted
+            open={open}
+            onClose={() => setOpen(false)}
+          >
             <MenuItem onClick={handleProfile}>Profile</MenuItem>
             <MenuItem color="inherit" onClick={handleLogout}>
               Logout

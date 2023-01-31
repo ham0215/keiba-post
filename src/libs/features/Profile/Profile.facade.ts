@@ -28,7 +28,7 @@ export function useProfileFacade({ currentUser }: Props) {
         id: currentUser.id,
         name: data.name,
         url: currentUser.url,
-        enabled: currentUser.enabled
+        enabled: currentUser.enabled,
       });
 
       setCurrentUser(updatedUser);
@@ -39,6 +39,6 @@ export function useProfileFacade({ currentUser }: Props) {
 
   return {
     handleCancel,
-    handleSubmit
+    handleSubmit,
   } as const;
 }

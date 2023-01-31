@@ -10,7 +10,10 @@ export function useResultCelPresenter({ bets, results }: Props) {
   const winners = bets.filter((bet, index) => results[index] > 0);
   const winnerResults = results.filter((result) => result > 0);
   const hasWinners = winners.length > 0;
-  const handleClickResults = useCallback(() => setOpenResult(!openResult), [openResult]);
+  const handleClickResults = useCallback(
+    () => setOpenResult(!openResult),
+    [openResult]
+  );
 
   return {
     openResult,
@@ -18,6 +21,6 @@ export function useResultCelPresenter({ bets, results }: Props) {
     winners,
     winnerResults,
     hasWinners,
-    handleClickResults
+    handleClickResults,
   } as const;
 }

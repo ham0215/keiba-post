@@ -21,7 +21,16 @@ type Props = {
   currentUser: User;
 };
 
-export function PostCard({ keibaId, uid, text, createdAt, name, url, canDelete, currentUser }: Props) {
+export function PostCard({
+  keibaId,
+  uid,
+  text,
+  createdAt,
+  name,
+  url,
+  canDelete,
+  currentUser,
+}: Props) {
   const [show, setShow] = useState(true);
 
   const handleDelete = useCallback(() => {

@@ -10,9 +10,18 @@ type Props = {
 };
 
 export function Result({ keibaId, currentUser }: Props) {
-  const { handleCancel, handleSubmit, betsResults } = useResultFacade({ keibaId, currentUser });
+  const { handleCancel, handleSubmit, betsResults } = useResultFacade({
+    keibaId,
+    currentUser,
+  });
 
   if (!betsResults) return <Loading />;
 
-  return <Form onSubmit={handleSubmit} onCancel={handleCancel} betsResults={betsResults} />;
+  return (
+    <Form
+      onSubmit={handleSubmit}
+      onCancel={handleCancel}
+      betsResults={betsResults}
+    />
+  );
 }

@@ -45,12 +45,22 @@ export function Detail({ keibaId, currentUser }: Props) {
       <Grid container>
         {posts.map((post) => (
           <Grid key={post.uid} item xs={12} md={4}>
-            <PostCard {...post} keibaId={keibaId} canDelete={canPost} currentUser={currentUser} />
+            <PostCard
+              {...post}
+              keibaId={keibaId}
+              canDelete={canPost}
+              currentUser={currentUser}
+            />
           </Grid>
         ))}
       </Grid>
       <Float bottom={'2px'} right={'2px'}>
-        <SpeedDial open={open} setOpen={setOpen} keibaId={keibaId} canPost={canPost} />
+        <SpeedDial
+          open={open}
+          setOpen={setOpen}
+          keibaId={keibaId}
+          canPost={canPost}
+        />
       </Float>
     </>
   );

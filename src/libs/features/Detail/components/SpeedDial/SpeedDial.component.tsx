@@ -14,7 +14,9 @@ type Props = {
 };
 
 export function SpeedDial({ open, setOpen, keibaId, canPost }: Props) {
-  const { handleClickText, handleClickResult } = useSpeedDialPresenter({ keibaId });
+  const { handleClickText, handleClickResult } = useSpeedDialPresenter({
+    keibaId,
+  });
 
   return (
     <MuiSpeedDial

@@ -18,7 +18,9 @@ type Props = {
 
 export function Form(props: Props) {
   const { onSubmit, onCancel, betsResults } = props;
-  const { register, handleSubmit, disabledUpdate, fields } = useFormPresenter({ betsResults });
+  const { register, handleSubmit, disabledUpdate, fields } = useFormPresenter({
+    betsResults,
+  });
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -33,7 +35,13 @@ export function Form(props: Props) {
               type="number"
               fullWidth
               defaultValue={field.result}
-              inputProps={{ ...register(`results.${index}.result`, { required: true, valueAsNumber: true, min: 0 }) }}
+              inputProps={{
+                ...register(`results.${index}.result`, {
+                  required: true,
+                  valueAsNumber: true,
+                  min: 0,
+                }),
+              }}
             />
           </ListItem>
         ))}

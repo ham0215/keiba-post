@@ -22,6 +22,6 @@ export function useUserMenuPresenter() {
     open,
     setOpen,
     handleLogout,
-    handleProfile
+    handleProfile,
   } as const;
 }

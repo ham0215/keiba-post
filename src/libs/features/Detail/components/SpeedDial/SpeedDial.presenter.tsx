@@ -18,6 +18,6 @@ export function useSpeedDialPresenter({ keibaId }: Props) {
 
   return {
     handleClickText,
-    handleClickResult
+    handleClickResult,
   } as const;
 }

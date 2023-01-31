@@ -1,4 +1,11 @@
-import { collection, doc, getDoc, getDocs, getFirestore, setDoc } from 'firebase/firestore';
+import {
+  collection,
+  doc,
+  getDoc,
+  getDocs,
+  getFirestore,
+  setDoc,
+} from 'firebase/firestore';
 
 export type User = {
   id: string;
@@ -18,7 +25,7 @@ export async function findUser(id: string): Promise<User | null> {
     id: user.id,
     name: userData.name,
     url: userData.url,
-    enabled: userData.enabled
+    enabled: userData.enabled,
   };
 }
 
@@ -31,7 +38,7 @@ export async function findUsers(): Promise<User[]> {
         id: doc.id,
         name: doc.data().name,
         url: doc.data().url,
-        enabled: doc.data().enabled
+        enabled: doc.data().enabled,
       };
     })
   );
@@ -41,7 +48,7 @@ export async function setUser({ id, name, url, enabled }: User) {
   await setDoc(doc(getFirestore(), 'users', id), {
     name: name,
     url: url,
-    enabled: enabled
+    enabled: enabled,
   });
   return await findUser(id);
 }

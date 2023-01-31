@@ -12,11 +12,21 @@ type Props = {
 const Wrapper = ({ currentUser = null, children }: Props) => {
   const setCurrentUser = jest.fn();
 
-  return <UserContext.Provider value={{ currentUser, setCurrentUser }}>{children}</UserContext.Provider>;
+  return (
+    <UserContext.Provider value={{ currentUser, setCurrentUser }}>
+      {children}
+    </UserContext.Provider>
+  );
 };
 
-const customRender = (ui: ReactElement, options?: RenderOptions & { currentUser: User }) => {
-  return render(ui, { wrapper: (props) => Wrapper({ ...props, ...options }), ...options });
+const customRender = (
+  ui: ReactElement,
+  options?: RenderOptions & { currentUser: User }
+) => {
+  return render(ui, {
+    wrapper: (props) => Wrapper({ ...props, ...options }),
+    ...options,
+  });
 };
 
 export * from '@testing-library/react';
