@@ -8,7 +8,7 @@ import {
   getDocs,
   getFirestore,
   setDoc,
-  updateDoc
+  updateDoc,
 } from 'firebase/firestore';
 import { findUser } from 'libs/firestore/User';
 
@@ -45,22 +45,29 @@ export type BetsResults = {
   results: number[] | undefined;
 };
 
-export async function updatePost({ keibaId, uid, name, url, text, createdAt }: UpdatePost) {
+export async function updatePost({
+  keibaId,
+  uid,
+  name,
+  url,
+  text,
+  createdAt,
+}: UpdatePost) {
   const db = getFirestore();
   await setDoc(doc(db, 'keibas', keibaId, 'posts', uid), {
     text,
     name,
     url,
-    createdAt
+    createdAt,
   });
   const keiba = await getDoc(doc(db, 'keibas', keibaId));
   if (keiba.data()?.bets) {
     await updateDoc(doc(db, 'keibas', keibaId), {
-      bets: arrayUnion(url)
+      bets: arrayUnion(url),
     });
   } else {
     await setDoc(doc(db, 'keibas', keibaId), {
-      bets: [url]
+      bets: [url],
     });
   }
 }
@@ -69,14 +76,14 @@ export async function deletePost(keibaId: string, uid: string, url: string) {
   const db = getFirestore();
   await deleteDoc(doc(db, 'keibas', keibaId, 'posts', uid));
   await updateDoc(doc(db, 'keibas', keibaId), {
-    bets: arrayRemove(url)
+    bets: arrayRemove(url),
   });
 }
 
 export async function updateResults({ keibaId, results }: UpdateResults) {
   const db = getFirestore();
   await updateDoc(doc(db, 'keibas', keibaId), {
-    results
+    results,
   });
 }
 
@@ -86,7 +93,7 @@ export async function findKeibas(): Promise<Keiba[]> {
     keibas.docs.map(async (doc) => ({
       id: doc.id,
       bets: doc.data().bets,
-      results: doc.data().results
+      results: doc.data().results,
     }))
   );
 }
@@ -100,7 +107,9 @@ export async function findBets(keibaId: string): Promise<BetsResults | null> {
 }
 
 export async function findPosts(keibaId: string): Promise<Post[]> {
-  const ps = await getDocs(collection(getFirestore(), 'keibas', keibaId, 'posts'));
+  const ps = await getDocs(
+    collection(getFirestore(), 'keibas', keibaId, 'posts')
+  );
   return Promise.all(
     ps.docs.map(async (doc) => {
       let name = '';
@@ -119,13 +128,16 @@ export async function findPosts(keibaId: string): Promise<Post[]> {
         text: doc.data().text,
         name,
         url,
-        createdAt: doc.data().createdAt.toDate()
+        createdAt: doc.data().createdAt.toDate(),
       };
     })
   );
 }
 
-export async function findPostText(keibaId: string, uid: string): Promise<string | null> {
+export async function findPostText(
+  keibaId: string,
+  uid: string
+): Promise<string | null> {
   const p = await getDoc(doc(getFirestore(), 'keibas', keibaId, 'posts', uid));
   const data = p.data();
   if (!data) return null;

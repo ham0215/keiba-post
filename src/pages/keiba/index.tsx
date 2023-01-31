@@ -11,7 +11,8 @@ export default function Keiba() {
   if (!currentUser || !currentUser.enabled) return <PleaseLogin />;
 
   const { tag } = router.query;
-  const selectedTag = typeof tag === 'string' && tags.includes(tag) ? tag : currentTag;
+  const selectedTag =
+    typeof tag === 'string' && tags.includes(tag) ? tag : currentTag;
 
   return <List selectedTag={selectedTag} />;
 }

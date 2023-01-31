@@ -13,9 +13,16 @@ type Props = {
 };
 
 export function ResultCel({ name, bets, results, onClickToDetail }: Props) {
-  const { openResult, setOpenResult, winners, winnerResults, hasWinners, handleClickResults } = useResultCelPresenter({
+  const {
+    openResult,
+    setOpenResult,
+    winners,
+    winnerResults,
+    hasWinners,
+    handleClickResults,
+  } = useResultCelPresenter({
     bets,
-    results
+    results,
   });
 
   return (

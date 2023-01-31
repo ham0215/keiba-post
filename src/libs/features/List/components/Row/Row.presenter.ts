@@ -18,6 +18,6 @@ export function useRowPresenter({ id, tag, results }: Props) {
 
   return {
     handleClickToDetail,
-    hasResults
+    hasResults,
   } as const;
 }

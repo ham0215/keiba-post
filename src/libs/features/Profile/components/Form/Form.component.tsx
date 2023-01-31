@@ -27,7 +27,9 @@ export function Form({ onSubmit, onCancel, currentUser }: Props) {
         defaultValue={currentUser?.name}
         inputProps={{ ...register('name', { required: true }) }}
       />
-      {errors?.name && <Typography color="error">Name is required!!</Typography>}
+      {errors?.name && (
+        <Typography color="error">Name is required!!</Typography>
+      )}
       <Styles.ButtonArea>
         <Button variant="outlined" onClick={onCancel}>
           キャンセル

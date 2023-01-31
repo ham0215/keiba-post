@@ -14,7 +14,11 @@ export function Modal({ children, open, setOpen }: Props) {
   }, [setOpen]);
 
   return (
-    <Styles.StyledModal open={open} onClose={handleClose} aria-labelledby="rule">
+    <Styles.StyledModal
+      open={open}
+      onClose={handleClose}
+      aria-labelledby="rule"
+    >
       <Styles.StyledPaper>{children}</Styles.StyledPaper>
     </Styles.StyledModal>
   );

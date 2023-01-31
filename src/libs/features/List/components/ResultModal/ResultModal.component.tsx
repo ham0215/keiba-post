@@ -17,7 +17,13 @@ type Props = {
   setOpen: (open: boolean) => void;
 };
 
-export function ResultModal({ name, winners, winnerResults, open, setOpen }: Props) {
+export function ResultModal({
+  name,
+  winners,
+  winnerResults,
+  open,
+  setOpen,
+}: Props) {
   return (
     <Modal open={open} onClose={() => setOpen(false)}>
       <Box sx={style}>
@@ -30,7 +36,9 @@ export function ResultModal({ name, winners, winnerResults, open, setOpen }: Pro
               <ListItemIcon>
                 <Avatar key={index} src={bet} sx={{ width: 24, height: 24 }} />
               </ListItemIcon>
-              <ListItemText primary={`${winnerResults[index].toLocaleString()}円`} />
+              <ListItemText
+                primary={`${winnerResults[index].toLocaleString()}円`}
+              />
             </ListItem>
           ))}
         </List>

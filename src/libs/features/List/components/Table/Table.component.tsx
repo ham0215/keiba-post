@@ -36,7 +36,9 @@ export function Table({ tag }: { tag: string }) {
               key={row.id}
               {...row}
               bets={keibas.find((keiba) => keiba.id === row.id)?.bets || []}
-              results={keibas.find((keiba) => keiba.id === row.id)?.results || []}
+              results={
+                keibas.find((keiba) => keiba.id === row.id)?.results || []
+              }
             />
           ))}
         </TableBody>

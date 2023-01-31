@@ -6,13 +6,13 @@ export function useFormPresenter() {
   const {
     register,
     handleSubmit,
-    formState: { isDirty, isSubmitted, isValid, errors }
+    formState: { isDirty, isSubmitted, isValid, errors },
   } = useForm<FormInputType>({ mode: 'all' });
 
   return {
     register,
     handleSubmit,
     errors,
-    disabledSubmit: !isDirty || isSubmitted || !isValid
+    disabledSubmit: !isDirty || isSubmitted || !isValid,
   } as const;
 }

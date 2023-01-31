@@ -9,7 +9,12 @@ type Props = {
 };
 
 export function PostKeiba({ keibaId, currentUser }: Props) {
-  const { handleCancel, handleSubmit, postText } = usePostKeibaFacade({ keibaId, currentUser });
+  const { handleCancel, handleSubmit, postText } = usePostKeibaFacade({
+    keibaId,
+    currentUser,
+  });
 
-  return <Form onSubmit={handleSubmit} onCancel={handleCancel} postText={postText} />;
+  return (
+    <Form onSubmit={handleSubmit} onCancel={handleCancel} postText={postText} />
+  );
 }

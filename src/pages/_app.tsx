@@ -20,7 +20,11 @@ interface MyAppProps extends AppProps {
   emotionCache?: EmotionCache;
 }
 
-export default function MyApp({ Component, emotionCache = clientSideEmotionCache, pageProps }: MyAppProps) {
+export default function MyApp({
+  Component,
+  emotionCache = clientSideEmotionCache,
+  pageProps,
+}: MyAppProps) {
   const [currentUser, setCurrentUser] = useState<User | null | undefined>();
 
   useEffect(() => {
@@ -34,7 +38,7 @@ export default function MyApp({ Component, emotionCache = clientSideEmotionCache
             id: fbUser.uid,
             name: fbUser.displayName || '',
             url: fbUser.photoURL || '',
-            enabled: false
+            enabled: false,
           });
         }
       }

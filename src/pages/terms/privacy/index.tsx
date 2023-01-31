@@ -33,14 +33,21 @@ export default function PrivacyPolicy() {
             などから収集することがあります。
           </Typography>
         </Sentence>
-        <Typography variant="h5">第3条（個人情報を収集・利用する目的）</Typography>
-        <Typography>当社が個人情報を収集・利用する目的は、以下のとおりです。</Typography>
+        <Typography variant="h5">
+          第3条（個人情報を収集・利用する目的）
+        </Typography>
+        <Typography>
+          当社が個人情報を収集・利用する目的は、以下のとおりです。
+        </Typography>
         <List>
           <ListItem>
             <Typography>1. 当社サービスの提供・運営のため</Typography>
           </ListItem>
           <ListItem>
-            <Typography>2. ユーザーからのお問い合わせに回答するため（本人確認を行うことを含む）</Typography>
+            <Typography>
+              2.
+              ユーザーからのお問い合わせに回答するため（本人確認を行うことを含む）
+            </Typography>
           </ListItem>
           <ListItem>
             <Typography>
@@ -49,7 +56,9 @@ export default function PrivacyPolicy() {
             </Typography>
           </ListItem>
           <ListItem>
-            <Typography>4. メンテナンス、重要なお知らせなど必要に応じたご連絡のため</Typography>
+            <Typography>
+              4. メンテナンス、重要なお知らせなど必要に応じたご連絡のため
+            </Typography>
           </ListItem>
           <ListItem>
             <Typography>
@@ -59,11 +68,14 @@ export default function PrivacyPolicy() {
           </ListItem>
           <ListItem>
             <Typography>
-              6. ユーザーにご自身の登録情報の閲覧や変更、削除、ご利用状況の閲覧を行っていただくため
+              6.
+              ユーザーにご自身の登録情報の閲覧や変更、削除、ご利用状況の閲覧を行っていただくため
             </Typography>
           </ListItem>
           <ListItem>
-            <Typography>7. 有料サービスにおいて、ユーザーに利用料金を請求するため</Typography>
+            <Typography>
+              7. 有料サービスにおいて、ユーザーに利用料金を請求するため
+            </Typography>
           </ListItem>
           <ListItem>
             <Typography>8. 上記の利用目的に付随する目的</Typography>
@@ -95,7 +107,8 @@ export default function PrivacyPolicy() {
           <NestedList>
             <ListItem>
               <Typography>
-                1. 人の生命、身体または財産の保護のために必要がある場合であって、本人の同意を得ることが困難であるとき
+                1.
+                人の生命、身体または財産の保護のために必要がある場合であって、本人の同意を得ることが困難であるとき
               </Typography>
             </ListItem>
             <ListItem>
@@ -111,7 +124,10 @@ export default function PrivacyPolicy() {
               </Typography>
             </ListItem>
             <ListItem>
-              <Typography>4. 予め次の事項を告知あるいは公表し、かつ当社が個人情報保護委員会に届出をしたとき</Typography>
+              <Typography>
+                4.
+                予め次の事項を告知あるいは公表し、かつ当社が個人情報保護委員会に届出をしたとき
+              </Typography>
             </ListItem>
             <NestedList>
               <ListItem>
@@ -124,7 +140,9 @@ export default function PrivacyPolicy() {
                 <Typography>3. 第三者への提供の手段または方法</Typography>
               </ListItem>
               <ListItem>
-                <Typography>4. 本人の求めに応じて個人情報の第三者への提供を停止すること</Typography>
+                <Typography>
+                  4. 本人の求めに応じて個人情報の第三者への提供を停止すること
+                </Typography>
               </ListItem>
               <ListItem>
                 <Typography>5. 本人の求めを受け付ける方法</Typography>
@@ -133,17 +151,22 @@ export default function PrivacyPolicy() {
           </NestedList>
           <ListItem>
             <Typography>
-              2. 前項の定めにかかわらず、次に掲げる場合には、当該情報の提供先は第三者に該当しないものとします。
+              2.
+              前項の定めにかかわらず、次に掲げる場合には、当該情報の提供先は第三者に該当しないものとします。
             </Typography>
           </ListItem>
           <NestedList>
             <ListItem>
               <Typography>
-                1 .当社が利用目的の達成に必要な範囲内において個人情報の取扱いの全部または一部を委託する場合
+                1
+                .当社が利用目的の達成に必要な範囲内において個人情報の取扱いの全部または一部を委託する場合
               </Typography>
             </ListItem>
             <ListItem>
-              <Typography>2. 合併その他の事由による事業の承継に伴って個人情報が提供される場合</Typography>
+              <Typography>
+                2.
+                合併その他の事由による事業の承継に伴って個人情報が提供される場合
+              </Typography>
             </ListItem>
             <ListItem>
               <Typography>
@@ -158,17 +181,23 @@ export default function PrivacyPolicy() {
         <List>
           <ListItem>
             <Typography>
-              1. 当社は、本人から個人情報の開示を求められたときは、本人に対し、遅滞なくこれを開示します。
+              1.
+              当社は、本人から個人情報の開示を求められたときは、本人に対し、遅滞なくこれを開示します。
               ただし、開示することにより次のいずれかに該当する場合は、その全部または一部を開示しないこともあり、開示しない決定をした場合には、その旨を遅滞なく通知します。
               なお、個人情報の開示に際しては、1件あたり1、000円の手数料を申し受けます。
             </Typography>
           </ListItem>
           <NestedList>
             <ListItem>
-              <Typography>1. 本人または第三者の生命、身体、財産その他の権利利益を害するおそれがある場合</Typography>
+              <Typography>
+                1.
+                本人または第三者の生命、身体、財産その他の権利利益を害するおそれがある場合
+              </Typography>
             </ListItem>
             <ListItem>
-              <Typography>2. 当社の業務の適正な実施に著しい支障を及ぼすおそれがある場合</Typography>
+              <Typography>
+                2. 当社の業務の適正な実施に著しい支障を及ぼすおそれがある場合
+              </Typography>
             </ListItem>
             <ListItem>
               <Typography>3. その他法令に違反することとなる場合</Typography>
@@ -206,7 +235,8 @@ export default function PrivacyPolicy() {
         <List>
           <ListItem>
             <Typography>
-              1. 当社は、本人から、個人情報が、利用目的の範囲を超えて取り扱われているという理由、
+              1.
+              当社は、本人から、個人情報が、利用目的の範囲を超えて取り扱われているという理由、
               または不正の手段により取得されたものであるという理由により、その利用の停止または消去（以下、「利用停止等」といいます。）を求められた場合には、遅滞なく必要な調査を行います。
             </Typography>
           </ListItem>
@@ -229,7 +259,9 @@ export default function PrivacyPolicy() {
             </Typography>
           </ListItem>
         </List>
-        <Typography variant="h5">第9条（プライバシーポリシーの変更）</Typography>
+        <Typography variant="h5">
+          第9条（プライバシーポリシーの変更）
+        </Typography>
         <List>
           <ListItem>
             <Typography>

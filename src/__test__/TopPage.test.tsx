@@ -1,11 +1,14 @@
-import { mockDisabledUser, mockUser } from 'libs/firestore/User/testing/mockUser';
+import {
+  mockDisabledUser,
+  mockUser,
+} from 'libs/firestore/User/testing/mockUser';
 
 import TopPage from '../pages';
 import { render, screen } from './test-utils';
 
 jest.mock('next/router', () => require('next-router-mock'));
 jest.mock('libs/features/Top', () => ({
-  Top: () => <div data-testid="top" />
+  Top: () => <div data-testid="top" />,
 }));
 
 describe('TopPage', () => {
