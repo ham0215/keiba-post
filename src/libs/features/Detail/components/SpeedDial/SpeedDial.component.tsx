@@ -10,10 +10,17 @@ type Props = {
   open: boolean;
   setOpen: (open: boolean) => void;
   keibaId: string;
+  canPost: boolean;
   canResult: boolean;
 };
 
-export function SpeedDial({ open, setOpen, keibaId, canResult }: Props) {
+export function SpeedDial({
+  open,
+  setOpen,
+  keibaId,
+  canPost,
+  canResult,
+}: Props) {
   const { handleClickText, handleClickResult } = useSpeedDialPresenter({
     keibaId,
   });
@@ -28,13 +35,15 @@ export function SpeedDial({ open, setOpen, keibaId, canResult }: Props) {
       onOpen={() => setOpen(true)}
       open={open}
     >
-      <SpeedDialAction
-        key="text"
-        icon={<BedroomBabyIcon />}
-        tooltipTitle="投票"
-        tooltipOpen
-        onClick={handleClickText}
-      />
+      {canPost && (
+        <SpeedDialAction
+          key="text"
+          icon={<BedroomBabyIcon />}
+          tooltipTitle="投票"
+          tooltipOpen
+          onClick={handleClickText}
+        />
+      )}
       {canResult && (
         <SpeedDialAction
           key="result"
