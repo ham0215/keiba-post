@@ -37,7 +37,8 @@ export function Detail({ keibaId, currentUser }: Props) {
   if (!keiba) return <Error />;
   const now = new Date();
   const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-  const canPost = today <= new Date(keiba.date);
+  const canDelete = today <= new Date(keiba.date);
+  const canResult = currentUser.id === 'DCpE0wpaviOrtizWGh1OC8qYk4m1';
 
   return (
     <>
@@ -48,7 +49,7 @@ export function Detail({ keibaId, currentUser }: Props) {
             <PostCard
               {...post}
               keibaId={keibaId}
-              canDelete={canPost}
+              canDelete={canDelete}
               currentUser={currentUser}
             />
           </Grid>
@@ -59,7 +60,7 @@ export function Detail({ keibaId, currentUser }: Props) {
           open={open}
           setOpen={setOpen}
           keibaId={keibaId}
-          canPost={canPost}
+          canResult={canResult}
         />
       </Float>
     </>
