@@ -38,6 +38,7 @@ export function Detail({ keibaId, currentUser }: Props) {
   const now = new Date();
   const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
   const canPost = today <= new Date(keiba.date);
+  const canResult = currentUser.id === 'DCpE0wpaviOrtizWGh1OC8qYk4m1';
 
   return (
     <>
@@ -60,6 +61,7 @@ export function Detail({ keibaId, currentUser }: Props) {
           setOpen={setOpen}
           keibaId={keibaId}
           canPost={canPost}
+          canResult={canResult}
         />
       </Float>
     </>
