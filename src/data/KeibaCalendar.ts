@@ -6,8 +6,10 @@ export type Props = {
   big: boolean;
 };
 
-export const currentTag = '2023a';
-export const tags = ['2021', '2022a', '2022b', '2023a'];
+export const CURRENT_TAG = '2023a' as const;
+export const TAGS = ['2021', '2022a', '2022b', '2023a'];
+
+export const RULE_2022_TAGS = ['2022b', '2022a', '2021'] as const;
 
 export const KeibaCalendar: Props[] = [
   {
@@ -379,14 +381,14 @@ export const KeibaCalendar: Props[] = [
     tag: '2023a',
     date: '2023/04/16',
     name: '皐月賞',
-    big: true,
+    big: false,
   },
   {
     id: '23106',
     tag: '2023a',
     date: '2023/04/30',
     name: '天皇賞（春）',
-    big: true,
+    big: false,
   },
   {
     id: '23107',
@@ -414,7 +416,7 @@ export const KeibaCalendar: Props[] = [
     tag: '2023a',
     date: '2023/05/28',
     name: '日本ダービー',
-    big: true,
+    big: false,
   },
   {
     id: '23111',
