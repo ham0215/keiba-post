@@ -1,4 +1,4 @@
-import { currentTag, tags } from 'data/KeibaCalendar';
+import { CURRENT_TAG, TAGS } from 'data/KeibaCalendar';
 import { List } from 'libs/features/List';
 import { PleaseLogin } from 'libs/features/PleaseLogin';
 import { UserContext } from 'libs/hooks/UserContext';
@@ -12,7 +12,7 @@ export default function Keiba() {
 
   const { tag } = router.query;
   const selectedTag =
-    typeof tag === 'string' && tags.includes(tag) ? tag : currentTag;
+    typeof tag === 'string' && TAGS.some((v) => v === tag) ? tag : CURRENT_TAG;
 
   return <List selectedTag={selectedTag} />;
 }

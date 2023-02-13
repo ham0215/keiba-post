@@ -17,7 +17,7 @@ export function NextRace({ tag }: { tag: string }) {
       <NextLink href={`/keiba/${nextRace.id}`} passHref legacyBehavior>
         <Link component="button">
           次回レース: {nextRace.date.substring(5)} {nextRace.name} (
-          {nextRace.big ? '3,000円' : '1,000円'})
+          {nextRace.big ? '3,000円' : '2,000円'})
         </Link>
       </NextLink>
     </Alert>

@@ -3,9 +3,10 @@ import Grid from '@mui/material/Grid';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
+import { RULE_2022_TAGS } from 'data/KeibaCalendar';
 import { useRouter } from 'next/router';
 
-import { Rule } from '../Rule/Rule.component';
+import { Rule, Rule2022 } from '../Rule';
 import * as Styles from './Header.styles';
 
 export function Header({ tag }: { tag: string }) {
@@ -32,7 +33,7 @@ export function Header({ tag }: { tag: string }) {
           </FormControl>
         </Grid>
         <Grid item xs alignItems="right">
-          <Rule />
+          {RULE_2022_TAGS.some((v) => v === tag) ? <Rule2022 /> : <Rule />}
         </Grid>
       </Grid>
     </Styles.Container>

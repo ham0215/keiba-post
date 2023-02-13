@@ -7,12 +7,18 @@ import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import { Props } from 'data/KeibaCalendar';
+import { RULE_2022_TAGS } from 'data/KeibaCalendar';
 import { Card } from 'libs/ui/Card';
 import { Link } from 'libs/ui/Link';
 
 import * as Styles from './KeibaCard.styles';
 
 export function KeibaCard({ date, big, name, tag }: Props) {
+  const yen = big
+    ? '3,000円'
+    : RULE_2022_TAGS.some((v) => v === tag)
+    ? '1,000円'
+    : '2,000円';
   return (
     <>
       <Styles.Back>
@@ -39,7 +45,7 @@ export function KeibaCard({ date, big, name, tag }: Props) {
             <ListItemIcon>
               <CurrencyYenIcon />
             </ListItemIcon>
-            <ListItemText primary={big ? '3,000円' : '1,000円'} />
+            <ListItemText primary={yen} />
           </ListItem>
         </List>
       </Card>
