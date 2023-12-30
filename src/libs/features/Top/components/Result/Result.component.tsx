@@ -19,7 +19,8 @@ export function Result({ currentUser }: Props) {
               <ResultCard
                 url="https://public.flourish.studio/visualisation/15280945/"
                 title="2023年後半戦"
-                winner="??"
+                winner="natsu"
+                avatar="https://cdn.netkeiba.com/img.news/?pid=news_img&id=336842"
               />
               <ResultCard
                 url="https://public.flourish.studio/visualisation/12399742/"
