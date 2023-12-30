@@ -1,17 +1,17 @@
 name: Test
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
 jobs:
   test:
     name: Run test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v4.1.1
+      - uses: actions/setup-node@v4.0.1
         with:
-          node-version: '18.x'
+          node-version: 20
           cache: npm
       - run: npm i
       - run: npm run test:ci
