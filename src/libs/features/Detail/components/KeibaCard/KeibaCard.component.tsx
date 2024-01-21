@@ -17,8 +17,8 @@ export function KeibaCard({ date, big, name, tag }: Props) {
   const yen = big
     ? '3,000円'
     : RULE_2022_TAGS.some((v) => v === tag)
-    ? '1,000円'
-    : '2,000円';
+      ? '1,000円'
+      : '2,000円';
   return (
     <>
       <Styles.Back>

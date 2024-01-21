@@ -40,7 +40,7 @@ export async function findUsers(): Promise<User[]> {
         url: doc.data().url,
         enabled: doc.data().enabled,
       };
-    })
+    }),
   );
 }
 

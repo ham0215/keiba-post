@@ -38,7 +38,7 @@ export function usePostKeibaFacade({ keibaId, currentUser }: Props) {
       });
       router.push({ pathname: `/keiba/${keibaId}` });
     },
-    [currentUser, keibaId, router]
+    [currentUser, keibaId, router],
   );
 
   return {
