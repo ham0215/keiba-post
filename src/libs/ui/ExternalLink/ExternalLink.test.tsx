@@ -7,7 +7,7 @@ describe('ExternalLink', () => {
     const { asFragment } = render(
       <ExternalLink href="/keiba" variant="body1">
         keiba
-      </ExternalLink>
+      </ExternalLink>,
     );
     expect(asFragment()).toMatchSnapshot();
   });

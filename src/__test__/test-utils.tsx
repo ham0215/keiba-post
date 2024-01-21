@@ -21,7 +21,7 @@ const Wrapper = ({ currentUser = null, children }: Props) => {
 
 const customRender = (
   ui: ReactElement,
-  options?: RenderOptions & { currentUser: User }
+  options?: RenderOptions & { currentUser: User },
 ) => {
   return render(ui, {
     wrapper: (props) => Wrapper({ ...props, ...options }),

@@ -36,7 +36,7 @@ export function useResultFacade({ keibaId, currentUser }: Props) {
 
       router.push({ pathname: `/keiba/${keibaId}` });
     },
-    [keibaId, router]
+    [keibaId, router],
   );
 
   return {

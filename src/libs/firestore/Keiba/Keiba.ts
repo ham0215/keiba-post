@@ -94,7 +94,7 @@ export async function findKeibas(): Promise<Keiba[]> {
       id: doc.id,
       bets: doc.data().bets,
       results: doc.data().results,
-    }))
+    })),
   );
 }
 
@@ -108,7 +108,7 @@ export async function findBets(keibaId: string): Promise<BetsResults | null> {
 
 export async function findPosts(keibaId: string): Promise<Post[]> {
   const ps = await getDocs(
-    collection(getFirestore(), 'keibas', keibaId, 'posts')
+    collection(getFirestore(), 'keibas', keibaId, 'posts'),
   );
   return Promise.all(
     ps.docs.map(async (doc) => {
@@ -130,13 +130,13 @@ export async function findPosts(keibaId: string): Promise<Post[]> {
         url,
         createdAt: doc.data().createdAt.toDate(),
       };
-    })
+    }),
   );
 }
 
 export async function findPostText(
   keibaId: string,
-  uid: string
+  uid: string,
 ): Promise<string | null> {
   const p = await getDoc(doc(getFirestore(), 'keibas', keibaId, 'posts', uid));
   const data = p.data();

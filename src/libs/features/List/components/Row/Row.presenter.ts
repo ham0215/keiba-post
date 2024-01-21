@@ -12,7 +12,7 @@ export function useRowPresenter({ id, tag, results }: Props) {
 
   const handleClickToDetail = useCallback(
     () => router.push({ pathname: `/keiba/${id}`, query: { tag } }),
-    [id, router, tag]
+    [id, router, tag],
   );
   const hasResults = results.length > 0;
 

@@ -12,7 +12,7 @@ export function useResultCelPresenter({ bets, results }: Props) {
   const hasWinners = winners.length > 0;
   const handleClickResults = useCallback(
     () => setOpenResult(!openResult),
-    [openResult]
+    [openResult],
   );
 
   return {

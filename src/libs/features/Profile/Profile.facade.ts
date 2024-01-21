@@ -34,7 +34,7 @@ export function useProfileFacade({ currentUser }: Props) {
       setCurrentUser(updatedUser);
       router.push('/');
     },
-    [currentUser, router, setCurrentUser]
+    [currentUser, router, setCurrentUser],
   );
 
   return {
