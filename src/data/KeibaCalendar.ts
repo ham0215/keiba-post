@@ -6,8 +6,15 @@ export type Props = {
   big: boolean;
 };
 
-export const CURRENT_TAG = '2023b' as const;
-export const TAGS = ['2021', '2022a', '2022b', '2023a', '2023b'];
+export const CURRENT_TAG = '2024a' as const;
+export const TAGS = [
+  '2021',
+  '2022a',
+  '2022b',
+  '2023a',
+  '2023b',
+  '2024a',
+] as const;
 
 export const RULE_2022_TAGS = ['2022b', '2022a', '2021'] as const;
 
@@ -515,5 +522,89 @@ export const KeibaCalendar: Props[] = [
     date: '2023/12/28',
     name: 'ホープフルS',
     big: false,
+  },
+  {
+    id: '24101',
+    tag: '2024a',
+    date: '2024/02/18',
+    name: 'フェブラリーS',
+    big: false,
+  },
+  {
+    id: '24102',
+    tag: '2024a',
+    date: '2024/03/24',
+    name: '高松宮記念',
+    big: false,
+  },
+  {
+    id: '24103',
+    tag: '2024a',
+    date: '2024/03/31',
+    name: '大阪杯',
+    big: false,
+  },
+  {
+    id: '24104',
+    tag: '2024a',
+    date: '2024/04/07',
+    name: '桜花賞',
+    big: false,
+  },
+  {
+    id: '24105',
+    tag: '2024a',
+    date: '2024/04/14',
+    name: '皐月賞',
+    big: false,
+  },
+  {
+    id: '24106',
+    tag: '2024a',
+    date: '2024/04/28',
+    name: '天皇賞（春）',
+    big: false,
+  },
+  {
+    id: '24107',
+    tag: '2024a',
+    date: '2024/05/05',
+    name: 'NHKマイルC',
+    big: false,
+  },
+  {
+    id: '24108',
+    tag: '2024a',
+    date: '2024/05/12',
+    name: 'ヴィクトリアマイル',
+    big: false,
+  },
+  {
+    id: '24109',
+    tag: '2024a',
+    date: '2024/05/19',
+    name: 'オークス',
+    big: false,
+  },
+  {
+    id: '24110',
+    tag: '2024a',
+    date: '2024/05/26',
+    name: '日本ダービー',
+    big: false,
+  },
+  {
+    id: '24111',
+    tag: '2024a',
+    date: '2024/06/02',
+    name: '安田記念',
+    big: false,
+  },
+  {
+    id: '24112',
+    tag: '2024a',
+    date: '2024/06/23',
+    name: '宝塚記念',
+    big: true,
   },
 ];
