@@ -59,7 +59,7 @@
     "next-router-mock": "0.9.11",
     "postcss-syntax": "0.36.2",
     "prettier": "3.2.4",
-    "ts-node": "10.9.1",
+    "ts-node": "10.9.2",
     "typescript": "5.2.2"
   },
   "engines": {
