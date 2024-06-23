@@ -19,7 +19,8 @@ export function Result({ currentUser }: Props) {
               <ResultCard
                 url="https://public.flourish.studio/visualisation/16523387/"
                 title="2024年前半戦"
-                winner="?"
+                winner="ham"
+                avatar="https://furusato-ippin.co.jp/user_data/img/detail/sakurahum-img1.jpg"
               />
               <ResultCard
                 url="https://public.flourish.studio/visualisation/15280945/"
