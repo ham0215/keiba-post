@@ -6,7 +6,7 @@ export type Props = {
   big: boolean;
 };
 
-export const CURRENT_TAG = '2024a' as const;
+export const CURRENT_TAG = '2024b' as const;
 export const TAGS = [
   '2021',
   '2022a',
@@ -14,6 +14,7 @@ export const TAGS = [
   '2023a',
   '2023b',
   '2024a',
+  '2024b',
 ] as const;
 
 export const RULE_2022_TAGS = ['2022b', '2022a', '2021'] as const;
@@ -606,5 +607,89 @@ export const KeibaCalendar: Props[] = [
     date: '2024/06/23',
     name: '宝塚記念',
     big: true,
+  },
+  {
+    id: '24201',
+    tag: '2024b',
+    date: '2024/09/29',
+    name: 'スプリンターズS',
+    big: false,
+  },
+  {
+    id: '24202',
+    tag: '2024b',
+    date: '2024/10/13',
+    name: '秋華賞',
+    big: false,
+  },
+  {
+    id: '24203',
+    tag: '2024b',
+    date: '2024/10/20',
+    name: '菊花賞',
+    big: false,
+  },
+  {
+    id: '24204',
+    tag: '2024b',
+    date: '2024/10/27',
+    name: '天皇賞（秋）',
+    big: false,
+  },
+  {
+    id: '24205',
+    tag: '2024b',
+    date: '2024/11/10',
+    name: 'エリザベス女王杯',
+    big: false,
+  },
+  {
+    id: '24206',
+    tag: '2024b',
+    date: '2024/11/17',
+    name: 'マイルチャンピオンシップ',
+    big: false,
+  },
+  {
+    id: '24207',
+    tag: '2024b',
+    date: '2024/11/24',
+    name: 'ジャパンC',
+    big: false,
+  },
+  {
+    id: '24208',
+    tag: '2024b',
+    date: '2024/12/01',
+    name: 'チャンピオンズC',
+    big: false,
+  },
+  {
+    id: '24209',
+    tag: '2024b',
+    date: '2024/12/08',
+    name: '阪神ジュベナイルF',
+    big: false,
+  },
+  {
+    id: '24210',
+    tag: '2024b',
+    date: '2024/12/15',
+    name: '朝日杯フューチュリティS',
+    big: false,
+  },
+  {
+    id: '24211',
+    tag: '2024b',
+    date: '2024/12/22',
+    name: '有馬記念',
+    big: true,
+  },
+  {
+    id: '24212',
+    tag: '2024b',
+    date: '2024/12/28',
+    name: 'ホープフルS',
+    big: false,
   },
 ];
