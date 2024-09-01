@@ -41,7 +41,7 @@ export default function Login() {
     return <CircularProgress />;
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
   const firebaseui = require('firebaseui');
 
   return (
