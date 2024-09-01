@@ -6,6 +6,7 @@ import {
 import TopPage from '../pages';
 import { render, screen } from './test-utils';
 
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 jest.mock('next/router', () => require('next-router-mock'));
 jest.mock('libs/features/Top', () => ({
   Top: () => <div data-testid="top" />,
