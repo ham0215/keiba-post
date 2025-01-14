@@ -17,9 +17,15 @@ export function Result({ currentUser }: Props) {
           <CardContent>
             <Grid container spacing={4}>
               <ResultCard
+                url="https://public.flourish.studio/visualisation/21157359/"
+                title="2025年前半戦"
+                winner="?"
+              />
+              <ResultCard
                 url="https://public.flourish.studio/visualisation/19213422/"
                 title="2024年後半戦"
-                winner="?"
+                winner="t"
+                avatar="https://prtimes.jp/i/19292/8/resize/d19292-8-952037-0.jpg"
               />
               <ResultCard
                 url="https://public.flourish.studio/visualisation/16523387/"
