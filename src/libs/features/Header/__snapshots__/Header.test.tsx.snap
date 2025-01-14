@@ -6,24 +6,24 @@ exports[`Header snapshot testing 1`] = `
     class="css-19myip5"
   >
     <header
-      class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4  MuiAppBar-root MuiAppBar-colorTransparent MuiAppBar-positionStatic  css-eudo0r-MuiPaper-root-MuiAppBar-root"
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorTransparent MuiAppBar-positionStatic css-94iixj-MuiPaper-root-MuiAppBar-root"
       style="--Paper-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12);"
     >
       <div
-        class="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular  css-95f9g5-MuiToolbar-root"
+        class="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-1ygil4i-MuiToolbar-root"
       >
         <h6
-          class="MuiTypography-root MuiTypography-h6  css-r7880p-MuiTypography-root"
+          class="MuiTypography-root MuiTypography-h6 css-1v16mxy-MuiTypography-root"
         >
           <a
-            class="MuiTypography-root MuiTypography-inherit  MuiLink-root MuiLink-underlineNone  css-1r7lyh7-MuiTypography-root-MuiLink-root"
+            class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone css-6b04s2-MuiTypography-root-MuiLink-root"
             href="/"
           >
             Keiba Post
           </a>
         </h6>
         <button
-          class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textInherit MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorInherit   MuiButton-root MuiButton-text MuiButton-textInherit MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorInherit  css-6j4gle-MuiButtonBase-root-MuiButton-root"
+          class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textInherit MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorInherit MuiButton-root MuiButton-text MuiButton-textInherit MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorInherit css-100ek8v-MuiButtonBase-root-MuiButton-root"
           tabindex="0"
           type="button"
         >
